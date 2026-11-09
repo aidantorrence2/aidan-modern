@@ -47,6 +47,8 @@ class OverlayService : Service() {
 
     private lateinit var wm: WindowManager
     private var bubble: FrameLayout? = null
+    private var bubbleCore: TextView? = null
+    private val bubbleBg by lazy { Ui.rounded(this, Ui.BG, 28, Ui.ACCENT) }
     private var badge: TextView? = null
     private var panelHost: FrameLayout? = null
     private lateinit var bubbleParams: WindowManager.LayoutParams
@@ -66,6 +68,7 @@ class OverlayService : Service() {
         Store.addListener(listener)
         // A new completion opens the panel. If it is already open, the new card just appears in it.
         Hub.onNewCompletion = { if (panelHost == null) expand() }
+        tickHandler.postDelayed(badgeTick, 30_000)
         updateBadge()
     }
 
@@ -84,6 +87,7 @@ class OverlayService : Service() {
         running = false
         Store.removeListener(listener)
         Hub.onNewCompletion = null
+        tickHandler.removeCallbacks(badgeTick)
         bubble?.let { runCatching { wm.removeView(it) } }
         panelHost?.let { runCatching { wm.removeView(it) } }
         super.onDestroy()
@@ -122,9 +126,10 @@ class OverlayService : Service() {
             textSize = 22f
             setTextColor(Ui.ACCENT)
             gravity = Gravity.CENTER
-            background = Ui.rounded(context, Ui.BG, 28, Ui.ACCENT)
+            background = bubbleBg
             elevation = dp(6).toFloat()
         }
+        bubbleCore = core
         b.addView(core, FrameLayout.LayoutParams(size, size))
         val bd = TextView(this).apply {
             textSize = 11f
@@ -187,9 +192,19 @@ class OverlayService : Service() {
     }
 
     private fun updateBadge() {
-        val n = Store.pending().size
+        val pending = Store.pending()
+        val n = pending.size
         badge?.text = n.toString()
         badge?.visibility = if (n > 0) View.VISIBLE else View.GONE
+        // Bubble blinks red if anything waits on you, else green while a "done" turn is under 5 minutes old.
+        val colors = pending.mapNotNull { Blink.colorFor(it) }
+        val color = if (Blink.RED in colors) Blink.RED else colors.firstOrNull()
+        bubbleCore?.let { Blink.apply(it, bubbleBg, color, Ui.ACCENT, dp(3), dp(1)) }
+    }
+
+    private val tickHandler = android.os.Handler(android.os.Looper.getMainLooper())
+    private val badgeTick = object : Runnable {
+        override fun run() { updateBadge(); tickHandler.postDelayed(this, 30_000) }
     }
 
     private fun pulse() {

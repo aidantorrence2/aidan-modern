@@ -126,8 +126,8 @@ struct CardView: View {
                 .onChange(of: g.frame(in: .global)) { _, f in model.cardFrames[c.id] = f }
                 .onDisappear { model.cardFrames[c.id] = nil }
         })
-        .overlay(RoundedRectangle(cornerRadius: 9).stroke(model.flashId == c.id ? Theme.accent : Theme.line, lineWidth: model.flashId == c.id ? 1.5 : 1))
-        .animation(.easeOut(duration: 0.3), value: model.flashId)
+        .overlay(RoundedRectangle(cornerRadius: 9).stroke(Theme.line, lineWidth: 1))
+        .overlay(BlinkBorder(c: c))
         .offset(x: model.swipe[c.id] ?? 0)
         .opacity(1 - min(0.7, Double(-(model.swipe[c.id] ?? 0)) / 280))
         .animation(.easeOut(duration: 0.15), value: model.swipe[c.id])
@@ -155,5 +155,34 @@ struct CardView: View {
         if s < 3600 { return "\(s / 60)m" }
         if s < 86400 { return "\(s / 3600)h" }
         return "\(s / 86400)d"
+    }
+}
+
+
+/// Blinking border: red while the agent waits on you; green for 5 minutes after a turn that needs nothing.
+struct BlinkBorder: View {
+    let c: Completion
+    static let red = Color(red: 0.95, green: 0.30, blue: 0.28)
+    static let green = Color(red: 0.35, green: 0.85, blue: 0.45)
+
+    var body: some View {
+        TimelineView(.animation(minimumInterval: 1.0 / 20)) { ctx in
+            let t = ctx.date.timeIntervalSince1970
+            let age = t - c.ts / 1000
+            let color: Color? = {
+                switch c.waitingOnUser {
+                case .some(true): return Self.red
+                case .some(false): return age < 300 ? Self.green : nil
+                case .none: return nil
+                }
+            }()
+            if let color {
+                let phase = (sin(t * .pi * 1.6) + 1) / 2 // ~0.8 blinks per second
+                RoundedRectangle(cornerRadius: 9)
+                    .stroke(color.opacity(0.25 + 0.75 * phase), lineWidth: 2)
+                    .shadow(color: color.opacity(0.5 * phase), radius: 4)
+            }
+        }
+        .allowsHitTesting(false)
     }
 }

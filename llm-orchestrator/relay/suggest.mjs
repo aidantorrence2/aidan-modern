@@ -38,7 +38,8 @@ How to draft:
 Also summarize the turn for a tiny inbox card:
 - "title": 2-5 words naming the work, shorthand welcome (LRC, PR, deps, auth, iOS, cfg, CI, w/, &). No punctuation at the end.
 - "did": at most 8 words, what the agent did or found. Past tense, no filler ("Fixed null check in auth; tests pass").
-- "needs": at most 6 words, what it needs from the user ("Approve push to main", "Pick option A or B", "Nothing — done").`;
+- "needs": at most 6 words, what it needs from the user ("Approve push to main", "Pick option A or B", "Nothing — done").
+- "needsReply": true if the agent is waiting on the user (a question, a decision, an approval, a blocker, or work it can't continue without them); false if it finished and nothing is required.`;
 
 const SCHEMA = {
   type: 'object',
@@ -47,18 +48,22 @@ const SCHEMA = {
     did: { type: 'string', description: 'One line: what the agent did.' },
     needs: { type: 'string', description: 'One line: what it needs from the user.' },
     primary: { type: 'string', description: 'The most likely reply, ready to send. One short sentence.' },
+    needsReply: { type: 'boolean', description: 'True when the agent is waiting on the user.' },
   },
-  required: ['title', 'did', 'needs', 'primary'],
+  required: ['title', 'did', 'needs', 'primary', 'needsReply'],
   additionalProperties: false,
 };
 
 export function fallbackSuggestion(event) {
   const text = (event?.text || '').toLowerCase();
   let primary = 'Looks good. Verify it builds and the tests pass, then commit and push.';
+  let needsReply = false;
   if (/\?\s*$/.test((event?.text || '').trim()) || /should i|would you like|do you want|which option/.test(text)) {
     primary = 'Yes, go with your recommended option and continue.';
+    needsReply = true;
   } else if (/error|failed|failing|exception|blocked|cannot|can't/.test(text)) {
     primary = 'Investigate the root cause of that error, fix it, and re-run to confirm.';
+    needsReply = true;
   }
   return {
     primary,
@@ -66,6 +71,7 @@ export function fallbackSuggestion(event) {
     title: '',
     did: '',
     needs: '',
+    needsReply,
     model: null,
   };
 }
@@ -146,12 +152,13 @@ function normalize(parsed, model) {
     title: line(parsed.title, 48),
     did: line(parsed.did, 120),
     needs: line(parsed.needs, 100),
+    needsReply: typeof parsed.needsReply === 'boolean' ? parsed.needsReply : !/^nothing\b/i.test(String(parsed.needs || '')),
     model,
   };
 }
 
 async function suggestViaCli(event, tasks, hint) {
-  const system = `${SYSTEM}\n\nRespond with ONLY a JSON object of the form {"title": string, "did": string, "needs": string, "primary": string} and nothing else.`;
+  const system = `${SYSTEM}\n\nRespond with ONLY a JSON object of the form {"title": string, "did": string, "needs": string, "primary": string, "needsReply": boolean} and nothing else.`;
   try {
     const out = await runCli(system, buildUserContent(event, tasks, hint));
     const r = normalize(parseJsonLoose(out), `cli:${CLI_MODEL}`);
@@ -186,7 +193,7 @@ async function suggestViaDeepSeek(event, tasks, hint) {
         thinking: { type: 'disabled' }, // v4-flash reasons by default and can spend every token on it
         response_format: { type: 'json_object' },
         messages: [
-          { role: 'system', content: SYSTEM + '\n\nRespond with ONLY a JSON object of the form {"title": string, "did": string, "needs": string, "primary": string}.' },
+          { role: 'system', content: SYSTEM + '\n\nRespond with ONLY a JSON object of the form {"title": string, "did": string, "needs": string, "primary": string, "needsReply": boolean}.' },
           { role: 'user', content: buildUserContent(event, tasks, hint) },
         ],
       }),

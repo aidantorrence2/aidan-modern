@@ -21,6 +21,7 @@ struct Completion: Identifiable, Equatable {
     var shortTitle: String
     var did: String
     var needs: String
+    var needsReply: Bool?
 
     init(_ o: [String: Any]) {
         id = o["id"] as? String ?? UUID().uuidString
@@ -40,10 +41,18 @@ struct Completion: Identifiable, Equatable {
         shortTitle = s?["title"] as? String ?? ""
         did = s?["did"] as? String ?? ""
         needs = s?["needs"] as? String ?? ""
+        needsReply = s?["needsReply"] as? Bool
         suggesting = o["suggesting"] as? Bool ?? false
         if (o["delivery"] as? String) == "failed" {
             note = "Couldn't send automatically: \((o["deliveryError"] as? String ?? "").prefix(120))"
         } else { note = "" }
+    }
+
+    /// Red = waiting on you; green = done, nothing needed (blinks for the first 5 minutes).
+    var waitingOnUser: Bool? {
+        if let n = needsReply { return n }
+        if needs.isEmpty { return nil }
+        return !needs.lowercased().hasPrefix("nothing")
     }
 
     var displayTitle: String { !shortTitle.isEmpty ? shortTitle : (!title.isEmpty ? title : String(sessionId.prefix(12))) }

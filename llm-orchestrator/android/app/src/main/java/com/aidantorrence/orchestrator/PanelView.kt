@@ -69,13 +69,18 @@ class PanelView(
         addView(scroll, Ui.lp(Ui.MATCH, 0, 1f).apply { topMargin = dp(8) })
     }
 
+    // Re-check every 30 s so a green "done" blink stops after its 5 minutes.
+    private val tick = object : Runnable { override fun run() { refresh(); postDelayed(this, 30_000) } }
+
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
         Store.addListener(listener)
+        postDelayed(tick, 30_000)
         rebuild()
     }
 
     override fun onDetachedFromWindow() {
+        removeCallbacks(tick)
         Store.removeListener(listener)
         super.onDetachedFromWindow()
     }
@@ -184,9 +189,10 @@ class PanelView(
         private val sendBtn: TextView
         private var expanded = false
         private var binding = false
+        private val cardBg = Ui.rounded(context, Ui.CARD, 14, Ui.LINE)
 
         init {
-            view.background = Ui.rounded(context, Ui.CARD, 14, Ui.LINE)
+            view.background = cardBg
             view.setPadding(dp(12), dp(10), dp(12), dp(10))
             val top = Ui.row(context, 8)
             top.addView(source)
@@ -233,6 +239,7 @@ class PanelView(
 
         fun bind(item: InboxItem) {
             binding = true
+            Blink.apply(view, cardBg, Blink.colorFor(item), Ui.LINE, dp(2), dp(1))
             source.text = Hub.label(item.source)
             source.setTextColor(Ui.sourceColor(item.source))
             title.text = item.shortTitle.ifBlank { item.title.ifBlank { item.sessionId.take(12) } }

@@ -241,6 +241,7 @@ object Hub {
         s.optString("title").takeIf { it.isNotBlank() }?.let { item.shortTitle = it }
         s.optString("did").takeIf { it.isNotBlank() }?.let { item.did = it }
         s.optString("needs").takeIf { it.isNotBlank() }?.let { item.needs = it }
+        if (s.has("needsReply") && !s.isNull("needsReply")) item.needsReply = s.optBoolean("needsReply")
     }
 
     fun requestSuggestion(item: InboxItem, hint: String) {

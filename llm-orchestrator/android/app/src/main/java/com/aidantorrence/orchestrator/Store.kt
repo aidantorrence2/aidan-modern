@@ -37,6 +37,8 @@ data class InboxItem(
     var shortTitle: String = "",
     var did: String = "",
     var needs: String = "",
+    /** From the drafter: true = waiting on you (blink red), false = nothing needed (blink green 5 min). */
+    var needsReply: Boolean? = null,
 ) {
     fun toJson(): JSONObject = JSONObject().apply {
         put("id", id); put("origin", origin); put("source", source); put("sessionId", sessionId)
@@ -45,6 +47,7 @@ data class InboxItem(
         put("url", url); put("replyMode", replyMode); put("reply", reply); put("delivery", delivery)
         put("packageName", packageName); put("note", note)
         put("shortTitle", shortTitle); put("did", did); put("needs", needs)
+        put("needsReply", needsReply ?: JSONObject.NULL)
     }
 
     companion object {
@@ -70,6 +73,7 @@ data class InboxItem(
             shortTitle = o.optString("shortTitle"),
             did = o.optString("did"),
             needs = o.optString("needs"),
+            needsReply = if (o.has("needsReply") && !o.isNull("needsReply")) o.optBoolean("needsReply") else null,
         )
     }
 }
