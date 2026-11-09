@@ -21,7 +21,10 @@ enum WindowHost {
             windows[id] = window
         }
         window.title = title
-        window.contentView = NSHostingView(rootView: content)
+        let host = NSHostingView(rootView: content)
+        host.sizingOptions = [.minSize] // keep the window's size; only enforce the content's minimum
+        window.contentView = host
+        window.setContentSize(size)
         NSApp.activate(ignoringOtherApps: true)
         window.makeKeyAndOrderFront(nil)
     }
