@@ -11,7 +11,9 @@ import android.graphics.PixelFormat
 import android.os.Build
 import android.os.IBinder
 import android.provider.Settings
+import android.os.SystemClock
 import android.view.Gravity
+import android.view.KeyEvent
 import android.view.MotionEvent
 import android.view.View
 import android.view.WindowManager
@@ -30,6 +32,8 @@ class OverlayService : Service() {
         private const val NOTIF_ID = 1
         const val ACTION_STOP = "stop"
         const val ACTION_EXPAND = "expand"
+        private const val REOPEN_GRACE_MS = 20_000L
+        const val ACTION_DEBUG = "com.aidantorrence.orchestrator.DEBUG"
 
         fun start(ctx: Context, expand: Boolean = false) {
             if (!Settings.canDrawOverlays(ctx)) return
@@ -54,6 +58,8 @@ class OverlayService : Service() {
     private lateinit var bubbleParams: WindowManager.LayoutParams
     private lateinit var panelParams: WindowManager.LayoutParams
     private val listener: () -> Unit = { updateBadge() }
+    private var lastCollapse = 0L
+    private var debugReceiver: android.content.BroadcastReceiver? = null
 
     override fun onBind(intent: Intent?): IBinder? = null
 
@@ -67,7 +73,12 @@ class OverlayService : Service() {
         addBubble()
         Store.addListener(listener)
         // A new completion opens the panel. If it is already open, the new card just appears in it.
-        Hub.onNewCompletion = { if (panelHost == null) expand() }
+        // Right after you close the panel it stays closed (the badge still counts the new card), so a burst
+        // of completions can't pop it back open faster than you can close it.
+        Hub.onNewCompletion = {
+            if (panelHost == null && SystemClock.uptimeMillis() - lastCollapse > REOPEN_GRACE_MS) expand()
+        }
+        registerDebugReceiver()
         tickHandler.postDelayed(badgeTick, 30_000)
         updateBadge()
     }
@@ -88,6 +99,7 @@ class OverlayService : Service() {
         Store.removeListener(listener)
         Hub.onNewCompletion = null
         tickHandler.removeCallbacks(badgeTick)
+        debugReceiver?.let { runCatching { unregisterReceiver(it) } }
         bubble?.let { runCatching { wm.removeView(it) } }
         panelHost?.let { runCatching { wm.removeView(it) } }
         super.onDestroy()
@@ -217,10 +229,20 @@ class OverlayService : Service() {
 
     // ------------------------------------------------------------------ panel
 
+    /** Panel root: the back key / back gesture closes the panel instead of being swallowed by it. */
+    private inner class PanelHost : FrameLayout(this@OverlayService) {
+        override fun dispatchKeyEvent(event: KeyEvent): Boolean {
+            if (event.keyCode == KeyEvent.KEYCODE_BACK || event.keyCode == KeyEvent.KEYCODE_ESCAPE) {
+                if (event.action == KeyEvent.ACTION_UP && !event.isCanceled) collapse()
+                return true
+            }
+            return super.dispatchKeyEvent(event)
+        }
+    }
+
     private fun expand() {
         if (panelHost != null) return
-        bubble?.visibility = View.GONE
-        val host = FrameLayout(this)
+        val host = PanelHost()
         val panel = PanelView(this, onMinimize = { collapse() }, onWantsKeyboard = { setFocusable(it) })
         host.addView(panel, FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT))
         val (pw, ph) = panelSize()
@@ -241,8 +263,15 @@ class OverlayService : Service() {
             if (e.action == MotionEvent.ACTION_OUTSIDE) setFocusable(false)
             false
         }
-        wm.addView(host, panelParams)
+        try {
+            wm.addView(host, panelParams)
+        } catch (e: Exception) {
+            // Overlay permission reset (HyperOS does this on updates) or a bad window: keep the bubble.
+            bubble?.visibility = View.VISIBLE
+            return
+        }
         panelHost = host
+        bubble?.visibility = View.GONE
     }
 
     /** Always fits the screen as it is now: never wider than the screen, never taller than ~62% of it. */
@@ -281,10 +310,66 @@ class OverlayService : Service() {
         }
     }
 
+    /** Always ends with the panel gone and the bubble showing, whatever state the panel window is in. */
     private fun collapse() {
-        panelHost?.let { runCatching { wm.removeView(it) } }
+        lastCollapse = SystemClock.uptimeMillis()
+        val host = panelHost
         panelHost = null
-        bubble?.visibility = View.VISIBLE
+        if (host != null) {
+            runCatching {
+                getSystemService(android.view.inputmethod.InputMethodManager::class.java)
+                    ?.hideSoftInputFromWindow(host.windowToken, 0)
+            }
+            host.visibility = View.GONE
+            if (runCatching { wm.removeViewImmediate(host) }.isFailure) runCatching { wm.removeView(host) }
+        }
+        val b = bubble
+        if (b == null || !b.isAttachedToWindow) {
+            b?.let { runCatching { wm.removeView(it) } }
+            bubble = null
+            addBubble()
+        } else {
+            b.visibility = View.VISIBLE
+        }
         updateBadge()
+    }
+
+    // ------------------------------------------------------------------ debug hook (debug builds only)
+
+    /**
+     * adb shell am broadcast -a com.aidantorrence.orchestrator.DEBUG --es op <op> [--ei n <count>]
+     *   inject  : add n local test cards (origin "test", never sent to the relay) and open the panel
+     *   isolate : --ez on true|false, show only test cards (in memory, so real cards are left untouched)
+     *   clear   : delete test cards and stop isolating
+     *   expand / collapse
+     */
+    private fun registerDebugReceiver() {
+        if (applicationInfo.flags and android.content.pm.ApplicationInfo.FLAG_DEBUGGABLE == 0) return
+        val r = object : android.content.BroadcastReceiver() {
+            override fun onReceive(c: Context, i: Intent) {
+                when (i.getStringExtra("op")) {
+                    "inject" -> {
+                        val n = i.getIntExtra("n", 3)
+                        val now = System.currentTimeMillis()
+                        repeat(n) { k ->
+                            Store.items += InboxItem(
+                                id = "test-${now.toString(36)}-$k", origin = "test", source = "claude-code",
+                                sessionId = "test-$now-$k", title = "Test card ${k + 1}", text = "Injected test completion ${k + 1}",
+                                ts = now - k, replyMode = "none", did = "Test card ${k + 1} of $n", needs = "Nothing — swipe me",
+                            )
+                        }
+                        Store.changed()
+                        if (panelHost == null) expand()
+                    }
+                    "isolate" -> { Store.debugIsolate = i.getBooleanExtra("on", true); Store.changed() }
+                    "clear" -> { Store.items.removeAll { it.origin == "test" }; Store.debugIsolate = false; Store.changed() }
+                    "expand" -> expand()
+                    "collapse" -> collapse()
+                }
+            }
+        }
+        val f = android.content.IntentFilter(ACTION_DEBUG)
+        if (Build.VERSION.SDK_INT >= 33) registerReceiver(r, f, Context.RECEIVER_EXPORTED) else registerReceiver(r, f)
+        debugReceiver = r
     }
 }

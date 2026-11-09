@@ -39,6 +39,8 @@ class PanelView(
     private val cards = mutableMapOf<String, InboxCard>()
     private val listener: () -> Unit = { refresh() }
     private var expandedId: String? = null
+    /** Overlay only: the inbox had cards since the panel opened, so emptying it should collapse to the bubble. */
+    private var hadPending = false
 
     init {
         orientation = VERTICAL
@@ -52,9 +54,12 @@ class PanelView(
         header.addView(tasksTab)
         header.addView(Ui.spacer(ctx))
         if (onMinimize != null) {
+            // A full 48dp touch target: this is the way out of the panel, it must be easy to hit.
             header.addView(Ui.text(ctx, "—", 20f, Ui.MUTED).apply {
+                gravity = Gravity.CENTER
+                minWidth = dp(48); minHeight = dp(48)
                 setPadding(dp(12), 0, dp(4), 0)
-                setOnClickListener { hideKeyboard(); onMinimize.invoke() }
+                setOnClickListener { minimize() }
             })
         }
         addView(header, Ui.lp())
@@ -75,6 +80,7 @@ class PanelView(
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
         Store.addListener(listener)
+        hadPending = Store.pending().isNotEmpty()
         postDelayed(tick, 30_000)
         rebuild()
     }
@@ -83,6 +89,11 @@ class PanelView(
         removeCallbacks(tick)
         Store.removeListener(listener)
         super.onDetachedFromWindow()
+    }
+
+    private fun minimize() {
+        hideKeyboard()
+        onMinimize?.invoke()
     }
 
     fun showItem(id: String?) {
@@ -120,6 +131,11 @@ class PanelView(
 
     private fun refreshInbox() {
         val pending = Store.pending()
+        // Last card swiped / dismissed / answered in the floating panel: go back to the bubble.
+        if (onMinimize != null && isAttachedToWindow) {
+            if (pending.isNotEmpty()) hadPending = true
+            else if (hadPending) { hadPending = false; post { minimize() } }
+        }
         val recent = Store.recent(8)
         val keys = pending.map { it.id } + listOf("--recent") + recent.map { "r:" + it.id + it.delivery }
         if (keys != inboxKeys || body.childCount == 0) {
@@ -142,6 +158,7 @@ class PanelView(
             }
         }
         pending.forEach { cards[it.id]?.bind(it) }
+        cards.values.forEach { it.view.ensureAtRest() }
     }
 
     private fun recentRow(item: InboxItem): View {

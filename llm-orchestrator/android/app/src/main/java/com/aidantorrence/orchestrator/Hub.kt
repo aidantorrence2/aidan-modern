@@ -208,6 +208,12 @@ object Hub {
         val sessionId = "$pkg:$key"
         val dup = Store.items.find { it.sessionId == sessionId && it.status == "new" && it.text == text }
         if (dup != null) { deviceHandles[dup.id] = handle; return@ui }
+        // The app re-posted (or updated) a notification for a turn already dismissed/answered: not a new
+        // completion. Without this, every re-post re-created the card and popped the panel open again.
+        val handled = Store.items.find {
+            it.sessionId == sessionId && it.text == text && it.status != "new" && System.currentTimeMillis() - it.ts < 6 * 3600_000
+        }
+        if (handled != null) return@ui
         // Already reported by the bridge (which can reply directly)? Then the notification adds nothing.
         val polled = Store.items.find {
             it.origin == "relay" && System.currentTimeMillis() - it.ts < 15 * 60_000 && sameTurn(text, it.text)

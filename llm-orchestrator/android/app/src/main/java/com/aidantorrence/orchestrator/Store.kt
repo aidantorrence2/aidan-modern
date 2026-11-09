@@ -170,7 +170,10 @@ object Store {
     fun item(id: String) = items.find { it.id == id }
 
     /** Unanswered items, newest first. */
-    fun pending() = items.filter { it.status == "new" }.sortedByDescending { it.ts }
+    fun pending() = items.filter { it.status == "new" && (!debugIsolate || it.origin == "test") }.sortedByDescending { it.ts }
+
+    /** Debug builds only (set by OverlayService's debug receiver): show just injected test cards. Not persisted. */
+    @Volatile var debugIsolate = false
     fun recent(limit: Int = 12) =
         items.filter { it.status == "replied" || it.status == "dismissed" }.sortedByDescending { it.ts }.take(limit)
 
