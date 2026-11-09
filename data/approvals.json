@@ -4151,6 +4151,25 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "outreach-category:rio-model_agency-v1",
+      "kind": "email",
+      "source": "codex:rio-fashion-network",
+      "title": "Approve outreach category: Model agencies (38 contacts)",
+      "summary": "Approving sends this email to every contact in the category, plus new ones research finds, within the 450/day cap and office hours. First: Mix Models, Arcos Models, Rio45, Cintra, Ford Rio, Única, Melrose, Kling Model Agency",
+      "payload": {
+        "category": "model_agency",
+        "subject": "Test shoots in Rio - Aidan Torrence",
+        "body": "{{greeting}}\n\nI'm Aidan Torrence, a fashion photographer currently in Rio. I'd love to shoot tests with {{org}} models while I'm here, through 4 December. I've attached a moodboard.\n\nMy work: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWould you be interested?\n\nBest,\nAidan Torrence\n",
+        "attachment": "rio moodboard",
+        "contacts": 38
+      },
+      "created": "2026-11-09T03:55:03Z",
+      "expires": "2026-11-16T03:55:03Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
