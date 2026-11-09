@@ -4554,6 +4554,30 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "outreach-category:rio-production_agency-v5",
+      "kind": "email",
+      "source": "codex:rio-fashion-network",
+      "title": "Approve outreach category: Production companies and creative/ad agencies (137 contacts)",
+      "summary": "Approving sends this email to every contact in the category, plus new ones research finds, within the 450/day cap and office hours. First: Litcreative, Teresa Filmes, Caravana Filmes, Capim Filmes, Camelô Produções, Tenda Produtora, Lūmen Creative, Grupo Blend Comunicação",
+      "payload": {
+        "category": "production_agency",
+        "subject": "Fashion photographer in Rio through 4 December | Aidan Torrence",
+        "body": "Hi Teresa Filmes team,\n\nI'm Aidan Torrence, a fashion and editorial photographer working in Rio through 4 December. I came across your fashion films for Foxton (Verão 2019) and Reserva (\"Tal pai, tal filho\").\n\nIf Teresa Filmes has fashion, beauty or lifestyle shoots coming up in Rio that need a photographer, I'd love to work with you.\n\nPortfolio: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWho would be the best person to talk to about upcoming productions?\n\nBest regards,\nAidan Torrence\n",
+        "template": "{{greeting}}\n\nI'm Aidan Torrence, a fashion and editorial photographer working in Rio through 4 December. {{highlight}}\n\nIf {{org}} has fashion, beauty or lifestyle shoots coming up in Rio that need a photographer, I'd love to work with you.\n\nPortfolio: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWho would be the best person to talk to about upcoming productions?\n\nBest regards,\nAidan Torrence\n",
+        "attachment": "none",
+        "contacts": 137,
+        "examples": [
+          "To Caravana Filmes:\nHi Caravana Filmes team,\n\nI'm Aidan Torrence, a fashion and editorial photographer working in Rio through 4 December. I came across your fashion films \"Avesso\" for Sacada and \"Volta ao Trabalho\" for Reserva Simples.\n\nIf Caravana Filmes has fashion, beauty or lifestyle shoots coming up in Rio that need a photographer, I'd love to work with you.\n\nPortfolio: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWho would be the best person to talk to about upcoming productions?\n\nBest regards,\nAidan Torrence\n",
+          "To Capim Filmes:\nHi Capim Filmes team,\n\nI'm Aidan Torrence, a fashion and editorial photographer working in Rio through 4 December. I came across your films \"Squadra Itália\" for Spoleto and the brand film for Maré Chocolate.\n\nIf Capim Filmes has fashion, beauty or lifestyle shoots coming up in Rio that need a photographer, I'd love to work with you.\n\nPortfolio: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWho would be the best person to talk to about upcoming productions?\n\nBest regards,\nAidan Torrence\n"
+        ]
+      },
+      "created": "2026-11-09T04:20:13Z",
+      "expires": "2026-11-16T04:20:13Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
