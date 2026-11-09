@@ -7,7 +7,7 @@ import android.graphics.RectF
 import android.graphics.Typeface
 import android.view.View
 
-/** The collapsed bubble: a dark circle, a green progress ring (done / total) and the cards left. */
+/** The collapsed bubble: a dark circle, a green progress ring (done / total) and the cards due now (… while cards are away). */
 class BubbleView(ctx: Context) : View(ctx) {
     var remaining = 0; var total = 0
     var stale = false   // list is from another day or missing: dim ring
@@ -21,8 +21,11 @@ class BubbleView(ctx: Context) : View(ctx) {
 
     init { elevation = 8 * d }
 
-    fun set(remaining: Int, total: Int, stale: Boolean) {
-        this.remaining = remaining; this.total = total; this.stale = stale; invalidate()
+    var done = 0
+
+    /** remaining = cards to study right now; done / total drives the ring. */
+    fun set(remaining: Int, done: Int, total: Int, stale: Boolean) {
+        this.remaining = remaining; this.done = done; this.total = total; this.stale = stale; invalidate()
     }
 
     override fun onMeasure(w: Int, h: Int) { val s = (56 * d).toInt(); setMeasuredDimension(s, s) }
@@ -35,10 +38,10 @@ class BubbleView(ctx: Context) : View(ctx) {
         c.drawArc(oval, 0f, 360f, false, track)
         if (total > 0) {
             ring.color = if (stale) Ui.FAINT else Ui.GREEN
-            c.drawArc(oval, -90f, 360f * (total - remaining) / total, false, ring)
+            c.drawArc(oval, -90f, 360f * done / total, false, ring)
         }
-        val label = when { total == 0 -> "·"; remaining == 0 -> "✓"; else -> remaining.toString() }
-        txt.color = if (remaining == 0 && total > 0) Ui.GREEN else Ui.TEXT
+        val label = when { total == 0 -> "·"; done >= total -> "✓"; remaining == 0 -> "…"; else -> remaining.toString() }
+        txt.color = if (done >= total && total > 0) Ui.GREEN else Ui.TEXT
         c.drawText(label, r, r - (txt.descent() + txt.ascent()) / 2, txt)
     }
 }

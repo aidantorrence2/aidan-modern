@@ -106,9 +106,9 @@ class GitHub(private val token: String?) {
 }
 
 /**
- * Today's deck and the game state, kept on the phone so the bubble works offline and instantly.
- * The deck order changes as you play (Again puts a card two places back, Later puts it last);
- * done ids are also written to data/todos-state.json so tomorrow's list knows what you finished.
+ * Today's deck and its Anki-style study state, kept on the phone so the bubble works offline.
+ * Every to-do starts as a new card. Again / Hard / Good send it away for 1 / 10 / 60 minutes and it
+ * comes back as a learning card; Done retires it for the day.
  */
 object Game {
     private lateinit var prefs: SharedPreferences
@@ -139,33 +139,40 @@ object Game {
     private fun ids(key: String) = prefs.getString(key, "")!!.split(',').filter { it.isNotEmpty() }
 
     val done: Set<String> get() = ids("done").toSet()
-    val points: Int get() = prefs.getInt("points", 0)
-    val combo: Int get() = prefs.getInt("combo", 0)
-    val streak: Int get() {
-        val s = prefs.getInt("streak", 0); val d = prefs.getString("streakDate", "")
-        return if (d == today() || d == yesterday()) s else 0
-    }
+    /** Cards answered at least once today and not done: Anki's "learning" cards. */
+    val seen: Set<String> get() = ids("seen").toSet()
     val stateDirty: Boolean get() = prefs.getBoolean("stateDirty", false)
-
-    /** Cards still in play, in play order. */
-    fun deck(): List<Todo> {
-        val l = list ?: return emptyList()
-        val byId = l.items.associateBy { it.id }
-        val order = ids("order").filter { it in byId } + l.items.map { it.id }.filter { it !in ids("order") }
-        val d = done
-        return order.filter { it !in d }.mapNotNull { byId[it] }
-    }
     val total: Int get() = list?.items?.size ?: 0
 
-    /** New list from GitHub. A new date resets the game; the same date keeps progress. */
+    fun due(id: String): Long = prefs.getLong("due:$id", 0)
+    private fun open(): List<Todo> { val d = done; return list?.items?.filter { it.id !in d } ?: emptyList() }
+
+    /** Cards to study now, as Anki orders them: learning cards whose time has come, then new cards. */
+    fun deck(now: Long = System.currentTimeMillis()): List<Todo> {
+        val o = open(); val s = seen
+        return o.filter { it.id in s && due(it.id) <= now }.sortedBy { due(it.id) } + o.filter { it.id !in s }
+    }
+
+    /** (new, learning, done): the blue / red / green counts. */
+    fun counts(): Triple<Int, Int, Int> {
+        val o = open(); val s = seen
+        return Triple(o.count { it.id !in s }, o.count { it.id in s }, total - o.size)
+    }
+
+    /** When the next waiting card comes back, or null if none is waiting. */
+    fun nextDue(now: Long = System.currentTimeMillis()): Long? {
+        val s = seen
+        return open().filter { it.id in s && due(it.id) > now }.minOfOrNull { due(it.id) }
+    }
+
+    /** New list from GitHub or the APK. A new date starts a fresh deck; the same date keeps progress. */
     fun setList(json: String, remoteDone: Set<String>?) {
         val l = TodoList.parse(json)
         val e = prefs.edit().putString("list", json)
         if (l.date != prefs.getString("listDate", null)) {
-            e.putString("listDate", l.date).putString("order", l.items.joinToString(",") { it.id })
-                .putString("done", "").putInt("combo", 0).putBoolean("stateDirty", false)
+            e.putString("listDate", l.date).putString("done", "").putString("seen", "").putBoolean("stateDirty", false)
+            prefs.all.keys.filter { it.startsWith("due:") }.forEach { e.remove(it) }
         } else if (remoteDone != null && !stateDirty) {
-            // Same day: merge what the server says is done (e.g. reinstall) with what we have.
             e.putString("done", (done + remoteDone).filter { id -> l.items.any { it.id == id } }.joinToString(","))
         }
         e.apply()
@@ -173,35 +180,20 @@ object Game {
         changed()
     }
 
-    fun markDone(t: Todo): Int {
-        val c = (combo + 1).coerceAtMost(5)
-        val gained = 10 * c
-        val newDone = done + t.id
-        val e = prefs.edit().putString("done", newDone.joinToString(",")).putInt("combo", c)
-            .putInt("points", points + gained).putBoolean("stateDirty", true)
-        // A day counts for the streak once half the deck is cleared.
-        if (newDone.size >= (total + 1) / 2 && prefs.getString("streakDate", "") != today()) {
-            e.putInt("streak", streak + 1).putString("streakDate", today())
-        }
-        e.apply(); changed()
-        return gained
+    /** Again / Hard / Good: the card comes back after [minutes]. */
+    fun answer(t: Todo, minutes: Int) {
+        prefs.edit().putString("seen", (seen + t.id).joinToString(","))
+            .putLong("due:${t.id}", System.currentTimeMillis() + minutes * 60_000L).apply()
+        changed()
     }
 
-    fun again(t: Todo) = move(t, 2)
-    fun later(t: Todo) = move(t, Int.MAX_VALUE)
-
-    private fun move(t: Todo, by: Int) {
-        val order = deck().map { it.id }.toMutableList()
-        val i = order.indexOf(t.id); if (i < 0) return
-        order.removeAt(i)
-        val at = if (by == Int.MAX_VALUE) order.size else (i + by).coerceAtMost(order.size)
-        order.add(at, t.id)
-        prefs.edit().putString("order", (order + done).joinToString(",")).putInt("combo", 0).apply()
+    fun markDone(t: Todo) {
+        prefs.edit().putString("done", (done + t.id).joinToString(",")).putBoolean("stateDirty", true).apply()
         changed()
     }
 
     fun undo(t: Todo) {
-        prefs.edit().putString("done", (done - t.id).joinToString(",")).putBoolean("stateDirty", true).apply()
+        prefs.edit().putString("done", (done - t.id).joinToString(",")).putLong("due:${t.id}", 0).putBoolean("stateDirty", true).apply()
         changed()
     }
 
@@ -212,6 +204,5 @@ object Game {
     fun changed() = main.post { listeners.toList().forEach { it() } }
 
     fun today(): String = SimpleDateFormat("yyyy-MM-dd", Locale.US).format(Date())
-    private fun yesterday(): String = SimpleDateFormat("yyyy-MM-dd", Locale.US).format(Date(System.currentTimeMillis() - 86_400_000))
     fun isoNow(): String = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.US).apply { timeZone = TimeZone.getTimeZone("UTC") }.format(Date())
 }

@@ -59,7 +59,7 @@ class MainActivity : Activity() {
         val lines = mutableListOf<Pair<String, Int>>()
         lines += (if (Game.lastSync > 0) "Synced ${DateFormat.getTimeInstance(DateFormat.SHORT).format(Date(Game.lastSync))}" else "Not synced yet") to Ui.FAINT
         Game.lastError?.let { lines += it to Ui.AMBER }
-        if (list != null) lines += "List for ${list.date}: ${Game.total - Game.deck().size}/${Game.total} done · ★ ${Game.points} · 🔥 ${Game.streak}" to Ui.DIM
+        if (list != null) lines += "List for ${list.date}: ${Game.counts().third}/${Game.total} done" to Ui.DIM
         for ((s, c) in lines) body.addView(Ui.text(this, s, 13f, c).apply { setPadding(0, dp(10), 0, 0) })
 
         if (list != null) {

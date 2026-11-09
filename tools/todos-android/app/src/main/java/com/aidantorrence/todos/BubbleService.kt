@@ -43,8 +43,14 @@ class BubbleService : Service() {
     private val tick = object : Runnable {
         override fun run() { sync(); main.postDelayed(this, POLL_MS) }
     }
+    private val dueTick = Runnable {
+        refreshViews()
+        bubble?.animate()?.scaleX(1.25f)?.scaleY(1.25f)?.setDuration(160)?.withEndAction {
+            bubble?.animate()?.scaleX(1f)?.scaleY(1f)?.setDuration(160)?.start()
+        }?.start()
+    }
     private val screenOn = object : BroadcastReceiver() {
-        override fun onReceive(c: Context, i: Intent) { sync() }
+        override fun onReceive(c: Context, i: Intent) { refreshViews(); sync() }
     }
 
     override fun onBind(intent: Intent?): IBinder? = null
@@ -183,8 +189,11 @@ class BubbleService : Service() {
 
     private fun refreshViews() {
         val list = Game.list
-        bubble?.set(Game.deck().size, Game.total, list == null || list.date != Game.today())
+        bubble?.set(Game.deck().size, Game.counts().third, Game.total, list == null || list.date != Game.today())
         if (panelShown) panel?.render()
+        // Wake up when the next waiting card comes back, so the bubble's count rises on time.
+        main.removeCallbacks(dueTick)
+        Game.nextDue()?.let { main.postDelayed(dueTick, (it - System.currentTimeMillis() + 500).coerceAtLeast(500)) }
     }
 
     // ---------- sync ----------
