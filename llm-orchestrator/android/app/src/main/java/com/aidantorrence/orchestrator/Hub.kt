@@ -172,7 +172,8 @@ object Hub {
         item.suggesting = o.optBoolean("suggesting")
         o.optJSONObject("suggestion")?.let { s ->
             item.suggestion = s.optString("primary")
-            item.alternatives = s.optJSONArray("alternatives").toStringList()
+            item.alternatives = emptyList()
+            applySummary(item, s)
         }
         if (existing == null) supersedeDeviceCopies(item)
         if (item.status != "new") {
@@ -236,6 +237,12 @@ object Hub {
 
     // ------------------------------------------------------------------ suggestions
 
+    private fun applySummary(item: InboxItem, s: JSONObject) {
+        s.optString("title").takeIf { it.isNotBlank() }?.let { item.shortTitle = it }
+        s.optString("did").takeIf { it.isNotBlank() }?.let { item.did = it }
+        s.optString("needs").takeIf { it.isNotBlank() }?.let { item.needs = it }
+    }
+
     fun requestSuggestion(item: InboxItem, hint: String) {
         item.suggesting = true
         Store.changed()
@@ -247,7 +254,7 @@ object Hub {
                 val s = if (item.origin == "relay") RelayClient.regenerate(item.id, hint)
                 else RelayClient.suggest(item.source, item.title, item.text, hint)
                 primary = s.optString("primary")
-                alts = s.optJSONArray("alternatives").toStringList()
+                ui { applySummary(item, s) }
             } catch (_: Exception) {
                 val l = localSuggestion(item.text)
                 primary = l.first; alts = l.second
@@ -256,7 +263,7 @@ object Hub {
                 item.suggesting = false
                 if (primary.isNotBlank()) {
                     item.suggestion = primary
-                    item.alternatives = alts
+                    item.alternatives = emptyList()
                     if (hint.isNotBlank()) item.draft = null // the rewritten draft replaces what was typed
                 }
                 Store.changed()
@@ -452,10 +459,11 @@ object Hub {
         )
         val b = Notification.Builder(app, CHANNEL_ALERTS)
             .setSmallIcon(R.drawable.ic_stat)
-            .setContentTitle("${label(item.source)} · ${item.title.ifBlank { "Session finished" }}")
-            .setContentText(item.text.take(200))
+            .setContentTitle("${label(item.source)} · ${item.shortTitle.ifBlank { item.title.ifBlank { "Session finished" } }}")
+            .setContentText(item.needs.ifBlank { item.did.ifBlank { item.text.take(200) } })
             .setStyle(Notification.BigTextStyle().bigText(
-                item.text.take(1200) + if (item.suggestion.isNotBlank()) "\n\n➜ ${item.suggestion}" else "",
+                listOf(item.did, item.needs.takeIf { it.isNotBlank() }?.let { "→ $it" }, item.suggestion.takeIf { it.isNotBlank() }?.let { "➜ $it" })
+                    .filterNotNull().filter { it.isNotBlank() }.joinToString("\n").ifBlank { item.text.take(1200) },
             ))
             .setContentIntent(open)
             .setAutoCancel(true)
@@ -475,7 +483,7 @@ object Hub {
             Intent(app, ActionReceiver::class.java).setAction(ActionReceiver.REPLY).putExtra("itemId", item.id),
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_MUTABLE,
         )
-        val choices = (listOf(item.suggestion) + item.alternatives).filter { it.isNotBlank() }.take(4)
+        val choices = listOf(item.suggestion).filter { it.isNotBlank() }
         val input = RemoteInput.Builder(ActionReceiver.KEY_TEXT)
             .setLabel("Reply to ${label(item.source)}")
             .apply { if (choices.isNotEmpty()) setChoices(choices.toTypedArray()) }

@@ -18,6 +18,9 @@ struct Completion: Identifiable, Equatable {
     var alternatives: [String]
     var suggesting: Bool
     var note: String
+    var shortTitle: String
+    var did: String
+    var needs: String
 
     init(_ o: [String: Any]) {
         id = o["id"] as? String ?? UUID().uuidString
@@ -33,11 +36,22 @@ struct Completion: Identifiable, Equatable {
         delivery = o["delivery"] as? String ?? ""
         let s = o["suggestion"] as? [String: Any]
         suggestion = s?["primary"] as? String ?? ""
-        alternatives = (s?["alternatives"] as? [String]) ?? []
+        alternatives = []
+        shortTitle = s?["title"] as? String ?? ""
+        did = s?["did"] as? String ?? ""
+        needs = s?["needs"] as? String ?? ""
         suggesting = o["suggesting"] as? Bool ?? false
         if (o["delivery"] as? String) == "failed" {
             note = "Couldn't send automatically: \((o["deliveryError"] as? String ?? "").prefix(120))"
         } else { note = "" }
+    }
+
+    var displayTitle: String { !shortTitle.isEmpty ? shortTitle : (!title.isEmpty ? title : String(sessionId.prefix(12))) }
+    /// One line on what the agent did: the drafter's summary, else the answer's first line.
+    var didLine: String {
+        if !did.isEmpty { return did }
+        let first = text.split(separator: "\n").map { $0.trimmingCharacters(in: CharacterSet(charactersIn: " *#")) }.first { !$0.isEmpty }
+        return first ?? "(no text)"
     }
 
     var sourceLabel: String {

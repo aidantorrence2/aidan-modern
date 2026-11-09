@@ -33,6 +33,10 @@ data class InboxItem(
     var packageName: String = "",
     /** Shown on the card, e.g. why an automatic send failed. */
     var note: String = "",
+    /** Card summary from the relay's drafter: shorthand title, what the agent did, what it needs. */
+    var shortTitle: String = "",
+    var did: String = "",
+    var needs: String = "",
 ) {
     fun toJson(): JSONObject = JSONObject().apply {
         put("id", id); put("origin", origin); put("source", source); put("sessionId", sessionId)
@@ -40,6 +44,7 @@ data class InboxItem(
         put("suggestion", suggestion); put("alternatives", JSONArray(alternatives)); put("draft", draft ?: JSONObject.NULL)
         put("url", url); put("replyMode", replyMode); put("reply", reply); put("delivery", delivery)
         put("packageName", packageName); put("note", note)
+        put("shortTitle", shortTitle); put("did", did); put("needs", needs)
     }
 
     companion object {
@@ -62,6 +67,9 @@ data class InboxItem(
             delivery = o.optString("delivery"),
             packageName = o.optString("packageName"),
             note = o.optString("note"),
+            shortTitle = o.optString("shortTitle"),
+            did = o.optString("did"),
+            needs = o.optString("needs"),
         )
     }
 }

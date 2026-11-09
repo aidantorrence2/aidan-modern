@@ -172,13 +172,15 @@ class PanelView(
         // Swipe left to dismiss; the thread comes back with its next completion (a new item).
         val view = SwipeColumn(context, 8) { Store.item(id)?.let { Hub.dismiss(it) } }
         private val source = Ui.text(context, "", 11f, Ui.MUTED, bold = true)
-        private val title = Ui.text(context, "", 14f, Ui.TEXT, bold = true).apply { maxLines = 2; ellipsize = TextUtils.TruncateAt.END }
+        private val title = Ui.text(context, "", 14f, Ui.TEXT, bold = true)
         private val age = Ui.text(context, "", 11f, Ui.MUTED)
-        private val prompt = Ui.text(context, "", 12f, Ui.MUTED).apply { maxLines = 1; ellipsize = TextUtils.TruncateAt.END }
+        // One line: what the agent did. One line: what it needs from you. Tap either for the full answer.
+        // Short by construction (the drafter caps them); they wrap rather than get cut off with "…".
+        private val did = Ui.text(context, "", 13f, Ui.TEXT)
+        private val needs = Ui.text(context, "", 13f, Ui.ACCENT)
         private val note = Ui.text(context, "", 12f, Ui.BAD)
-        private val response = Ui.text(context, "", 13f, Ui.TEXT).apply { maxLines = 6; ellipsize = TextUtils.TruncateAt.END }
+        private val response = Ui.text(context, "", 13f, Ui.MUTED).apply { visibility = GONE }
         private val edit = Ui.input(context, "Reply…", multiLine = true)
-        private val alts = Ui.row(context, 6)
         private val sendBtn: TextView
         private var expanded = false
         private var binding = false
@@ -191,13 +193,15 @@ class PanelView(
             top.addView(title, Ui.lp(0, Ui.WRAP, 1f))
             top.addView(age)
             view.addView(top)
-            view.addView(prompt)
+            view.addView(did)
+            view.addView(needs)
             view.addView(note)
             view.addView(response)
-            response.setOnClickListener {
+            val toggle = View.OnClickListener {
                 expanded = !expanded
-                response.maxLines = if (expanded) Int.MAX_VALUE else 6
+                response.visibility = if (expanded) VISIBLE else GONE
             }
+            did.setOnClickListener(toggle); needs.setOnClickListener(toggle); response.setOnClickListener(toggle)
             edit.imeOptions = EditorInfo.IME_FLAG_NO_EXTRACT_UI
             edit.setOnFocusChangeListener { _, has -> if (has) onWantsKeyboard?.invoke(true) }
             edit.setOnClickListener { onWantsKeyboard?.invoke(true) }
@@ -212,10 +216,6 @@ class PanelView(
                 }
             })
             view.addView(edit, Ui.lp())
-            view.addView(HorizontalScrollView(context).apply {
-                isHorizontalScrollBarEnabled = false
-                addView(alts)
-            })
 
             val actions = Ui.row(context, 6)
             sendBtn = Ui.button(context, "Send", primary = true) { send() }
@@ -235,14 +235,15 @@ class PanelView(
             binding = true
             source.text = Hub.label(item.source)
             source.setTextColor(Ui.sourceColor(item.source))
-            title.text = item.title.ifBlank { item.sessionId.take(12) }
+            title.text = item.shortTitle.ifBlank { item.title.ifBlank { item.sessionId.take(12) } }
             age.text = Ui.ago(item.ts)
-            prompt.text = if (item.prompt.isNotBlank()) "You: ${item.prompt.replace(Regex("\\s+"), " ")}" else ""
-            prompt.visibility = if (item.prompt.isBlank()) GONE else VISIBLE
+            did.text = item.did.ifBlank { item.text.lineSequence().map { it.trim().trim('*', '#', ' ') }.firstOrNull { it.isNotBlank() } ?: "(no text)" }
+            needs.text = if (item.needs.isNotBlank()) "→ ${item.needs}" else ""
+            needs.visibility = if (item.needs.isBlank()) GONE else VISIBLE
             note.text = item.note
             note.visibility = if (item.note.isBlank()) GONE else VISIBLE
             if (response.text.toString() != item.text) response.text = item.text.ifBlank { "(no text in the completion)" }
-            if (expandedId == item.id) { expanded = true; response.maxLines = Int.MAX_VALUE; expandedId = null }
+            if (expandedId == item.id) { expanded = true; response.visibility = VISIBLE; expandedId = null }
 
             // The box holds only what you type; the drafted reply is the hint, and Send sends it
             // when the box is empty.
@@ -260,20 +261,6 @@ class PanelView(
                 else -> "Send"
             }
 
-            alts.removeAllViews()
-            if (item.suggesting) alts.addView(Ui.chip(context, "drafting…", Ui.MUTED))
-            for (a in item.alternatives) {
-                alts.addView(Ui.chip(context, a, Ui.ACCENT) {
-                    edit.setText(a); edit.setSelection(a.length)
-                    item.draft = a
-                })
-            }
-            if (item.suggestion.isNotBlank() && item.draft != null) {
-                alts.addView(Ui.chip(context, "↺ suggestion", Ui.MUTED) {
-                    item.draft = null
-                    edit.setText("")
-                })
-            }
             binding = false
         }
 

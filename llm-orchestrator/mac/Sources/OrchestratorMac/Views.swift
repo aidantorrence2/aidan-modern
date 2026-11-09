@@ -76,21 +76,24 @@ struct CardView: View {
         VStack(alignment: .leading, spacing: 4) {
             HStack(spacing: 4) {
                 Text(c.sourceLabel).font(.system(size: 9, weight: .bold)).foregroundStyle(Theme.source(c.source))
-                Text(c.title.isEmpty ? String(c.sessionId.prefix(12)) : c.title)
-                    .font(.system(size: 11, weight: .semibold)).foregroundStyle(Theme.text).lineLimit(1)
+                Text(c.displayTitle)
+                    .font(.system(size: 11, weight: .semibold)).foregroundStyle(Theme.text).fixedSize(horizontal: false, vertical: true)
                 Spacer(minLength: 2)
                 Text(ago(c.ts)).font(.system(size: 9)).foregroundStyle(Theme.muted)
             }
-            if !c.prompt.isEmpty {
-                Text("You: " + c.prompt.replacingOccurrences(of: "\n", with: " "))
-                    .font(.system(size: 9)).foregroundStyle(Theme.muted).lineLimit(1)
+            // One line: what it did. One line: what it needs. Click either for the full answer.
+            Group {
+                Text(c.didLine).font(.system(size: 10.5)).foregroundStyle(Theme.text).fixedSize(horizontal: false, vertical: true)
+                if !c.needs.isEmpty {
+                    Text("→ " + c.needs).font(.system(size: 10.5)).foregroundStyle(Theme.accent).fixedSize(horizontal: false, vertical: true)
+                }
+                if expanded {
+                    Text(c.text).font(.system(size: 10)).foregroundStyle(Theme.muted)
+                        .frame(maxWidth: .infinity, alignment: .leading).textSelection(.enabled)
+                }
             }
-            Text(c.text.isEmpty ? "(no text in the completion)" : c.text)
-                .font(.system(size: 10.5)).foregroundStyle(Theme.text)
-                .lineLimit(expanded ? nil : 4)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .contentShape(Rectangle())
-                .onTapGesture { expanded.toggle() }
+            .contentShape(Rectangle())
+            .onTapGesture { expanded.toggle() }
             if !c.note.isEmpty {
                 Text(c.note).font(.system(size: 9)).foregroundStyle(Color.orange.opacity(0.85)).lineLimit(2)
             }
@@ -102,18 +105,6 @@ struct CardView: View {
                 .padding(6)
                 .background(RoundedRectangle(cornerRadius: 7).fill(Theme.field))
                 .onSubmit { model.send(c) }
-            if !c.alternatives.isEmpty {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 4) {
-                        ForEach(c.alternatives, id: \.self) { a in
-                            Text(a).font(.system(size: 9)).foregroundStyle(Theme.accent).lineLimit(1)
-                                .padding(.horizontal, 7).padding(.vertical, 2)
-                                .background(Capsule().stroke(Theme.accent.opacity(0.7)))
-                                .onTapGesture { model.drafts[c.id] = a }
-                        }
-                    }
-                }
-            }
             HStack(spacing: 4) {
                 Button(action: { model.send(c) }) {
                     Text(c.replyMode == "none" ? "Copy & open" : (hasTyped || c.suggestion.isEmpty ? "Send" : "Send draft")).font(.system(size: 10, weight: .semibold))

@@ -1,5 +1,5 @@
 // Drafts the user's next message to an LLM session, using Claude.
-// Returns { primary, alternatives[] }. Falls back to canned replies when no API key is configured
+// Returns { primary, title, did, needs } (alternatives kept empty for older clients). Falls back to canned replies when no API key is configured
 // or the call fails, so the app always has something to show.
 import Anthropic from '@anthropic-ai/sdk';
 import { execFile } from 'node:child_process';
@@ -33,16 +33,22 @@ How to draft:
 - If the agent hit an error or is blocked, tell it how to unblock or what to try next.
 - Use the user's top tasks to steer toward what matters most, but never invent facts about the codebase.
 - Never include preamble, quotes, or explanations: only the message text itself.
+- Keep the reply SHORT: one sentence, at most 12 words.
 
-Also give up to 3 short alternative replies (each under 12 words) that cover clearly different intents (for example: "Ship it", "Explain first", "Stop here").`;
+Also summarize the turn for a tiny inbox card:
+- "title": 2-5 words naming the work, shorthand welcome (LRC, PR, deps, auth, iOS, cfg, CI, w/, &). No punctuation at the end.
+- "did": at most 8 words, what the agent did or found. Past tense, no filler ("Fixed null check in auth; tests pass").
+- "needs": at most 6 words, what it needs from the user ("Approve push to main", "Pick option A or B", "Nothing — done").`;
 
 const SCHEMA = {
   type: 'object',
   properties: {
-    primary: { type: 'string', description: 'The most likely reply, ready to send.' },
-    alternatives: { type: 'array', items: { type: 'string' }, description: 'Up to 3 short alternative replies.' },
+    title: { type: 'string', description: '2-5 word shorthand title.' },
+    did: { type: 'string', description: 'One line: what the agent did.' },
+    needs: { type: 'string', description: 'One line: what it needs from the user.' },
+    primary: { type: 'string', description: 'The most likely reply, ready to send. One short sentence.' },
   },
-  required: ['primary', 'alternatives'],
+  required: ['title', 'did', 'needs', 'primary'],
   additionalProperties: false,
 };
 
@@ -56,7 +62,10 @@ export function fallbackSuggestion(event) {
   }
   return {
     primary,
-    alternatives: ['Continue.', 'Explain what you changed first.', 'Stop here, thanks.'],
+    alternatives: [],
+    title: '',
+    did: '',
+    needs: '',
     model: null,
   };
 }
@@ -130,15 +139,19 @@ function buildUserContent(event, tasks, hint) {
 }
 
 function normalize(parsed, model) {
+  const line = (v, n) => String(v || '').replace(/\s+/g, ' ').trim().slice(0, n);
   return {
     primary: String(parsed.primary || '').trim(),
-    alternatives: (parsed.alternatives || []).map(String).filter(Boolean).slice(0, 3),
+    alternatives: [],
+    title: line(parsed.title, 48),
+    did: line(parsed.did, 120),
+    needs: line(parsed.needs, 100),
     model,
   };
 }
 
 async function suggestViaCli(event, tasks, hint) {
-  const system = `${SYSTEM}\n\nRespond with ONLY a JSON object of the form {"primary": string, "alternatives": string[]} and nothing else.`;
+  const system = `${SYSTEM}\n\nRespond with ONLY a JSON object of the form {"title": string, "did": string, "needs": string, "primary": string} and nothing else.`;
   try {
     const out = await runCli(system, buildUserContent(event, tasks, hint));
     const r = normalize(parseJsonLoose(out), `cli:${CLI_MODEL}`);
@@ -173,7 +186,7 @@ async function suggestViaDeepSeek(event, tasks, hint) {
         thinking: { type: 'disabled' }, // v4-flash reasons by default and can spend every token on it
         response_format: { type: 'json_object' },
         messages: [
-          { role: 'system', content: SYSTEM + '\n\nRespond with ONLY a JSON object of the form {"primary": string, "alternatives": string[]}.' },
+          { role: 'system', content: SYSTEM + '\n\nRespond with ONLY a JSON object of the form {"title": string, "did": string, "needs": string, "primary": string}.' },
           { role: 'user', content: buildUserContent(event, tasks, hint) },
         ],
       }),

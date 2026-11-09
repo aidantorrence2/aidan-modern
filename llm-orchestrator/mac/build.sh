@@ -12,7 +12,7 @@ SIGN_ID="Apple Development: Aidan Torrence (4FV7VDRJ8S)"
 VERSION="1.0.0"; BUILD="$(date +%Y%m%d%H%M)"; TS="$(date +%Y%m%d-%H%M%S)"
 STAGE="dist/stage"; ARCHIVE="dist/archive"; APP="$STAGE/$APP_NAME"; INSTALLED="/Applications/$APP_NAME"
 
-swift build -c release 2>&1 | grep -E "error|warning: unre|Compiling|Build complete" | grep -v "^\[" || true
+if ! swift build -c release > /tmp/orch-mac-build.log 2>&1; then grep -E "error" /tmp/orch-mac-build.log | head -5; echo "build failed"; exit 1; fi
 BIN_PATH="$(swift build -c release --show-bin-path)/$BIN"
 [[ -x "$BIN_PATH" ]] || { echo "build failed"; exit 1; }
 
