@@ -168,14 +168,19 @@ export async function findPaneForSession(kind, sessionId, opts = {}) {
  */
 export async function deliverLocal(kind, reply, opts = {}) {
   const { pane, owners } = await locateSession(kind, reply.sessionId, opts);
+  const since = Date.now();
   if (pane) {
     await sendToPane(pane, reply.text);
+    await confirmSubmitted(kind, reply.sessionId, reply.text, since, owners, () => pressReturnInPane(pane));
     return true;
   }
   if (owners.length) {
     // Not in tmux: type it into the Terminal.app / iTerm2 tab that hosts the session.
     for (const pid of owners) {
-      if (await sendToTerminalTab(pid, reply.text)) return true;
+      if (await sendToTerminalTab(pid, reply.text)) {
+        await confirmSubmitted(kind, reply.sessionId, reply.text, since, owners, () => sendToTerminalTab(pid, '', { allowEmpty: true }));
+        return true;
+      }
     }
     throw new Error(`${kind === 'codex' ? 'Codex' : 'Claude Code'} session (pid ${owners.join(', ')}) is in a terminal I can't type into; answer it there`);
   }
@@ -221,7 +226,7 @@ end run`;
  * followed by Return. Newlines are flattened to spaces: each one would otherwise submit a separate message.
  * The first time, macOS asks to allow the bridge to control Terminal (Automation permission).
  */
-export async function sendToTerminalTab(pid, text) {
+export async function sendToTerminalTab(pid, text, { allowEmpty = false } = {}) {
   let tty = '';
   try {
     tty = (await run('/bin/ps', ['-o', 'tty=', '-p', String(pid)])).trim();
@@ -239,7 +244,7 @@ export async function sendToTerminalTab(pid, text) {
   }
   if (!app) return false;
   const flat = String(text).replace(/\s*\n+\s*/g, ' ').trim();
-  if (!flat) return false;
+  if (!flat && !allowEmpty) return false; // allowEmpty: `do script ""` = a bare Return (used to resubmit)
   const out = await run('/usr/bin/osascript', ['-e', app === 'Terminal' ? TERMINAL_SCRIPT : ITERM_SCRIPT, `/dev/${tty}`, flat], { timeoutMs: 15_000 });
   return out.trim() === 'ok';
 }
@@ -261,6 +266,88 @@ export async function sendToPane(target, text) {
   } else if (body) {
     await t(['send-keys', '-t', target.pane, '-l', '--', body]);
   }
-  await sleep(150); // let the TUI finish handling the paste before the submit key arrives
+  // Let the TUI finish handling the typed burst before the submit key arrives: Claude Code treats a fast burst
+  // as a paste, and an Enter that lands inside it becomes part of the paste instead of submitting.
+  await sleep(Math.min(900, 250 + body.length * 2));
   await t(['send-keys', '-t', target.pane, 'Enter']);
+}
+
+async function pressReturnInPane(target) {
+  await run(tmuxPath(), ['-S', target.socket, 'send-keys', '-t', target.pane, 'Enter']);
+}
+
+/* ---------- submit confirmation ----------
+ * Typing a reply is not the same as sending it: Terminal.app's `do script` delivers text+Return in one burst,
+ * which Claude Code reads as a paste, so the Return can end up inside the input box and the reply just sits
+ * there unsent (seen 2026-11-09). For Claude sessions we check the session's transcript for the reply (as a
+ * user turn, or as a queued_command when the session was busy) and press Return again only if it is missing.
+ * We also stand down as soon as the session reports a status change after the send, so a stray Return can
+ * never answer a dialog the new turn opened. */
+function transcriptPath(sessionId) {
+  const root = path.join(os.homedir(), '.claude', 'projects');
+  try {
+    for (const d of fs.readdirSync(root)) {
+      const f = path.join(root, d, `${sessionId}.jsonl`);
+      if (fs.existsSync(f)) return f;
+    }
+  } catch {}
+  return null;
+}
+
+function tail(file, bytes = 512 * 1024) {
+  const fd = fs.openSync(file, 'r');
+  try {
+    const size = fs.fstatSync(fd).size, len = Math.min(size, bytes), buf = Buffer.alloc(len);
+    fs.readSync(fd, buf, 0, len, size - len);
+    return buf.toString('utf8');
+  } finally {
+    fs.closeSync(fd);
+  }
+}
+
+const norm = (x) => String(x).replace(/\s+/g, ' ').trim();
+
+/** True when the transcript holds this reply (user turn or queued command) written after `since`. */
+export function replyInTranscript(file, text, since) {
+  const probe = norm(text).slice(0, 80);
+  if (!probe) return true;
+  for (const line of tail(file).split('\n').reverse()) {
+    if (!line.includes('"timestamp"')) continue;
+    let d;
+    try { d = JSON.parse(line); } catch { continue; }
+    if (Date.parse(d.timestamp) < since - 5000) break;
+    const c = d.type === 'user' ? d.message?.content : d.type === 'attachment' && d.attachment?.type === 'queued_command' ? d.attachment.prompt : null;
+    const textOf = typeof c === 'string' ? c : Array.isArray(c) ? c.map((b) => b?.text || '').join(' ') : '';
+    if (textOf && norm(textOf).includes(probe)) return true;
+  }
+  return false;
+}
+
+/** Session moved on (Claude Code rewrites ~/.claude/sessions/<pid>.json on every status change). */
+function statusChangedSince(pids, since) {
+  for (const pid of pids || []) {
+    try {
+      const s = JSON.parse(fs.readFileSync(path.join(os.homedir(), '.claude', 'sessions', `${pid}.json`), 'utf8'));
+      if ((s.statusUpdatedAt || 0) > since && s.status === 'busy') return true;
+    } catch {}
+  }
+  return false;
+}
+
+export async function confirmSubmitted(kind, sessionId, text, since, pids, pressReturn, { waits = [1500, 2500, 4000] } = {}) {
+  if (kind !== 'claude' || !sessionId) return 'unchecked';
+  if (!transcriptPath(sessionId) && !(pids || []).length) return 'unchecked';
+  for (const [i, wait] of waits.entries()) {
+    await sleep(wait);
+    const file = transcriptPath(sessionId); // a brand-new session only creates its transcript on the first turn
+    if ((file && replyInTranscript(file, text, since)) || statusChangedSince(pids, since)) return i ? `resubmitted x${i}` : 'ok';
+    if (i < waits.length - 1) await pressReturn();
+  }
+  // Still running a turn: Claude Code queues a submitted message and only logs it when the turn picks it up.
+  for (const pid of pids || []) {
+    try {
+      if (JSON.parse(fs.readFileSync(path.join(os.homedir(), '.claude', 'sessions', `${pid}.json`), 'utf8')).status === 'busy') return 'queued';
+    } catch {}
+  }
+  throw new Error('reply was typed into the session but did not submit; press Return there');
 }
