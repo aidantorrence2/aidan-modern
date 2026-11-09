@@ -1,6 +1,6 @@
 {
  "date": "2026-11-09",
- "generated": "2026-11-09T22:00:00Z",
+ "generated": "2026-11-09T22:30:00Z",
  "items": [
   {
    "id": "publication-1",
@@ -13,6 +13,16 @@
    "source": "photography · magazines"
   },
   {
+   "id": "pt-precisar",
+   "task": "pt-precisar",
+   "rank": 99,
+   "title": "precisar = to need",
+   "text": "Eu {{preciso}} de mais tempo. (I need more time.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
    "id": "editorials-1",
    "task": "editorials",
    "rank": 2,
@@ -21,6 +31,16 @@
    "note": "Strong means a full story a magazine could run, not a test.",
    "minutes": 0,
    "source": "photography · Rio"
+  },
+  {
+   "id": "pt-ficar",
+   "task": "pt-ficar",
+   "rank": 99,
+   "title": "ficar = to stay / to become",
+   "text": "Vou {{ficar}} no Rio até dezembro. (I'm going to stay in Rio until December.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
   },
   {
    "id": "bookings-1",
@@ -33,6 +53,16 @@
    "source": "photography · bookings"
   },
   {
+   "id": "pt-querer",
+   "task": "pt-querer",
+   "rank": 99,
+   "title": "querer = to want",
+   "text": "Você {{quer}} fazer um ensaio? (Do you want to do a shoot?)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
    "id": "next-city-1",
    "task": "next-city",
    "rank": 4,
@@ -41,6 +71,16 @@
    "note": "Set up means outreach sent, a sign-up page live and ads running before landing.",
    "minutes": 0,
    "source": "photography · travel"
+  },
+  {
+   "id": "pt-poder",
+   "task": "pt-poder",
+   "rank": 99,
+   "title": "poder = can / to be able to",
+   "text": "Você {{pode}} amanhã de manhã? (Can you do tomorrow morning?)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
   },
   {
    "id": "sao-paulo-1",
@@ -53,6 +93,16 @@
    "source": "photography · São Paulo"
   },
   {
+   "id": "pt-fazer",
+   "task": "pt-fazer",
+   "rank": 99,
+   "title": "fazer = to do / to make",
+   "text": "O que você vai {{fazer}} hoje? (What are you going to do today?)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
    "id": "instagram-1",
    "task": "instagram",
    "rank": 6,
@@ -61,6 +111,16 @@
    "note": "Saved at /picks.",
    "minutes": 0,
    "source": "photography · Instagram"
+  },
+  {
+   "id": "pt-achar",
+   "task": "pt-achar",
+   "rank": 99,
+   "title": "achar = to think / to find",
+   "text": "Eu {{acho}} que a luz está boa. (I think the light is good.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
   },
   {
    "id": "archive-1",
@@ -73,6 +133,16 @@
    "source": "photography · archive"
   },
   {
+   "id": "pt-falar",
+   "task": "pt-falar",
+   "rank": 99,
+   "title": "falar = to speak / to talk",
+   "text": "Eu {{falo}} um pouco de português. (I speak a little Portuguese.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
    "id": "dating-app-1",
    "task": "dating-app",
    "rank": 8,
@@ -81,6 +151,16 @@
    "note": "Not 'can it be built'. That is already known.",
    "minutes": 0,
    "source": "apps · dating photos"
+  },
+  {
+   "id": "pt-saber",
+   "task": "pt-saber",
+   "rank": 99,
+   "title": "saber = to know (a fact)",
+   "text": "Você {{sabe}} onde fica o hotel? (Do you know where the hotel is?)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
   },
   {
    "id": "accountability-1",
@@ -93,6 +173,16 @@
    "source": "apps · accountability"
   },
   {
+   "id": "pt-conseguir",
+   "task": "pt-conseguir",
+   "rank": 99,
+   "title": "conseguir = to manage to / to get",
+   "text": "Não {{consegui}} chegar a tempo. (I didn't manage to arrive in time.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
    "id": "flywheel-1",
    "task": "flywheel",
    "rank": 10,
@@ -101,6 +191,16 @@
    "note": "Hundreds of offer pages are live. None counts until one earns a build.",
    "minutes": 0,
    "source": "apps · flywheel"
+  },
+  {
+   "id": "pt-gostar",
+   "task": "pt-gostar",
+   "rank": 99,
+   "title": "gostar = to like (always with 'de')",
+   "text": "Eu {{gosto}} muito dessa foto. (I really like this photo.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
   },
   {
    "id": "publication-2",
@@ -113,6 +213,16 @@
    "source": "photography · magazines"
   },
   {
+   "id": "pt-chegar",
+   "task": "pt-chegar",
+   "rank": 99,
+   "title": "chegar = to arrive",
+   "text": "Que horas você vai {{chegar}}? (What time are you going to arrive?)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
    "id": "editorials-2",
    "task": "editorials",
    "rank": 2,
@@ -121,6 +231,16 @@
    "note": "Count the free shoot days left and give each editorial a date.",
    "minutes": 0,
    "source": "photography · Rio"
+  },
+  {
+   "id": "pt-deixar",
+   "task": "pt-deixar",
+   "rank": 99,
+   "title": "deixar = to leave / to let",
+   "text": "Pode {{deixar}} a bolsa aqui. (You can leave the bag here.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
   },
   {
    "id": "bookings-2",
@@ -133,6 +253,16 @@
    "source": "photography · bookings"
   },
   {
+   "id": "pt-pegar",
+   "task": "pt-pegar",
+   "rank": 99,
+   "title": "pegar = to take / to grab / to catch",
+   "text": "Vou {{pegar}} um Uber. (I'm going to take an Uber.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
    "id": "next-city-2",
    "task": "next-city",
    "rank": 4,
@@ -141,6 +271,16 @@
    "note": "Rio showed how long agencies, venues and magazines take to answer.",
    "minutes": 0,
    "source": "photography · travel"
+  },
+  {
+   "id": "pt-levar",
+   "task": "pt-levar",
+   "rank": 99,
+   "title": "levar = to take (somewhere) / to bring along",
+   "text": "Vou {{levar}} a câmera. (I'm going to take the camera.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
   },
   {
    "id": "sao-paulo-2",
@@ -153,6 +293,16 @@
    "source": "photography · São Paulo"
   },
   {
+   "id": "pt-trazer",
+   "task": "pt-trazer",
+   "rank": 99,
+   "title": "trazer = to bring",
+   "text": "Você pode {{trazer}} duas roupas? (Can you bring two outfits?)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
    "id": "instagram-2",
    "task": "instagram",
    "rank": 6,
@@ -161,6 +311,16 @@
    "note": "With about 200 pitches out, people are looking this week.",
    "minutes": 0,
    "source": "photography · Instagram"
+  },
+  {
+   "id": "pt-esperar",
+   "task": "pt-esperar",
+   "rank": 99,
+   "title": "esperar = to wait / to hope",
+   "text": "Pode me {{esperar}} cinco minutos? (Can you wait five minutes for me?)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
   },
   {
    "id": "archive-2",
@@ -173,6 +333,16 @@
    "source": "photography · archive"
   },
   {
+   "id": "pt-tentar",
+   "task": "pt-tentar",
+   "rank": 99,
+   "title": "tentar = to try",
+   "text": "Vamos {{tentar}} de novo. (Let's try again.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
    "id": "dating-app-2",
    "task": "dating-app",
    "rank": 8,
@@ -181,6 +351,16 @@
    "note": "Each has its own 'launching soon' page, so sign-ups show which one people want.",
    "minutes": 0,
    "source": "apps · dating photos"
+  },
+  {
+   "id": "pt-mandar",
+   "task": "pt-mandar",
+   "rank": 99,
+   "title": "mandar = to send",
+   "text": "Vou te {{mandar}} as fotos amanhã. (I'll send you the photos tomorrow.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
   },
   {
    "id": "accountability-2",
@@ -193,6 +373,16 @@
    "source": "apps · accountability"
   },
   {
+   "id": "pt-marcar",
+   "task": "pt-marcar",
+   "rank": 99,
+   "title": "marcar = to schedule / to book",
+   "text": "Vamos {{marcar}} o ensaio para sexta. (Let's schedule the shoot for Friday.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
    "id": "flywheel-2",
    "task": "flywheel",
    "rank": 10,
@@ -201,6 +391,16 @@
    "note": "Evidence from 3 or more people plus a sign that money is already being spent.",
    "minutes": 0,
    "source": "apps · flywheel"
+  },
+  {
+   "id": "pt-combinar",
+   "task": "pt-combinar",
+   "rank": 99,
+   "title": "combinar = to agree / to arrange",
+   "text": "{{Combinado}}, a gente se vê às dez. (Agreed, we'll see each other at ten.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
   },
   {
    "id": "publication-3",
@@ -213,6 +413,16 @@
    "source": "photography · magazines"
   },
   {
+   "id": "pt-olhar",
+   "task": "pt-olhar",
+   "rank": 99,
+   "title": "olhar = to look",
+   "text": "{{Olha}} para a câmera. (Look at the camera.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
    "id": "editorials-3",
    "task": "editorials",
    "rank": 2,
@@ -221,6 +431,16 @@
    "note": "A yes from a venue is only worth something once a shoot date is on it.",
    "minutes": 0,
    "source": "photography · Rio"
+  },
+  {
+   "id": "pt-comecar",
+   "task": "pt-comecar",
+   "rank": 99,
+   "title": "começar = to start",
+   "text": "A gente pode {{começar}} agora? (Can we start now?)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
   },
   {
    "id": "bookings-3",
@@ -233,6 +453,16 @@
    "source": "photography · bookings"
   },
   {
+   "id": "pt-acabar",
+   "task": "pt-acabar",
+   "rank": 99,
+   "title": "acabar = to finish / to end",
+   "text": "Já vamos {{acabar}}. (We're about to finish.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
    "id": "next-city-3",
    "task": "next-city",
    "rank": 4,
@@ -241,6 +471,16 @@
    "note": "Agencies and venues need lead time.",
    "minutes": 0,
    "source": "photography · travel"
+  },
+  {
+   "id": "pt-pagar",
+   "task": "pt-pagar",
+   "rank": 99,
+   "title": "pagar = to pay",
+   "text": "Quem vai {{pagar}} a conta? (Who is going to pay the bill?)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
   },
   {
    "id": "sao-paulo-3",
@@ -253,6 +493,16 @@
    "source": "photography · São Paulo"
   },
   {
+   "id": "pt-ajudar",
+   "task": "pt-ajudar",
+   "rank": 99,
+   "title": "ajudar = to help",
+   "text": "Você pode me {{ajudar}}? (Can you help me?)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
    "id": "instagram-3",
    "task": "instagram",
    "rank": 6,
@@ -261,6 +511,16 @@
    "note": "The order is already decided. The goal is to get it published.",
    "minutes": 0,
    "source": "photography · Instagram"
+  },
+  {
+   "id": "pt-coisa",
+   "task": "pt-coisa",
+   "rank": 99,
+   "title": "coisa = thing",
+   "text": "Só mais uma {{coisa}}. (Just one more thing.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
   },
   {
    "id": "archive-3",
@@ -273,6 +533,16 @@
    "source": "photography · archive"
   },
   {
+   "id": "pt-tempo",
+   "task": "pt-tempo",
+   "rank": 99,
+   "title": "tempo = time / weather",
+   "text": "Não tenho muito {{tempo}} hoje. (I don't have much time today.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
    "id": "dating-app-3",
    "task": "dating-app",
    "rank": 8,
@@ -281,6 +551,16 @@
    "note": "The dating ideas get judged against this, nothing softer.",
    "minutes": 0,
    "source": "apps · dating photos"
+  },
+  {
+   "id": "pt-lugar",
+   "task": "pt-lugar",
+   "rank": 99,
+   "title": "lugar = place",
+   "text": "Esse {{lugar}} é perfeito para fotos. (This place is perfect for photos.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
   },
   {
    "id": "accountability-3",
@@ -293,6 +573,16 @@
    "source": "apps · accountability"
   },
   {
+   "id": "pt-gente",
+   "task": "pt-gente",
+   "rank": 99,
+   "title": "gente = people ('a gente' = we)",
+   "text": "A {{gente}} vai fotografar na praia. (We're going to shoot at the beach.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
    "id": "flywheel-3",
    "task": "flywheel",
    "rank": 10,
@@ -301,6 +591,16 @@
    "note": "The single pre-order is the strongest signal of the three.",
    "minutes": 0,
    "source": "apps · flywheel"
+  },
+  {
+   "id": "pt-trabalho",
+   "task": "pt-trabalho",
+   "rank": 99,
+   "title": "trabalho = work / job",
+   "text": "Esse é o meu {{trabalho}}. (This is my work.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
   },
   {
    "id": "publication-4",
@@ -313,6 +613,16 @@
    "source": "photography · magazines"
   },
   {
+   "id": "pt-jeito",
+   "task": "pt-jeito",
+   "rank": 99,
+   "title": "jeito = way / manner",
+   "text": "Faz do seu {{jeito}}. (Do it your way.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
    "id": "editorials-4",
    "task": "editorials",
    "rank": 2,
@@ -321,6 +631,16 @@
    "note": "The next milestone is one shoot with all three confirmed on a calendar date.",
    "minutes": 0,
    "source": "photography · Rio"
+  },
+  {
+   "id": "pt-vez",
+   "task": "pt-vez",
+   "rank": 99,
+   "title": "vez = time (occasion)",
+   "text": "Mais uma {{vez}}, por favor. (One more time, please.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
   },
   {
    "id": "bookings-4",
@@ -333,6 +653,16 @@
    "source": "photography · bookings"
   },
   {
+   "id": "pt-dinheiro",
+   "task": "pt-dinheiro",
+   "rank": 99,
+   "title": "dinheiro = money",
+   "text": "Quanto {{dinheiro}} custa o táxi? (How much money does the taxi cost?)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
    "id": "next-city-4",
    "task": "next-city",
    "rank": 4,
@@ -341,6 +671,16 @@
    "note": "The same kit Rio has: /sign-up-collab-rio plus rio - website - pt.",
    "minutes": 0,
    "source": "photography · travel"
+  },
+  {
+   "id": "pt-roupa",
+   "task": "pt-roupa",
+   "rank": 99,
+   "title": "roupa = clothes / outfit",
+   "text": "Gostei dessa {{roupa}}. (I liked this outfit.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
   },
   {
    "id": "sao-paulo-4",
@@ -353,6 +693,16 @@
    "source": "photography · São Paulo"
   },
   {
+   "id": "pt-luz",
+   "task": "pt-luz",
+   "rank": 99,
+   "title": "luz = light",
+   "text": "A {{luz}} da tarde é a melhor. (The afternoon light is the best.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
    "id": "instagram-4",
    "task": "instagram",
    "rank": 6,
@@ -361,6 +711,16 @@
    "note": "The next milestone is the first full row posted.",
    "minutes": 0,
    "source": "photography · Instagram"
+  },
+  {
+   "id": "pt-rua",
+   "task": "pt-rua",
+   "rank": 99,
+   "title": "rua = street",
+   "text": "A gente fotografa na {{rua}}. (We shoot in the street.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
   },
   {
    "id": "archive-4",
@@ -373,6 +733,16 @@
    "source": "photography · archive"
   },
   {
+   "id": "pt-praia",
+   "task": "pt-praia",
+   "rank": 99,
+   "title": "praia = beach",
+   "text": "Vamos para a {{praia}} cedo. (Let's go to the beach early.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
    "id": "dating-app-4",
    "task": "dating-app",
    "rank": 8,
@@ -381,6 +751,16 @@
    "note": "A small price for knowing which idea to build.",
    "minutes": 0,
    "source": "apps · dating photos"
+  },
+  {
+   "id": "pt-ensaio",
+   "task": "pt-ensaio",
+   "rank": 99,
+   "title": "ensaio = photo shoot / rehearsal",
+   "text": "O {{ensaio}} dura duas horas. (The shoot lasts two hours.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
   },
   {
    "id": "accountability-4",
@@ -393,6 +773,16 @@
    "source": "apps · accountability"
   },
   {
+   "id": "pt-semana",
+   "task": "pt-semana",
+   "rank": 99,
+   "title": "semana = week",
+   "text": "Estou livre na {{semana}} que vem. (I'm free next week.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
    "id": "flywheel-4",
    "task": "flywheel",
    "rank": 10,
@@ -401,6 +791,16 @@
    "note": "The posting scripts are written. Nothing is posted automatically.",
    "minutes": 0,
    "source": "apps · flywheel"
+  },
+  {
+   "id": "pt-bom",
+   "task": "pt-bom",
+   "rank": 99,
+   "title": "bom = good",
+   "text": "O resultado ficou muito {{bom}}. (The result turned out really good.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
   },
   {
    "id": "publication-5",
@@ -413,6 +813,16 @@
    "source": "photography · magazines"
   },
   {
+   "id": "pt-legal",
+   "task": "pt-legal",
+   "rank": 99,
+   "title": "legal = cool / nice",
+   "text": "Que {{legal}}! Adorei. (How cool! I loved it.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
    "id": "editorials-5",
    "task": "editorials",
    "rank": 2,
@@ -421,6 +831,16 @@
    "note": "No editorials, no publication.",
    "minutes": 0,
    "source": "photography · Rio"
+  },
+  {
+   "id": "pt-lindo",
+   "task": "pt-lindo",
+   "rank": 99,
+   "title": "lindo = beautiful",
+   "text": "Ficou {{lindo}}. (It turned out beautiful.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
   },
   {
    "id": "bookings-5",
@@ -433,6 +853,16 @@
    "source": "photography · bookings"
   },
   {
+   "id": "pt-pronto",
+   "task": "pt-pronto",
+   "rank": 99,
+   "title": "pronto = ready",
+   "text": "Você está {{pronta}}? (Are you ready? (to a woman))",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
    "id": "next-city-5",
    "task": "next-city",
    "rank": 4,
@@ -441,6 +871,16 @@
    "note": "Nothing else can start until that is fixed.",
    "minutes": 0,
    "source": "photography · travel"
+  },
+  {
+   "id": "pt-perto",
+   "task": "pt-perto",
+   "rank": 99,
+   "title": "perto = near / close",
+   "text": "O estúdio fica {{perto}} daqui. (The studio is close to here.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
   },
   {
    "id": "dating-app-5",
@@ -453,6 +893,16 @@
    "source": "apps · dating photos"
   },
   {
+   "id": "pt-longe",
+   "task": "pt-longe",
+   "rank": 99,
+   "title": "longe = far",
+   "text": "É muito {{longe}} para ir a pé. (It's too far to walk.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
    "id": "accountability-5",
    "task": "accountability",
    "rank": 9,
@@ -461,6 +911,16 @@
    "note": "Everything else waits on that choice.",
    "minutes": 0,
    "source": "apps · accountability"
+  },
+  {
+   "id": "pt-cedo",
+   "task": "pt-cedo",
+   "rank": 99,
+   "title": "cedo = early",
+   "text": "Prefiro começar {{cedo}}. (I prefer to start early.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
   },
   {
    "id": "editorials-6",
@@ -473,6 +933,16 @@
    "source": "photography · Rio"
   },
   {
+   "id": "pt-agora",
+   "task": "pt-agora",
+   "rank": 99,
+   "title": "agora = now",
+   "text": "Pode ser {{agora}}? (Can it be now?)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
    "id": "dating-app-6",
    "task": "dating-app",
    "rank": 8,
@@ -481,6 +951,16 @@
    "note": "So the dating test needs a start date and an end date.",
    "minutes": 0,
    "source": "apps · dating photos"
+  },
+  {
+   "id": "pt-depois",
+   "task": "pt-depois",
+   "rank": 99,
+   "title": "depois = after / later",
+   "text": "A gente conversa {{depois}}. (We'll talk later.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
   },
   {
    "id": "accountability-6",
@@ -493,6 +973,16 @@
    "source": "apps · accountability"
   },
   {
+   "id": "pt-ainda",
+   "task": "pt-ainda",
+   "rank": 99,
+   "title": "ainda = still / yet",
+   "text": "{{Ainda}} não recebi resposta. (I still haven't received an answer.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
    "id": "dating-app-7",
    "task": "dating-app",
    "rank": 8,
@@ -501,6 +991,16 @@
    "note": "Until the test runs there is nothing to decide on.",
    "minutes": 0,
    "source": "apps · dating photos"
+  },
+  {
+   "id": "pt-devagar",
+   "task": "pt-devagar",
+   "rank": 99,
+   "title": "devagar = slowly",
+   "text": "Pode falar mais {{devagar}}? (Can you speak more slowly?)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
   }
  ]
 }
