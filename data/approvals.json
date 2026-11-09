@@ -4246,6 +4246,25 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "outreach-category:rio-production_agency-v1",
+      "kind": "email",
+      "source": "codex:rio-fashion-network",
+      "title": "Approve outreach category: Production companies and creative/ad agencies (137 contacts)",
+      "summary": "Approving sends this email to every contact in the category, plus new ones research finds, within the 450/day cap and office hours. First: Litcreative, Teresa Filmes, Caravana Filmes, Capim Filmes, Camelô Produções, Tenda Produtora, Lūmen Creative, Grupo Blend Comunicação",
+      "payload": {
+        "category": "production_agency",
+        "subject": "Fashion photographer in Rio until 4 December",
+        "body": "{{greeting}}\n\nI'm Aidan Torrence, a fashion photographer currently in Rio, here through 4 December. If you have shoots coming up that need a photographer, I'd love to work with you.\n\nMy work: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nBest,\nAidan Torrence\n",
+        "attachment": "none",
+        "contacts": 137
+      },
+      "created": "2026-11-09T03:55:18Z",
+      "expires": "2026-11-16T03:55:18Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
