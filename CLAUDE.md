@@ -25,3 +25,11 @@
 - **Render scripts**: `render-{number}{letter}.mjs` with matching `output-{number}{letter}/` dir
 - **All output filenames must match**: render script output name, output dir name, and reels/ copy name must all use the same `{number}{letter}` identifier
 - **Copy to reels/**: Every rendered mp4 must be copied to `reels-final/reels/` with the correct name
+
+## Model Workflow: Plan on Fable 5.2, Execute on Opus 5.5
+
+- **Main session (Fable 5.2)** does the high-level work: understanding the request, exploring the codebase, deciding the approach, breaking it into steps, and reviewing results.
+- **Execution goes to Opus 5.5**: delegate implementation (writing/editing code, running builds and renders) to the `executor` subagent (`.claude/agents/executor.md`, `model: opus`) via the Agent tool. Give it a self-contained brief: goal, files involved, constraints, and what "done" looks like.
+- Run independent pieces of work as parallel `executor` agents; keep dependent steps sequential.
+- After each executor finishes, the main session reviews the diff and the verification output before committing and pushing.
+- Exception: trivial changes (a one-line fix, a typo, a config tweak) can be made directly in the main session — delegation is not worth the overhead.
