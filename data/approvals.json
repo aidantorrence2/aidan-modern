@@ -5396,6 +5396,28 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "build:deploy-grid-picker-sync-endpoint-to-aida-202611101847",
+      "kind": "build",
+      "source": "codex:grid-picker-data",
+      "title": "Deploy Grid Picker sync endpoint to aidantorrence.com",
+      "summary": "Adds private /api/gridpicker/board (token-protected) storing your grid/carousel picks as one JSON row in Neon, so the native Mac and Android Grid Picker apps stay in sync anywhere. No public pages change.",
+      "payload": {
+        "repo": "~/Documents/aidan-modern",
+        "routes": [
+          "GET /api/gridpicker/board",
+          "PUT /api/gridpicker/board"
+        ],
+        "auth": "Bearer token in Vercel env GRIDPICKER_TOKEN",
+        "db": "Neon table gridpicker_board(id text pk, version int, board jsonb, updated timestamptz)",
+        "deploy": "scripts/deploy.sh flow after preview check"
+      },
+      "created": "2026-11-10T18:47:24Z",
+      "expires": "2026-11-13T18:47:24Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
