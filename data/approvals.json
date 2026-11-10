@@ -5360,6 +5360,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-40graus-fernanda",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to 40 Graus: Fernanda model tests",
+      "summary": "40 Graus softened their decline after Aidan's pushback and CC'd Fernanda (photographer/booker) to suggest models",
+      "payload": {
+        "to": "internacional@40grausmodels.com",
+        "subject": "Re: Rio model tests | Aidan Torrence",
+        "body": "Hi Fernanda,\n\nThanks for joining the thread. I'm in Rio until 4 December and would like to shoot tests with a few 40 Graus models: natural light on location, 60 to 90 minutes, 2 or 3 looks, and the edited images free for their book and the agency's site and social, with no fee either way.\n\nMy work: https://aidantorrence.com · https://instagram.com/madebyaidan\n\nIf you send me a few names, let me know which days work for them.\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-10T16:12:13Z",
+      "expires": "2026-11-13T16:12:13Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
