@@ -5342,6 +5342,24 @@
       "status": "approved",
       "decided": "2026-11-09T23:50:27Z",
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-lazin-magazine",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to LAZIN: feature accepted, pull letter",
+      "summary": "LAZIN will feature the editorial subject to quality checks; ask for pull letter and submission specs",
+      "payload": {
+        "to": "submit@lazin.uk",
+        "subject": "Re: Editorial proposal: Rio de Janeiro",
+        "body": "Hi LAZIN team,\n\nThank you, that's great to hear. We're shooting in the second half of November on the beaches and streets of Rio, with the stylist styling the looks and pulling pieces.\n\nCould you send a pull letter for LAZIN Magazine so the stylist can request pieces from brands? And are there any specs I should follow for the final submission (number of images, format, deadline)?\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-10T14:12:50Z",
+      "expires": "2026-11-13T14:12:50Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
