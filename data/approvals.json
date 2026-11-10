@@ -5418,6 +5418,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-nobru-base",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to Nobru (Base MGT): shoot details",
+      "summary": "New Face dept asks date, location, time, duration, and whether food/transport provided (food/transport NOT answered - Aidan to add)",
+      "payload": {
+        "to": "newfacerio@basemgt.com.br",
+        "subject": "Re: Rio model tests | Aidan Torrence",
+        "body": "Hi Nobru,\n\nThanks for getting back to me. Here are the details:\n\n- Dates: I'm shooting in the second half of November. Which days work for your new faces?\n- Location: natural light on location in Rio: Arpoador and Ipanema, Santa Teresa, the modernist Centro (MAM, Palácio Capanema), Parque Lage. I'll confirm the exact spot and meeting time once we have a day.\n- Duration: 60 to 90 minutes per model, 2 or 3 looks.\n- It's TFP: no fee on either side, and each model gets full credit and the edited images for their book and your site and social.\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-10T22:16:01Z",
+      "expires": "2026-11-13T22:16:01Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
