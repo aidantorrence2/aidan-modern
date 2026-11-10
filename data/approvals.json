@@ -5436,6 +5436,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-sabrina-mendes",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to Sabrina Mendes: WhatsApp number",
+      "summary": "Mix Models asks to coordinate models via WhatsApp",
+      "payload": {
+        "to": "sabrina@mixmodelsagency.com.br",
+        "subject": "Re: Rio model tests | Aidan Torrence",
+        "body": "Hi Sabrina,\n\nSure, my WhatsApp is +49 175 8966210. Message me there and we can go through the models and days.\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-10T22:16:05Z",
+      "expires": "2026-11-13T22:16:05Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
