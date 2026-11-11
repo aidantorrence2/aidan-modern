@@ -13,6 +13,10 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true
   },
+  // /map is a standalone static page (travel journal) in public/map.
+  async rewrites() {
+    return [{ source: '/map', destination: '/map/index.html' }];
+  },
   // Pre-generated homepage photos: let browsers keep them for a week without re-checking.
   async headers() {
     return [{ source: '/images/opt/:path*', headers: [{ key: 'Cache-Control', value: 'public, max-age=604800, stale-while-revalidate=2592000' }] }];
