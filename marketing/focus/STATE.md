@@ -37,12 +37,12 @@ _Last updated: 2026-11-11 (run 3)_
 | MORNING | 007 | Freedom | unverified |
 
 ## Next up (priority order)
-1. Render 002 (next run), then 003–007 one per run (one per run): write `render/specs/NNN.json` from the script, render, inspect frames.
-3. Possible renderer upgrade: simple drawn icons/mock UI per step (scripts mention mock UI) — currently text-only.
-4. Capture landing page (static HTML in `marketing/focus/landing/`) + keyword map.
-5. Post packages in `queue/` per platform.
-6. Signals research refresh (Reddit / Shorts / ad libraries).
-7. Draft affiliate application answers (never submit).
+1. Render 002 next, then 003–007, one per run: write `render/specs/NNN.json` from the script, render, inspect frames.
+2. Possible renderer upgrade: simple drawn icons/mock UI per step (scripts mention mock UI) — currently text-only.
+3. Capture landing page (static HTML in `marketing/focus/landing/`) + keyword map.
+4. Post packages in `queue/` per platform.
+5. Signals research refresh (Reddit / Shorts / ad libraries).
+6. Draft affiliate application answers (never submit).
 
 ## Blocked on owner
 - Platform accounts/credentials for Facebook, TikTok, X (owner-todo #1).
