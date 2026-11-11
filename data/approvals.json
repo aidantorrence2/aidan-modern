@@ -5545,6 +5545,34 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "build:map-publish-2026-11-11-v2",
+      "kind": "build",
+      "source": "codex:aidan-modern",
+      "title": "Publish the travel journal page at aidantorrence.com/map (topless frames removed)",
+      "summary": "Replaces the earlier /map publish card. 19 Saigon balcony frames with a bare breast are out; hand-, arm-, hair- and clothing-covered frames stay. 97 stops, 1,152 photographs. Preview on this Mac: http://localhost:5173/map",
+      "preview_url": "http://localhost:5173/map",
+      "payload": {
+        "action": "deploy",
+        "repo": "aidan-modern",
+        "changes": [
+          "xyqktpxn /map travel journal page",
+          "opwnoqut remove 19 Saigon frames with bare breasts"
+        ],
+        "steps": [
+          "put both changes on main",
+          "scripts/deploy.sh: build, push main, wait for the production build, promote to www.aidantorrence.com",
+          "check https://www.aidantorrence.com/map loads with images"
+        ],
+        "adds": "public/map (page, 958 grid frames, 194 site photos, font) and a /map rewrite in next.config.mjs",
+        "not_included": "no link to /map from the homepage or nav; journal text is still AI-written"
+      },
+      "created": "2026-11-11T12:24:34Z",
+      "expires": "2026-11-14T12:24:34Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
