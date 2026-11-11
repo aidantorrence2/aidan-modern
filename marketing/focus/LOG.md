@@ -15,4 +15,5 @@
 - Inspected frames at several timestamps. First pass had the CTA keyword box nearly touching the right edge and "7-day" splitting across lines → fixed (two-tier keyword box, no-wrap on "N-word") and re-rendered; second-pass frames look clean.
 - Fixed a caption error in script 001: said "3 changes" but the video shows 4 steps.
 - Honest limits: video is text cards with a slow push-in only — no icons, no music, no voiceover. Not yet human-reviewed.
+- Note: repo-root .gitignore excludes *.mp4; added `videos/.gitignore` with `!*.mp4` so rendered videos are committed.
 - Next: write scripts 006–007 (unrendered buffer is 4, target ≥5), then render 002.
