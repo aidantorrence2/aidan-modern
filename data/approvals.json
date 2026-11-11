@@ -5638,6 +5638,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-gica-araujo",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to Gica Araujo: project details",
+      "summary": "Interested; asked how he found her (Behance?) and how he sees the collaboration",
+      "payload": {
+        "to": "cafonabygica@gmail.com",
+        "subject": "Re: Rio beach/street editorial - styling collaboration",
+        "body": "Hi Gica,\n\nYes, I found your work on Behance.\n\nThe story is a beach/street fashion editorial in Rio, shooting in the second half of November. You'd style the looks and pull pieces for the shoot. It's being pitched to magazines like Purple, Numéro Berlin and Vogue Portugal. It's a creative collaboration with no fee on either side; you get full credit and the final images.\n\nWhich days in the second half of November work for you?\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-11T20:09:34Z",
+      "expires": "2026-11-14T20:09:34Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
