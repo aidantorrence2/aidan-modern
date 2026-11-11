@@ -5526,6 +5526,25 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "build:map-publish-2026-11-11",
+      "kind": "build",
+      "source": "codex:aidan-modern",
+      "title": "Publish the travel journal page at aidantorrence.com/map",
+      "summary": "The road: 97 stops Dunedin to Rio, 1,171 photographs (194 site + 977 grid picker). Look first at http://localhost:5173/map on your Mac. Includes about 30 topless or hand-covered frames (Dunedin, Saigon, Bangkok, Pattaya), one Saigon frame with a bare breast: approve to publish as is, or deny with a note such as 'pull the nudity'. Journal text is still AI-written from your bookings.",
+      "preview_url": "http://localhost:5173/map",
+      "payload": {
+        "action": "deploy",
+        "what": "Put jj change xyqktpxn (public/map + /map rewrite in next.config.mjs, 73 MB, 1,175 files) onto main, push main to origin, wait for the aidan-modern-at9e production build, promote it to www.aidantorrence.com, then check https://www.aidantorrence.com/map loads with images",
+        "not_included": "no link to /map from the homepage or nav; nothing else on the site changes",
+        "rollback": "vercel rollback to the previous production deployment, and jj undo of the main move"
+      },
+      "created": "2026-11-11T05:29:33Z",
+      "expires": "2026-11-14T05:29:33Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
