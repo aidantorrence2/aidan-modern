@@ -28,3 +28,9 @@
 - Frame check found "step-by-step" breaking at a hyphen on the CTA card → generalised the renderer's no-wrap rule to any hyphenated word, re-rendered, re-checked the CTA frame: clean.
 - Removed the unsupported "takes about 10 minutes" from the 002 caption (script + video caption file).
 - Unrendered buffer is now exactly 5 (003–007). Next: write 008 to keep the buffer, or render 003.
+
+## 2026-11-11 — run 5
+- Rendered `videos/003-block-sites-on-computer.mp4` + `.txt` caption from `render/specs/003.json` (blue accent): 24.0 s, 1.70 MB, 1080x1920.
+- Frame check (hook, steps 1/2/4, CTA): text fits, no bad wraps or edge crowding.
+- Changed the CTA from "my exact blocklist" to "a ready-made blocklist" (avoids implying a personal persona/usage claim); script updated to match.
+- Unrendered buffer now 4 (004–007). Next: write script 008, then render 004.

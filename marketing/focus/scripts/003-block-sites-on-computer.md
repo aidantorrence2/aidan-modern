@@ -1,6 +1,6 @@
 # 003 — Block YouTube on your computer during work hours (60 seconds)
 
-- **Status:** draft (ready for review)
+- **Status:** rendered → `videos/003-block-sites-on-computer.mp4` (spec `render/specs/003.json`)
 - **Format:** 9:16, ~25 s, text + simple drawn browser/laptop graphics
 - **Comment keyword:** `FOCUS`
 - **Matched offer:** Freedom (app & website blocker; 10%, 90-day cookie — verify)
@@ -15,11 +15,11 @@
 4. **Lock the session** so you can't turn it off mid-block.
 
 ## Closing card
-"Comment FOCUS and I'll send my exact blocklist + the app I use to sync it."
+"Comment FOCUS for a ready-made blocklist + the app setup that syncs it across devices."
 
 ## Caption
 The easiest productivity upgrade is removing the exit doors 🚪 4 steps 👇
-Comment FOCUS for the blocklist.
+Comment FOCUS for a ready-made blocklist.
 #productivity #focus #deepwork #wfh #studytips #distraction
 
 ## Disclosure
