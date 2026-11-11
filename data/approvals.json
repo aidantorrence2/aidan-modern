@@ -5508,6 +5508,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-mariana-botelho",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to Mariana Botelho: interested, wants concept details",
+      "summary": "Interested, wants to know more about the concept and production needs",
+      "payload": {
+        "to": "marianafbot@gmail.com",
+        "subject": "Re: Rio beach/street editorial - styling collaboration",
+        "body": "Hi Mariana,\n\nThanks for getting back to me. The story is a beach/street fashion editorial here in Rio; the moodboard is in my first email. I'm shooting in the second half of November, and it will be pitched to magazines like Purple, Numéro Berlin and Vogue Portugal.\n\nYou'd be styling the looks and pulling pieces for the shoot. It's a creative collaboration with no fee on either side; you get full credit and the final images.\n\nWhich days in the second half of November work for you?\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-11T02:08:53Z",
+      "expires": "2026-11-14T02:08:53Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
