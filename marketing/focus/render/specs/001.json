@@ -1,0 +1,14 @@
+{
+  "out": "001-phone-out-of-bedroom",
+  "script": "scripts/001-phone-out-of-bedroom.md",
+  "accent": "#ffcc33",
+  "scenes": [
+    { "type": "hook", "dur": 3.4, "kicker": "7-day bedtime reset", "text": "If your phone is the last thing you see at night, try this for 7 days." },
+    { "type": "step", "n": 1, "dur": 4.6, "title": "Charge it outside the bedroom.", "body": "Pick one spot — kitchen counter, hallway. **Not the nightstand.**" },
+    { "type": "step", "n": 2, "dur": 4.6, "title": "Set a hard cutoff.", "body": "Same time every night (e.g. 10:30). Use your phone's built-in **Bedtime / Downtime** mode." },
+    { "type": "step", "n": 3, "dur": 4.6, "title": "Grayscale after cutoff.", "body": "Colour is part of the pull. **Grey makes feeds boring.**" },
+    { "type": "step", "n": 4, "dur": 4.6, "title": "Make it physical.", "body": "If willpower fails, a **timed lock box** means you can't \"just check one thing\"." },
+    { "type": "cta", "dur": 4.2, "text": "Want the free 7-day reset checklist?", "keyword": "NIGHT", "sub": "I'll send it to you." }
+  ],
+  "caption": "Your phone doesn't need to sleep next to you. 4 changes that make late-night scrolling harder 👇\nComment NIGHT for the free 7-day checklist.\n\n#screentime #digitalwellbeing #sleephabits #phoneaddiction #focus"
+}

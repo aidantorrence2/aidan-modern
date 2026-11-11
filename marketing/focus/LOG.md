@@ -7,3 +7,12 @@
 - Verified: ffmpeg at /usr/bin/ffmpeg; existing reel render scripts under `marketing/bts-reels/` to learn from.
 - Not verified: affiliate terms listed in the brief (all still marked unverified); no signals research done yet — hooks are educated guesses.
 - Next: build renderer, render script 001, inspect frames.
+
+## 2026-11-11 — run 2
+- Copied the standing rules (where state lives / choosing the step / hard limits) into the top of STATE.md.
+- Built `render/render.mjs` (Playwright HTML cards → PNG → ffmpeg zoompan + xfade, silent AAC) and spec `render/specs/001.json`.
+- Rendered `videos/001-phone-out-of-bedroom.mp4` + `.txt` caption: h264 1080x1920 30fps, 24.0 s, 2.0 MB.
+- Inspected frames at several timestamps. First pass had the CTA keyword box nearly touching the right edge and "7-day" splitting across lines → fixed (two-tier keyword box, no-wrap on "N-word") and re-rendered; second-pass frames look clean.
+- Fixed a caption error in script 001: said "3 changes" but the video shows 4 steps.
+- Honest limits: video is text cards with a slow push-in only — no icons, no music, no voiceover. Not yet human-reviewed.
+- Next: write scripts 006–007 (unrendered buffer is 4, target ≥5), then render 002.
