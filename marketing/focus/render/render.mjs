@@ -20,7 +20,7 @@ const OUT = join(ROOT, '..', 'videos', `${spec.out}.mp4`);
 rmSync(WORK, { recursive: true, force: true });
 mkdirSync(WORK, { recursive: true });
 
-const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/(\d+-\w+)/g, '<span class="nw">$1</span>');
+const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/(\w+(?:-\w+)+)/g, '<span class="nw">$1</span>');
 const accent = spec.accent || '#ffcc33';
 
 const CSS = `

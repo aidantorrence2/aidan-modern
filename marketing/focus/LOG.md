@@ -22,3 +22,9 @@
 - Wrote scripts 006 (50-minute study session, keyword STUDY → Freedom / lock box) and 007 (first hour without the phone, keyword MORNING → Freedom). Unrendered buffer now 6 (target ≥5).
 - Added both to the keyword→offer map in STATE.md. Offer terms still unverified.
 - No render this run (one step per run). Next: render 002 (KIDS).
+
+## 2026-11-11 — run 4
+- Rendered `videos/002-kids-phone-settings.mp4` + `.txt` caption from new spec `render/specs/002.json` (teal accent, 5 step cards incl. bonus): 26.6 s, 2.08 MB, 1080x1920.
+- Frame check found "step-by-step" breaking at a hyphen on the CTA card → generalised the renderer's no-wrap rule to any hyphenated word, re-rendered, re-checked the CTA frame: clean.
+- Removed the unsupported "takes about 10 minutes" from the 002 caption (script + video caption file).
+- Unrendered buffer is now exactly 5 (003–007). Next: write 008 to keep the buffer, or render 003.

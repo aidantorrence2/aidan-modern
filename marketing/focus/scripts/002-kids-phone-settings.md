@@ -1,6 +1,6 @@
 # 002 — 4 settings every parent should check on their kid's phone tonight
 
-- **Status:** draft (ready for review)
+- **Status:** rendered → `videos/002-kids-phone-settings.mp4` (spec `render/specs/002.json`)
 - **Format:** 9:16, ~30 s, text-on-screen over generic phone-settings mock UI (drawn, not screenshots of a real app)
 - **Comment keyword:** `KIDS`
 - **Matched offer:** Aura parental controls (primary), Qustodio (alternate) — verify current terms first
@@ -19,7 +19,7 @@
 "Built-in settings have gaps across devices. Comment KIDS for the free setup guide + the tool I'd use."
 
 ## Caption
-4 phone settings to check before bedtime — takes about 10 minutes 👇
+4 phone settings to check on your kid's phone before bedtime (+1 bonus) 👇
 Comment KIDS for the free step-by-step guide.
 #parenting #screentime #parentalcontrols #kidsandtech #momtips #dadtips
 

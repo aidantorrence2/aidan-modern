@@ -1,0 +1,15 @@
+{
+  "out": "002-kids-phone-settings",
+  "script": "scripts/002-kids-phone-settings.md",
+  "accent": "#5ee0c1",
+  "scenes": [
+    { "type": "hook", "dur": 3.4, "kicker": "For parents", "text": "It's 1 a.m. Do you know what app your kid is on?" },
+    { "type": "step", "n": 1, "dur": 4.2, "title": "Downtime.", "body": "Schedule hours when **only calls and messages** work." },
+    { "type": "step", "n": 2, "dur": 4.2, "title": "App limits by category.", "body": "Social and games get a **daily cap**. School apps don't." },
+    { "type": "step", "n": 3, "dur": 4.4, "title": "Content & download rules.", "body": "Block explicit content and **require approval** for new apps." },
+    { "type": "step", "n": 4, "dur": 4.2, "title": "Keep the passcode yours.", "body": "The settings only work if **your kid can't change them**." },
+    { "type": "step", "n": 5, "dur": 4.2, "title": "Bonus: talk first.", "body": "Tell them what you're setting up and why. **It lands better than a surprise.**" },
+    { "type": "cta", "dur": 4.4, "text": "Want the free step-by-step setup guide?", "keyword": "KIDS", "sub": "Built-in settings have gaps across devices — the guide covers those too." }
+  ],
+  "caption": "4 phone settings to check on your kid's phone before bedtime (+1 bonus) 👇\nComment KIDS for the free step-by-step guide.\n\n#parenting #screentime #parentalcontrols #kidsandtech #momtips #dadtips"
+}
