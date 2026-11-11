@@ -17,3 +17,8 @@
 - Honest limits: video is text cards with a slow push-in only — no icons, no music, no voiceover. Not yet human-reviewed.
 - Note: repo-root .gitignore excludes *.mp4; added `videos/.gitignore` with `!*.mp4` so rendered videos are committed.
 - Next: write scripts 006–007 (unrendered buffer is 4, target ≥5), then render 002.
+
+## 2026-11-11 — run 3
+- Wrote scripts 006 (50-minute study session, keyword STUDY → Freedom / lock box) and 007 (first hour without the phone, keyword MORNING → Freedom). Unrendered buffer now 6 (target ≥5).
+- Added both to the keyword→offer map in STATE.md. Offer terms still unverified.
+- No render this run (one step per run). Next: render 002 (KIDS).
