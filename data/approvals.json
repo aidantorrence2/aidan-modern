@@ -5674,6 +5674,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-nobru-base-3",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to Nobru (Base): new faces folder received",
+      "summary": "Nobru sent a Drive folder of unapproached New Faces and asked which profiles Aidan likes",
+      "payload": {
+        "to": "newfacerio@basemgt.com.br",
+        "subject": "Re: Rio model tests | Aidan Torrence",
+        "body": "Hi Nobru,\n\nThanks for sending these. I will go through the folder and send you the profiles I would like to shoot.\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-11T22:12:14Z",
+      "expires": "2026-11-14T22:12:14Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
