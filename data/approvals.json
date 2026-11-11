@@ -5573,6 +5573,35 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "build:map-publish-2026-11-11-v3",
+      "kind": "build",
+      "source": "codex:aidan-modern",
+      "title": "Publish the travel journal page at aidantorrence.com/map (35 photo stops)",
+      "summary": "Replaces both earlier /map publish cards. Now only the 35 stops that have photographs (62 photo-less stops and their text removed; route runs Dunedin to Almaty), 1,152 photographs, the 19 bare-breast Saigon frames out. Preview on this Mac: http://localhost:5173/map",
+      "preview_url": "http://localhost:5173/map",
+      "payload": {
+        "action": "deploy",
+        "repo": "aidan-modern",
+        "changes": [
+          "xyqktpxn /map travel journal page",
+          "opwnoqut remove 19 Saigon frames with bare breasts",
+          "xoklotqw only stops with photographs (35 of 97)"
+        ],
+        "steps": [
+          "put the three changes on main",
+          "scripts/deploy.sh: build, push main, wait for the production build, promote to www.aidantorrence.com",
+          "check https://www.aidantorrence.com/map loads with images"
+        ],
+        "adds": "public/map (page, 958 grid frames, 194 site photos, font) and a /map rewrite in next.config.mjs",
+        "not_included": "no link to /map from the homepage or nav; journal text is still AI-written"
+      },
+      "created": "2026-11-11T12:29:29Z",
+      "expires": "2026-11-14T12:29:29Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
