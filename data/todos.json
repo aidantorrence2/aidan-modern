@@ -1,6 +1,6 @@
 {
- "date": "2026-11-10",
- "generated": "2026-11-10T08:50:00Z",
+ "date": "2026-11-11",
+ "generated": "2026-11-11T08:50:00Z",
  "items": [
   {
    "id": "publication-1",
@@ -403,12 +403,12 @@
    "source": "português"
   },
   {
-   "id": "publication-3",
+   "id": "publication-3b",
    "task": "publication",
    "rank": 1,
    "title": "Land a magazine publication from the Rio trip",
-   "text": "About {{200}} 'Editorial proposal: Rio de Janeiro' pitches have gone out to magazines. The goal now is turning replies into a yes.",
-   "note": "Sending is done. The work is answering every reply fast and with strong images.",
+   "text": "Of about 200 magazine pitches, {{LAZIN}} has said it will feature the Rio editorial, subject to quality checks.",
+   "note": "A conditional yes. The editorial now has to be good enough to pass.",
    "minutes": 0,
    "source": "photography · magazines"
   },
@@ -803,12 +803,12 @@
    "source": "português"
   },
   {
-   "id": "publication-5",
+   "id": "publication-5b",
    "task": "publication",
    "rank": 1,
    "title": "Land a magazine publication from the Rio trip",
-   "text": "I will know this goal is met when {{a magazine confirms a story in writing}}.",
-   "note": "Interest and 'send us more' are progress, not the finish line.",
+   "text": "LAZIN's yes depends on {{quality checks}}, so this goal is only met when the story is actually published.",
+   "note": "Until then it is a strong lead, not a publication. Keep the other magazine conversations alive.",
    "minutes": 0,
    "source": "photography · magazines"
   },
@@ -983,14 +983,14 @@
    "source": "português"
   },
   {
-   "id": "dating-app-7",
-   "task": "dating-app",
-   "rank": 8,
-   "title": "Find out whether people will pay for the dating photo generator",
-   "text": "The next milestone for the dating app is {{the first real number: sign-ups per idea}}.",
-   "note": "Until the test runs there is nothing to decide on.",
+   "id": "editorials-7",
+   "task": "editorials",
+   "rank": 2,
+   "title": "Shoot 2-3 strong Rio editorials before 4 December",
+   "text": "The Rio location board now holds 185 editorial pins across {{17 spots}}, so each editorial can be given a location before the shoot day.",
+   "note": "Published as the v3 location board. Next is matching a spot to each planned editorial.",
    "minutes": 0,
-   "source": "apps · dating photos"
+   "source": "photography · Rio"
   },
   {
    "id": "pt-devagar",
@@ -1001,6 +1001,16 @@
    "note": "",
    "minutes": 0,
    "source": "português"
+  },
+  {
+   "id": "dating-app-7",
+   "task": "dating-app",
+   "rank": 8,
+   "title": "Find out whether people will pay for the dating photo generator",
+   "text": "The next milestone for the dating app is {{the first real number: sign-ups per idea}}.",
+   "note": "Until the test runs there is nothing to decide on.",
+   "minutes": 0,
+   "source": "apps · dating photos"
   }
  ]
 }
