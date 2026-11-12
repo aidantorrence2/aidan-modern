@@ -89,3 +89,9 @@
 - Regenerated post packages: queue now has 7 (added 005).
 - Rendered: 001–005, 008, 010. Unrendered: 006, 007, 009, 011 (4 → below target).
 - Next: write script 012, then render 006.
+
+## 2026-11-12 — run 14
+- Wrote scripts 012 (console/phone game limits, keyword GAMES → Qustodio/Aura) and 013 (phone-free dinner table, keyword TABLE → lock box). Unrendered buffer now 6 (006, 007, 009, 011–013).
+- Added both to the landing page and keyword map. Verified in Chromium: both pages render with 5 steps; fallback lists all 13; no JS errors.
+- Caught an unbacked promise while checking: TABLE originally offered "30 questions in the email", but no email sequence exists. Changed to 7 questions shown on the page; removed "30" from the script and landing title.
+- Next: render 012 (parent offer) or 006.

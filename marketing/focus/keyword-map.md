@@ -16,6 +16,8 @@ Flow: viewer comments KEYWORD → auto/manual DM with the link `<landing-url>?k=
 | FIRST | 008 | First-phone checklist + agreement template | Parental controls (`aura`) | unverified |
 | QUIET | 009 | Notification cleanup checklist | none (trust builder) | n/a |
 | AUTOPLAY | 010 | Autoplay-off setup guide | Per-app limits across devices (`qustodio`; alt `aura`) | unverified |
+| GAMES | 012 | Game-time limits: console + phone | Cross-device limits (`qustodio`; alt `aura`) | unverified |
+| TABLE | 013 | Phone-free dinner plan + dinner questions | Timed lock box (`lockbox`) | unverified |
 | INBOX | 011 | Email check-in setup + auto-reply template | Scheduled email block (`freedom`) | unverified |
 
 ## DM reply template (send when someone comments the keyword)
