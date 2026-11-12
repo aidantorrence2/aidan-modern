@@ -3,7 +3,7 @@
 Niche: app blocking / phone & computer distraction. Short vertical videos → comment keyword → DM → email opt-in → matched affiliate offer.
 Channels planned: Facebook Page/Group, TikTok, X. Branch: `claude/focus-pipeline`, dir `marketing/focus/`.
 
-_Last updated: 2026-11-12 (run 18)_
+_Last updated: 2026-11-12 (run 19)_
 
 ## Standing rules (copied from the owner's brief — survive context resets)
 **Where state lives:** repo `aidantorrence2/aidan-modern`, branch `claude/focus-pipeline` (pull it first every run), dir `marketing/focus/`. STATE.md = source of truth (read first). LOG.md = one dated entry per run. `scripts/` = one markdown per video (hook, steps, caption, keyword, offer). `videos/` = 1080x1920 mp4 < 8 MB + caption file. `queue/` = ready-to-post packages per platform. `owner-todo.md` = owner-only actions with exact steps and prefilled text. Repo is PUBLIC: never commit credentials, affiliate IDs or ID-bearing links, personal details or revenue. Never touch files outside `marketing/focus/`, never push another branch, no PR. Repo CLAUDE.md reel naming does not apply here; no `next build` needed.
@@ -19,7 +19,7 @@ Do NOT render any video (and do not re-render existing ones) until this block is
 ## Stage status
 | # | Stage | Status | Notes |
 |---|-------|--------|-------|
-| 1 | Signals | not started | No signals research committed yet; scripts 001–005 are based on general niche knowledge, not verified hooks. |
+| 1 | Signals | first pass done | `signals/2026-11-12.md`: top user-reported failure = app blocked but website open; feed reset; parents: precise co-created rules, routines > caps, modeling. 4 new script angles listed there. Aura $65/60-day seen on two third-party directories (still unverified with Aura). |
 | 2 | Scripts | 15 drafts (5 unrendered: 007, 009, 011, 013, 014) | `scripts/001`–`015`. Keywords: NIGHT, KIDS, FOCUS, TAPS, FREE, STUDY, MORNING, FIRST, QUIET, AUTOPLAY, INBOX, GAMES, TABLE, WEEKEND, WIFI. New scripts must also get a landing-page entry + keyword-map row. |
 | 3 | Review | not started | Self-review checklist: claims, disclosure, no logos/trademarks on screen. |
 | 4 | Render | **10 of 15** (001–006, 008, 010, 012, 015) | Renderer: `node render/render.mjs render/specs/NNN.json` (HTML cards → PNG → ffmpeg push-in + crossfades, silent AAC track). 001 done (24 s, 2.0 MB); 002 done (26.6 s, 2.1 MB); 003 done (24 s, 1.7 MB); 008 done (24.4 s, 2.1 MB); 004 done (23.6 s, 1.8 MB); 010 done (24 s, 2.0 MB); 005 done (23.8 s, 1.9 MB); 012 done (24 s, 1.9 MB); 006 done (23.8 s, 1.9 MB); 015 done (24 s, 1.7 MB). Renderer now uses `text-wrap: balance/pretty` and auto-shrinks long comment keywords to fit. Style is text-only cards; no music (add in-app). |
@@ -48,7 +48,7 @@ Do NOT render any video (and do not re-render existing ones) until this block is
 | WIFI | 015 | Qustodio / Aura | unverified |
 
 ## Next up (priority order)
-1. ON HOLD (see top): no renders until owner review. Meanwhile: signals research, affiliate application drafts. After approval: render 007, then 009, 011, 013, 014 one per run. Content is far ahead of distribution (nothing posted yet): when the buffer would need refilling, prefer a signals-research run over new scripts (run `node queue/make-packages.mjs` after each): write `render/specs/NNN.json` from the script, render, inspect frames.
+1. ON HOLD (see top): no renders until owner review. Meanwhile: affiliate application drafts (next), more signals if useful. After approval: render 007, then 009, 011, 013, 014 one per run. Content is far ahead of distribution (nothing posted yet): when the buffer would need refilling, prefer a signals-research run over new scripts (run `node queue/make-packages.mjs` after each): write `render/specs/NNN.json` from the script, render, inspect frames.
 2. Possible renderer upgrade: simple drawn icons/mock UI per step (scripts mention mock UI) — currently text-only.
 3. Signals research refresh (Reddit / Shorts / ad libraries).
 4. Draft affiliate application answers (never submit).

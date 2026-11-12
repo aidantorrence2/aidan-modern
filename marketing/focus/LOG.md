@@ -127,3 +127,10 @@
 
 ## 2026-11-12 — owner instruction (between runs)
 - Owner: "stop creating videos until I've reviewed". Added a HOLD block at the top of STATE.md (no renders or re-renders until the owner lifts it) and owner-todo #0 listing the 10 videos to review. Nothing rendered in this entry.
+
+## 2026-11-12 — run 19
+- HOLD respected: no renders.
+- Signals research (3 web searches) → `signals/2026-11-12.md`: user-reported failure modes and fixes (browser loophole, feed reset, streaks), parent guidance from article/study coverage (precise co-created rules, routines over caps, modeling, rewards/punishments not helping), and 4 new script angles. No study numbers put into content; sources listed.
+- Aura terms: two third-party directories show $65 first-purchase CPA, 60-day cookie (one says up to $125 tiered via Impact). Not confirmed by Aura.
+- Limits: no Reddit threads for the parent query (articles only); mirrors used for Reddit; vendor blogs discounted.
+- Next: draft affiliate application answers (affiliate-drafts/), no submission.
