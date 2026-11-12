@@ -5800,6 +5800,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-victor-brandolin-2",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to Victor Brandolin: talk on Instagram",
+      "summary": "Waiting on another end-Nov job; asked to talk on Instagram",
+      "payload": {
+        "to": "victorbrandolin@gmail.com",
+        "subject": "Re: São Paulo street editorial - styling collaboration",
+        "body": "Hi Victor,\n\nSure, I'm @madebyaidan on Instagram (https://instagram.com/madebyaidan). Send me a message there and we can talk. Let me know once you hear back about the other job.\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-12T22:09:35Z",
+      "expires": "2026-11-15T22:09:35Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
