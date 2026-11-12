@@ -5746,6 +5746,22 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "other:message-iproyal-live-chat-replace-the-ri-202611121552",
+      "kind": "other",
+      "source": "codex:aidantorrence",
+      "title": "Message IPRoyal live chat: replace the Rio proxy address (order #88322359)",
+      "summary": "Instagram refuses logins from 200.234.155.196. IPRoyal has no replace button; support swaps within 24h of purchase (bought 10:24 today). I send this in their dashboard chat from your account. No payment.",
+      "payload": {
+        "where": "IPRoyal dashboard live chat",
+        "message": "Hi, order #88322359 (ISP dedicated, Niteroi/Rio de Janeiro, bought today). The IP 200.234.155.196 is blocked by Instagram: logins are refused and the login page returned 429 from the first request. Please replace it with a different Brazil (Rio de Janeiro if possible) IP that works with Instagram. Thanks."
+      },
+      "created": "2026-11-12T15:52:10Z",
+      "expires": "2026-11-13T11:52:10Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
