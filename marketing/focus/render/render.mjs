@@ -41,6 +41,8 @@ html,body{width:${W}px;height:${H}px;background:#0e0f12;color:#f4f4f2;font-famil
 .kw small{display:block;font-size:44px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:#f4f4f2;margin-bottom:4px}
 .kw strong{display:block;font-size:150px;font-weight:900;letter-spacing:10px;line-height:1}
 .nw{white-space:nowrap}
+.hook,.title,.cta{text-wrap:balance}
+.body,.sub{text-wrap:pretty}
 .sub{margin-top:48px;font-size:46px;color:#a9aab2;line-height:1.35}
 .handle{position:absolute;right:96px;top:150px;font-size:36px;color:#ffffff66;letter-spacing:2px}
 `;

@@ -1,6 +1,6 @@
 # 004 — The friction trick: make your worst app 4 taps harder
 
-- **Status:** draft (ready for review)
+- **Status:** rendered → `videos/004-friction-trick.mp4` (spec `render/specs/004.json`)
 - **Format:** 9:16, ~25 s, text + home-screen mock (drawn icons, no real app logos)
 - **Comment keyword:** `TAPS`
 - **Matched offer:** Brick (physical app-blocking device, ~$59 — affiliate rate unverified); fallback: free checklist only

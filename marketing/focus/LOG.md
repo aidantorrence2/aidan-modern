@@ -54,3 +54,9 @@
 - Verified in Chromium at 390x844: KIDS page renders; submit hides the form and shows 6 steps; no-keyword fallback lists all 9 checklists; offer hidden without link; with a test link (scratch copy only) the offer card shows with `rel="sponsored"` and the disclosure; no JS errors. Fixed two bugs found while checking: form stayed visible after submit (CSS overrode `hidden`), and the "copy by email" promise showed with no email tool connected.
 - Not verified: actual email delivery (no provider yet); page not deployed.
 - Added owner-todo #4 (host the page). Next: render 004, then post packages in `queue/`.
+
+## 2026-11-12 — run 9
+- Rendered `videos/004-friction-trick.mp4` + `.txt` caption (spec `render/specs/004.json`, purple accent): 23.6 s, 1.79 MB.
+- Frame check found four one-word last lines (hook, steps 2 and 4, CTA sub). Fixed at renderer level: `text-wrap: balance` on hook/title/CTA and `pretty` on body/sub (benefits all future renders; 001–003 and 008 not re-rendered — their frames were already checked OK). One remaining orphan ("bump.") fixed by rewording the step-2 body. Re-checked frames: clean.
+- Rendered: 001–004, 008. Unrendered buffer now 4 (005–007, 009) → below target.
+- Next: write script 010, then render 005.
