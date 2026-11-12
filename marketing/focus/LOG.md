@@ -34,3 +34,8 @@
 - Frame check (hook, steps 1/2/4, CTA): text fits, no bad wraps or edge crowding.
 - Changed the CTA from "my exact blocklist" to "a ready-made blocklist" (avoids implying a personal persona/usage claim); script updated to match.
 - Unrendered buffer now 4 (004–007). Next: write script 008, then render 004.
+
+## 2026-11-12 — run 6
+- Wrote scripts 008 (kid's first phone setup, keyword FIRST → Aura/Qustodio; parents are the highest-value audience) and 009 (notification cleanup, keyword QUIET → lead magnet). Unrendered buffer now 6.
+- Added both to the keyword→offer map. Offer terms still unverified.
+- Next: render 004 (TAPS), or 008 early for the higher-value parent offer.

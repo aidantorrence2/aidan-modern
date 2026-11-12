@@ -3,7 +3,7 @@
 Niche: app blocking / phone & computer distraction. Short vertical videos → comment keyword → DM → email opt-in → matched affiliate offer.
 Channels planned: Facebook Page/Group, TikTok, X. Branch: `claude/focus-pipeline`, dir `marketing/focus/`.
 
-_Last updated: 2026-11-11 (run 5)_
+_Last updated: 2026-11-12 (run 6)_
 
 ## Standing rules (copied from the owner's brief — survive context resets)
 **Where state lives:** repo `aidantorrence2/aidan-modern`, branch `claude/focus-pipeline` (pull it first every run), dir `marketing/focus/`. STATE.md = source of truth (read first). LOG.md = one dated entry per run. `scripts/` = one markdown per video (hook, steps, caption, keyword, offer). `videos/` = 1080x1920 mp4 < 8 MB + caption file. `queue/` = ready-to-post packages per platform. `owner-todo.md` = owner-only actions with exact steps and prefilled text. Repo is PUBLIC: never commit credentials, affiliate IDs or ID-bearing links, personal details or revenue. Never touch files outside `marketing/focus/`, never push another branch, no PR. Repo CLAUDE.md reel naming does not apply here; no `next build` needed.
@@ -17,7 +17,7 @@ _Last updated: 2026-11-11 (run 5)_
 | # | Stage | Status | Notes |
 |---|-------|--------|-------|
 | 1 | Signals | not started | No signals research committed yet; scripts 001–005 are based on general niche knowledge, not verified hooks. |
-| 2 | Scripts | 7 drafts (4 unrendered) | `scripts/001`–`007`. Keywords: NIGHT, KIDS, FOCUS, TAPS, FREE, STUDY, MORNING. Buffer OK (≥5). |
+| 2 | Scripts | 9 drafts (6 unrendered) | `scripts/001`–`009`. Keywords: NIGHT, KIDS, FOCUS, TAPS, FREE, STUDY, MORNING, FIRST, QUIET. Buffer OK (≥5). |
 | 3 | Review | not started | Self-review checklist: claims, disclosure, no logos/trademarks on screen. |
 | 4 | Render | **3 of 7** | Renderer: `node render/render.mjs render/specs/NNN.json` (HTML cards → PNG → ffmpeg push-in + crossfades, silent AAC track). 001 done (24 s, 2.0 MB); 002 done (26.6 s, 2.1 MB); 003 done (24 s, 1.7 MB). Style is text-only cards; no music (add in-app). |
 | 5 | Publish | **blocked (owner)** | No Facebook / TikTok / X credential or connector in session. See owner-todo #1. |
@@ -35,9 +35,11 @@ _Last updated: 2026-11-11 (run 5)_
 | FREE | 005 | Lead magnet only (Freedom secondary) | n/a |
 | STUDY | 006 | Freedom (secondary: lock box) | unverified |
 | MORNING | 007 | Freedom | unverified |
+| FIRST | 008 | Aura / Qustodio | unverified |
+| QUIET | 009 | Lead magnet (Freedom secondary) | n/a |
 
 ## Next up (priority order)
-1. Buffer is 4 → write script 008 next run, then render 004; continue 004–007 one per run: write `render/specs/NNN.json` from the script, render, inspect frames.
+1. Render 004 next, then 005–009 one per run (consider 008 early — parents are the highest-value offer): write `render/specs/NNN.json` from the script, render, inspect frames.
 2. Possible renderer upgrade: simple drawn icons/mock UI per step (scripts mention mock UI) — currently text-only.
 3. Capture landing page (static HTML in `marketing/focus/landing/`) + keyword map.
 4. Post packages in `queue/` per platform.
