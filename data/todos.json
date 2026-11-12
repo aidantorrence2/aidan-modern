@@ -1,6 +1,6 @@
 {
- "date": "2026-11-11",
- "generated": "2026-11-11T08:50:00Z",
+ "date": "2026-11-12",
+ "generated": "2026-11-12T08:50:00Z",
  "items": [
   {
    "id": "publication-1",
@@ -683,12 +683,12 @@
    "source": "português"
   },
   {
-   "id": "sao-paulo-4",
+   "id": "sao-paulo-4b",
    "task": "sao-paulo",
    "rank": 5,
    "title": "Make the São Paulo week produce one strong shoot",
    "text": "The next milestone for São Paulo is {{a confirmed shoot date inside 24 to 30 November}}.",
-   "note": "Mafê Domingues is the open conversation there.",
+   "note": "Several São Paulo contacts have now replied with interest and are asking for dates and details. One of them needs a date.",
    "minutes": 0,
    "source": "photography · São Paulo"
   },
