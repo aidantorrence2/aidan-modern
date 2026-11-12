@@ -110,3 +110,10 @@
 - Regenerated post packages: 9 in queue/.
 - Rendered: 001–006, 008, 010, 012. Unrendered: 007, 009, 011, 013 (4 → below target).
 - Next: write script 014, then render 007.
+
+## 2026-11-12 — run 17
+- Wrote scripts 014 (weekend-only social apps, keyword WEEKEND → Freedom) and 015 (Wi-Fi bedtime for kids' devices, keyword WIFI → Qustodio/Aura). Unrendered buffer now 6 (007, 009, 011, 013–015).
+- Added both to the landing page and keyword map. Verified in Chromium: both pages render with 5 steps; fallback lists all 15; no JS errors.
+- 015 explicitly says router schedules don't cover mobile data (avoids an overclaim), and avoids router brand names.
+- Observation: 17 runs in, nothing has been posted — every remaining stage depends on owner-todo #1 (accounts). Content is ahead of distribution; after the buffer is used, runs may shift to signals research (hooks are still unvalidated guesses) rather than piling up more videos.
+- Next: render 015 (parent offer) or 007.

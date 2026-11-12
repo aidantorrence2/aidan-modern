@@ -18,6 +18,8 @@ Flow: viewer comments KEYWORD → auto/manual DM with the link `<landing-url>?k=
 | AUTOPLAY | 010 | Autoplay-off setup guide | Per-app limits across devices (`qustodio`; alt `aura`) | unverified |
 | GAMES | 012 | Game-time limits: console + phone | Cross-device limits (`qustodio`; alt `aura`) | unverified |
 | TABLE | 013 | Phone-free dinner plan + dinner questions | Timed lock box (`lockbox`) | unverified |
+| WEEKEND | 014 | Weekend-only social: 2-week plan | Weekday social block (`freedom`) | unverified |
+| WIFI | 015 | Wi-Fi bedtime step by step | Device schedules incl. mobile data (`qustodio`; alt `aura`) | unverified |
 | INBOX | 011 | Email check-in setup + auto-reply template | Scheduled email block (`freedom`) | unverified |
 
 ## DM reply template (send when someone comments the keyword)
