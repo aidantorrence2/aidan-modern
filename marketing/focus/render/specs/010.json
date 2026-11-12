@@ -1,0 +1,14 @@
+{
+  "out": "010-autoplay-off",
+  "script": "scripts/010-autoplay-off.md",
+  "accent": "#6ee7f0",
+  "scenes": [
+    { "type": "hook", "dur": 3.6, "kicker": "For parents", "text": "Your kid didn't choose to watch 2 hours. Autoplay chose for them." },
+    { "type": "step", "n": 1, "dur": 4.6, "title": "Turn off autoplay.", "body": "In every video app your kid uses — **usually under Settings → Playback.**" },
+    { "type": "step", "n": 2, "dur": 4.2, "title": "Use the kids' version.", "body": "**Fewer rabbit holes,** where one exists." },
+    { "type": "step", "n": 3, "dur": 4.4, "title": "Limit video apps, not the device.", "body": "A daily cap **just for video apps** — homework apps stay open." },
+    { "type": "step", "n": 4, "dur": 4.8, "title": "End on a clear signal.", "body": "**\"Two episodes, then the tablet goes on the shelf\"** beats \"a little longer.\"" },
+    { "type": "cta", "dur": 4.4, "text": "Want the step-by-step for each app?", "keyword": "AUTOPLAY", "sub": "Plus the tool that sets limits across all their devices." }
+  ],
+  "caption": "Autoplay is doing the deciding. Take it back in 4 steps 👇\nComment AUTOPLAY for the free setup guide.\n\n#parenting #screentime #kidsandtech #parentingtips #momtips #dadtips"
+}

@@ -63,6 +63,13 @@ const pngs = [];
 for (const [i, s] of spec.scenes.entries()) {
   await page.setContent(sceneHTML(s, i, spec.scenes.length), { waitUntil: 'load' });
   await page.evaluate(() => document.fonts.ready);
+  // Shrink the comment keyword until its box fits inside the side padding (long keywords overflowed).
+  await page.evaluate((maxW) => {
+    const el = document.querySelector('.kw strong'), box = document.querySelector('.kw');
+    if (!el) return;
+    let fs = parseFloat(getComputedStyle(el).fontSize);
+    while (box.getBoundingClientRect().width > maxW && fs > 60) { fs -= 4; el.style.fontSize = fs + 'px'; el.style.letterSpacing = Math.max(2, fs / 15) + 'px'; }
+  }, W - 96 * 2);
   const p = join(WORK, `s${String(i).padStart(2, '0')}.png`);
   await page.screenshot({ path: p });
   pngs.push(p);

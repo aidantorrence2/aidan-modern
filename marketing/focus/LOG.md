@@ -66,3 +66,10 @@
 - Added both keywords to the landing page (`K` object) and `keyword-map.md`, so the funnel covers every script. Verified in Chromium: AUTOPLAY, INBOX, QUIET pages render with 5 steps each; no-keyword fallback lists all 11; no JS errors.
 - Rule added to STATE: every new script also needs a landing-page entry + keyword-map row.
 - Next: render 010 (parent offer) or 005.
+
+## 2026-11-12 — run 11
+- Rendered `videos/010-autoplay-off.mp4` + `.txt` caption (spec `render/specs/010.json`, cyan accent): 24.0 s, 1.96 MB. Chose 010 for its higher-value parent offer.
+- Frame check caught a real defect: the 8-letter keyword "AUTOPLAY" ran off the right edge of the CTA card. Fixed in the renderer: the keyword now shrinks until its box fits inside the side padding (protects MORNING and future long keywords). Also reworded step 2 to remove a one-word last line. Re-checked CTA and step-2 frames: clean.
+- Earlier renders (001–004, 008) use keywords of ≤5 letters and were checked fine; not re-rendered.
+- Rendered: 001–004, 008, 010. Unrendered: 005–007, 009, 011 (5).
+- Next: render 005 (or write 012 if the buffer drops below 5).

@@ -1,6 +1,6 @@
 # 010 — The one setting that keeps kids watching "just one more"
 
-- **Status:** draft (ready for review)
+- **Status:** rendered → `videos/010-autoplay-off.mp4` (spec `render/specs/010.json`)
 - **Format:** 9:16, ~24 s, text cards (renderer default)
 - **Comment keyword:** `AUTOPLAY`
 - **Matched offer:** Qustodio (primary — per-app time limits across devices), Aura (alternate) — terms unverified
