@@ -5780,6 +5780,26 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-giovanna-vacani",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to Giovanna Vacani: resend SP pitch",
+      "summary": "She never got the first email and asked to have it resent",
+      "payload": {
+        "to": "giovanna.vacani@gmail.com",
+        "subject": "Re: São Paulo street editorial - styling collaboration",
+        "body": "Hi Giovanna,\n\nSure, here it is again.\n\nI'm Aidan Torrence, a fashion photographer working in São Paulo. I'm putting together a street fashion editorial I'm planning to shoot in the second half of November. I've attached the moodboard.\n\nI'm looking for a stylist to style the looks and pull pieces for the shoot, and would love to work with you on it. It's a creative collaboration with no fee on either side; you get full credit and the final images. Would you be interested? If so, which days work for you?\n\nMy work: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nBest,\nAidan Torrence\n",
+        "attachments": [
+          "Sao-Paulo-Street-Moodboard.pdf"
+        ]
+      },
+      "created": "2026-11-12T18:17:44Z",
+      "expires": "2026-11-15T18:17:44Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
