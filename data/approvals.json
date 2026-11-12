@@ -5762,6 +5762,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-isa-corazza-2",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to Isa Corazza: available 24th or 25th AM",
+      "summary": "Isa can only do 24 Nov or morning of 25 Nov (flying out 25th night until 1 Dec)",
+      "payload": {
+        "to": "isabella.corazza12@gmail.com",
+        "subject": "Re: São Paulo street editorial - styling collaboration",
+        "body": "Hi Isa,\n\nThanks for letting me know. Noted that the 24th, or the 25th finishing by early afternoon, works on your side. I'll get back to you once the rest of the team's availability is in.\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-12T16:10:26Z",
+      "expires": "2026-11-15T16:10:26Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
