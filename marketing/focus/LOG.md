@@ -134,3 +134,10 @@
 - Aura terms: two third-party directories show $65 first-purchase CPA, 60-day cookie (one says up to $125 tiered via Impact). Not confirmed by Aura.
 - Limits: no Reddit threads for the parent query (articles only); mirrors used for Reddit; vendor blogs discounted.
 - Next: draft affiliate application answers (affiliate-drafts/), no submission.
+
+## 2026-11-12 — run 20
+- HOLD respected: no renders.
+- Wrote `affiliate-drafts/`: README with shared application answers (channel description, audience, promotion method, disclosure) and per-program notes for Aura, Qustodio, Freedom, Brick, Amazon Associates. Placeholders only for owner identity/URLs; no IDs or personal data. Nothing submitted.
+- Flagged: Amazon's own disclosure wording and its 3-sales-in-180-days rule; Brick program existence unverified.
+- Updated STATE (Monetize = drafts ready) and owner-todo #2.
+- Status: every remaining stage now needs the owner (review → hold lift, accounts, email tool, hosting, applications). Future runs should log "idle, waiting on owner" and stop rather than invent work.

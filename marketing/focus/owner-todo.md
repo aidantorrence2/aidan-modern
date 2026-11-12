@@ -14,7 +14,7 @@ The automated runs can only post through a credential/connector that exists in t
 - Then post from `marketing/focus/queue/`: one ready package per video (caption per platform, first comment, DM reply). `queue/README.md` has a suggested first-week order and a posting checklist. Or connect the platform to Claude so runs can post.
 
 ## 2. Affiliate programs (needs your identity, tax and payout details)
-Runs will draft application answers in `marketing/focus/affiliate-drafts/`; you submit. Programs: Aura, Qustodio, Freedom, Brick, Amazon Associates (for the lock box). Keep affiliate IDs and links out of this public repo.
+Drafts are ready in `marketing/focus/affiliate-drafts/` (start with README.md); you fill in identity/tax/payout and submit. Apply once the accounts have 3–5 posts. Programs: Aura, Qustodio, Freedom, Brick, Amazon Associates (for the lock box). Keep affiliate IDs and links out of this public repo.
 
 ## 3. Pick an email tool for the opt-in
 Any free tier works (e.g. ConvertKit/Kit, MailerLite, Beehiiv). The landing page will be built to accept a form action URL you paste in.
