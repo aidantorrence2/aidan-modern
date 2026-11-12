@@ -7,7 +7,7 @@ The automated runs can only post through a credential/connector that exists in t
 - **Facebook Page** — Create at facebook.com/pages/create. Suggested name: "Unplugged Daily" (check availability). Category: "Education". Bio (prefilled):
   > Short, practical ways to spend less time on your phone and get your focus back. New tip every day.
 - **TikTok** and **X** — same name/handle if available, same bio.
-- Then either post the packages manually from `queue/`, or connect the platform to Claude so runs can post.
+- Then post from `marketing/focus/queue/`: one ready package per video (caption per platform, first comment, DM reply). `queue/README.md` has a suggested first-week order and a posting checklist. Or connect the platform to Claude so runs can post.
 
 ## 2. Affiliate programs (needs your identity, tax and payout details)
 Runs will draft application answers in `marketing/focus/affiliate-drafts/`; you submit. Programs: Aura, Qustodio, Freedom, Brick, Amazon Associates (for the lock box). Keep affiliate IDs and links out of this public repo.

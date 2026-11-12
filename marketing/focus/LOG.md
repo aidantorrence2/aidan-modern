@@ -73,3 +73,11 @@
 - Earlier renders (001–004, 008) use keywords of ≤5 letters and were checked fine; not re-rendered.
 - Rendered: 001–004, 008, 010. Unrendered: 005–007, 009, 011 (5).
 - Next: render 005 (or write 012 if the buffer drops below 5).
+
+## 2026-11-12 — run 12
+- Chose post packages over a 7th render: 6 videos exist, nothing was ready to post, and publishing is the bottleneck.
+- Added `queue/make-packages.mjs`: for every rendered spec it writes `queue/<video>.md` with Facebook Reel caption + pinned first comment, TikTok caption + first comment, X post (length-checked ≤280; all 6 are 115–146) + self-reply carrying the link, and the DM reply. Also writes `queue/README.md` (index, first-week order, posting checklist).
+- Generated 6 packages (001–004, 008, 010). Links use the `{LANDING_URL}` placeholder; every place a link appears carries the affiliate disclosure. Checked: no affiliate IDs/tracking params in queue/.
+- Updated owner-todo #1 to point at the queue, and STATE (Publish = packages ready, blocked on accounts).
+- Not verified: platform caption/hashtag limits beyond X's 280 (FB/TikTok captions are short, well under their limits).
+- Next: render 005, then regenerate packages.
