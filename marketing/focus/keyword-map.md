@@ -15,6 +15,8 @@ Flow: viewer comments KEYWORD → auto/manual DM with the link `<landing-url>?k=
 | MORNING | 007 | 7-day morning plan | Scheduled morning block (`freedom`) | unverified |
 | FIRST | 008 | First-phone checklist + agreement template | Parental controls (`aura`) | unverified |
 | QUIET | 009 | Notification cleanup checklist | none (trust builder) | n/a |
+| AUTOPLAY | 010 | Autoplay-off setup guide | Per-app limits across devices (`qustodio`; alt `aura`) | unverified |
+| INBOX | 011 | Email check-in setup + auto-reply template | Scheduled email block (`freedom`) | unverified |
 
 ## DM reply template (send when someone comments the keyword)
 > Here you go 👉 {landing-url}?k={KEYWORD}

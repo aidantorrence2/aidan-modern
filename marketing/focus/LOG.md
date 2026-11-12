@@ -60,3 +60,9 @@
 - Frame check found four one-word last lines (hook, steps 2 and 4, CTA sub). Fixed at renderer level: `text-wrap: balance` on hook/title/CTA and `pretty` on body/sub (benefits all future renders; 001–003 and 008 not re-rendered — their frames were already checked OK). One remaining orphan ("bump.") fixed by rewording the step-2 body. Re-checked frames: clean.
 - Rendered: 001–004, 008. Unrendered buffer now 4 (005–007, 009) → below target.
 - Next: write script 010, then render 005.
+
+## 2026-11-12 — run 10
+- Wrote scripts 010 (autoplay off for kids, keyword AUTOPLAY → Qustodio/Aura) and 011 (email twice a day, keyword INBOX → Freedom). Unrendered buffer now 6 (005–007, 009–011).
+- Added both keywords to the landing page (`K` object) and `keyword-map.md`, so the funnel covers every script. Verified in Chromium: AUTOPLAY, INBOX, QUIET pages render with 5 steps each; no-keyword fallback lists all 11; no JS errors.
+- Rule added to STATE: every new script also needs a landing-page entry + keyword-map row.
+- Next: render 010 (parent offer) or 005.
