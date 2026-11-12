@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your free checklist</title>
+<meta name="robots" content="noindex">
+<style>
+:root{--bg:#0e0f12;--fg:#f4f4f2;--mut:#a9aab2;--card:#17181d;--line:#ffffff1f;--acc:#ffcc33}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--fg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;min-height:100vh}
+main{max-width:560px;margin:0 auto;padding:48px 20px 64px}
+.kicker{color:var(--acc);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:13px;margin-bottom:14px}
+h1{font-size:34px;line-height:1.12;letter-spacing:-.02em;font-weight:800;margin-bottom:14px}
+.lead{color:var(--mut);font-size:17px;margin-bottom:28px}
+form{display:flex;flex-direction:column;gap:12px;margin-bottom:12px}
+input[type=email]{width:100%;padding:16px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--fg);font-size:17px}
+button{padding:16px;border:0;border-radius:12px;background:var(--acc);color:#111;font-weight:800;font-size:17px;cursor:pointer}
+.fine{color:var(--mut);font-size:13px}
+.list{margin-top:8px;display:none}
+.list.on{display:block}
+.list h2{font-size:22px;margin:8px 0 16px}
+.list ol{padding-left:0;list-style:none;counter-reset:s}
+.list li{counter-increment:s;position:relative;padding:14px 14px 14px 56px;margin-bottom:10px;background:var(--card);border:1px solid var(--line);border-radius:12px}
+.list li::before{content:counter(s);position:absolute;left:14px;top:12px;width:30px;height:30px;border-radius:9px;background:var(--acc);color:#111;font-weight:800;display:flex;align-items:center;justify-content:center}
+.offer{margin-top:24px;padding:18px;border:1px solid var(--line);border-radius:12px}
+.offer h3{font-size:17px;margin-bottom:6px}
+.offer p{color:var(--mut);font-size:15px;margin-bottom:12px}
+.offer a{display:inline-block;padding:12px 16px;border-radius:10px;background:var(--fg);color:#111;font-weight:700;text-decoration:none}
+.disc{margin-top:10px;font-size:12px;color:var(--mut)}
+footer{margin-top:40px;font-size:12px;color:var(--mut)}
+</style>
+</head>
+<body>
+<main>
+  <div class="kicker" id="kicker">Free checklist</div>
+  <h1 id="title">Get your free checklist</h1>
+  <p class="lead" id="lead">Short, practical steps to spend less time on your phone.</p>
+
+  <form id="f">
+    <input type="email" name="email" required placeholder="Your email" autocomplete="email">
+    <input type="hidden" name="keyword" id="kw">
+    <button type="submit">Send it to me</button>
+  </form>
+  <p class="fine" id="fine">You'll see the checklist right away and get a copy by email. Unsubscribe anytime.</p>
+
+  <section class="list" id="list">
+    <h2 id="listTitle"></h2>
+    <ol id="steps"></ol>
+    <div class="offer" id="offer" hidden>
+      <h3 id="offerTitle"></h3>
+      <p id="offerBody"></p>
+      <a id="offerLink" href="#" rel="sponsored noopener" target="_blank">See it</a>
+      <p class="disc">Affiliate link — I may earn a commission at no extra cost to you.</p>
+    </div>
+  </section>
+
+  <footer>Not medical advice. Tips are general habits that work for some people; adjust to what fits you.</footer>
+</main>
+
+<script>
+// ---- Configuration the owner fills in (never commit real affiliate IDs to the public repo;
+// set these at deploy time or in a private copy). Empty = feature hidden. ----
+const FORM_ACTION = '';           // email provider's form POST URL (Kit / MailerLite / Beehiiv)
+const OFFER_LINKS = {             // affiliate links per offer key
+  aura: '', qustodio: '', freedom: '', brick: '', lockbox: ''
+};
+
+// ---- Keyword map: keep in sync with ../keyword-map.md ----
+const K = {
+  NIGHT:{acc:'#ffcc33',kicker:'7-day bedtime reset',title:'The 7-day bedtime phone reset',lead:'Four small changes that make late-night scrolling harder.',
+    steps:['Pick one charging spot outside the bedroom. Not the nightstand.','Set a fixed cutoff time and turn on your phone\'s Bedtime / Downtime mode.','Switch the screen to grayscale after the cutoff.','Use a real alarm clock so the phone has no reason to be in the room.','If you keep breaking the rule, add a physical barrier (a timed lock box).','Each morning, note one line: did the phone stay out? Seven days, seven lines.'],
+    offer:{key:'lockbox',title:'Timed lock box',body:'A box with a timer lid: once it\'s locked, the phone stays in until the timer ends.'}},
+  KIDS:{acc:'#5ee0c1',kicker:'For parents',title:'Kid\'s phone setup: step by step',lead:'The settings to check tonight, plus where built-in controls fall short.',
+    steps:['Downtime: schedule hours when only calls and messages work.','App limits by category: cap social and games, leave school apps alone.','Content & download rules: block explicit content, require approval for new apps.','Keep the passcode yours, and different from your own phone\'s.','Talk first: explain what you\'re setting up and why.','Check the gaps: built-in tools differ across iPhone, Android and laptops. If your family mixes devices, a cross-device tool fills those gaps.'],
+    offer:{key:'aura',title:'Cross-device parental controls',body:'One dashboard for limits and filters across your family\'s phones and computers.'}},
+  FIRST:{acc:'#ff9f6e',kicker:'First phone?',title:'First-phone checklist + agreement',lead:'Set these up before the phone leaves your hands.',
+    steps:['Set the phone up as a child account, not with your own login.','Decide where it charges at night and from what time.','Start with a short app list; add apps one at a time, with approval.','Write a one-page agreement together: what\'s okay, what isn\'t, what happens if it\'s broken.','Agreement template: "I will… / I won\'t… / If I break this…" — both sign it and stick it on the fridge.','Review the agreement after the first month, together.'],
+    offer:{key:'aura',title:'Parental controls that cover every device',body:'Useful once the first phone joins a tablet, a laptop and a game console.'}},
+  FOCUS:{acc:'#7aa7ff',kicker:'Work-hours fix',title:'A ready-made blocklist',lead:'Block the usual exit doors during work hours.',
+    steps:['Start list: video sites, social feeds, news homepages, shopping sites, your personal email.','Add your own top 3 — the sites you open without thinking.','Schedule the block (e.g. 9–12 and 1–5 on weekdays) instead of blocking "when distracted".','Block on laptop and phone at the same time.','Turn on a locked mode so a session can\'t be cancelled mid-block.'],
+    offer:{key:'freedom',title:'Cross-device site & app blocker',body:'Syncs one blocklist and schedule across your laptop and phone.'}},
+  TAPS:{acc:'#c79bff',kicker:'Friction checklist',title:'The friction checklist',lead:'Make your worst app a few taps harder to open.',
+    steps:['Move the app off the home screen, into a folder on the last page.','Log out after every use.','Delete the app and use the browser version instead.','Turn off its notifications and badges.','Add a physical step: something you have to walk to before the app unlocks.'],
+    offer:{key:'brick',title:'Physical app-blocking device',body:'You tap your phone on it to lock or unlock chosen apps — leave it in another room.'}},
+  FREE:{acc:'#9be37a',kicker:'Free method',title:'Screen Time lock: iPhone & Android',lead:'Use the blocker already on your phone, with someone else holding the passcode.',
+    steps:['iPhone: Settings → Screen Time → App Limits. Android: Settings → Digital Wellbeing → Dashboard. (Menu names vary by version.)','Set limits for your two worst apps.','Turn on "Block at End of Limit" (iPhone) or the timer (Android).','Have a partner or friend type a passcode you never see.','Agree on one rule: they unlock it only for real reasons.'],
+    offer:{key:'freedom',title:'For your computer too',body:'Phone settings don\'t cover your laptop. A blocker that syncs both closes that gap.'}},
+  STUDY:{acc:'#ffd166',kicker:'Study setup',title:'The 50/10 study session planner',lead:'A simple session your phone can\'t interrupt.',
+    steps:['Before you start, write the one task you\'ll finish in this session.','Put the phone in another room (out of sight, not face-down).','Block your distracting sites on the laptop for 50 minutes.','Work 50, break 10. The phone is the break, not the interruption.','Repeat up to 3 times, then take a longer break.'],
+    offer:{key:'freedom',title:'Site & app blocker for study sessions',body:'Start a 50-minute block on your laptop and phone with one tap.'}},
+  MORNING:{acc:'#ffb4a2',kicker:'Morning plan',title:'7-day morning plan',lead:'Take back the first hour of your day.',
+    steps:['Use a real alarm clock.','Schedule a morning block for social and email until a set time.','Pick tomorrow\'s first thing tonight: water, a walk, 10 pages.','Check messages once, on purpose, then put the phone down.','Each day, note what time you first opened the phone. Watch it move later.'],
+    offer:{key:'freedom',title:'Scheduled morning block',body:'Keep feeds and email locked until the time you choose, every day.'}},
+  QUIET:{acc:'#8fd3ff',kicker:'5-minute cleanup',title:'Notification cleanup checklist',lead:'If it\'s not a person, it doesn\'t get to interrupt you.',
+    steps:['Open notification settings and scroll the whole list.','Keep only people: calls, messages, family.','Turn everything else off — including badges (the red dots).','Set a Focus / Do Not Disturb mode that allows only favourites.','Pick 2–3 times a day to check apps on purpose.'],
+    offer:null}
+};
+
+const q = new URLSearchParams(location.search);
+const key = (q.get('k') || q.get('keyword') || '').toUpperCase();
+const d = K[key];
+if (d) {
+  document.documentElement.style.setProperty('--acc', d.acc);
+  document.title = d.title;
+  kicker.textContent = d.kicker; title.textContent = d.title; lead.textContent = d.lead;
+  listTitle.textContent = d.title;
+  steps.innerHTML = d.steps.map(s => `<li>${s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}</li>`).join('');
+  if (d.offer && OFFER_LINKS[d.offer.key]) {
+    offerTitle.textContent = d.offer.title; offerBody.textContent = d.offer.body;
+    offerLink.href = OFFER_LINKS[d.offer.key]; offer.hidden = false;
+  }
+}
+kw.value = key;
+if (!FORM_ACTION) fine.textContent = 'You\'ll see the checklist right away.';
+f.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  if (FORM_ACTION) {
+    try { await fetch(FORM_ACTION, { method: 'POST', mode: 'no-cors', body: new FormData(f) }); } catch (_) {}
+  }
+  f.hidden = true; fine.textContent = FORM_ACTION ? 'Done — a copy is on its way to your inbox.' : 'Here it is.';
+  if (!d) { listTitle.textContent = 'Pick a checklist'; steps.innerHTML = Object.keys(K).map(k => `<li><a style="color:inherit" href="?k=${k}">${K[k].title}</a></li>`).join(''); }
+  list.classList.add('on');
+});
+</script>
+</body>
+</html>

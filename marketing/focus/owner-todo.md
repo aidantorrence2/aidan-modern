@@ -14,3 +14,11 @@ Runs will draft application answers in `marketing/focus/affiliate-drafts/`; you 
 
 ## 3. Pick an email tool for the opt-in
 Any free tier works (e.g. ConvertKit/Kit, MailerLite, Beehiiv). The landing page will be built to accept a form action URL you paste in.
+
+## 4. Host the opt-in landing page
+The page is a single static file: `marketing/focus/landing/index.html`. Any static host works (Netlify Drop, Cloudflare Pages, GitHub Pages from a separate repo, or a path on an existing site).
+1. Make a private copy of the file and fill in the two config blocks at the top of the `<script>`:
+   - `FORM_ACTION` = your email tool's form POST URL (from step 3).
+   - `OFFER_LINKS` = your affiliate links once approved (step 2). Leave any empty to hide that offer card.
+2. Upload it. The DM link pattern is `https://<your-host>/?k=NIGHT` (keywords in `marketing/focus/keyword-map.md`).
+3. Tell the pipeline the base URL (add it to STATE.md "Blocked on owner" → done) so post packages can use it. The URL itself is fine to commit; affiliate IDs are not.

@@ -45,3 +45,12 @@
 - Frame check: all cards fit; the CTA sub-line left "free." orphaned on its own line → reworded and re-rendered; final CTA frame checked clean.
 - Rendered so far: 001, 002, 003, 008. Unrendered buffer: 5 (004–007, 009).
 - Next: write 010 to keep the buffer above 5, then render 004.
+
+## 2026-11-12 — run 8
+- Chose capture over another render: 4 videos exist but no way to capture a lead yet.
+- Built `landing/index.html` (single static file, no dependencies): reads `?k=KEYWORD`, sets accent/title/pitch per keyword, email form, checklist revealed instantly on submit, footer "not medical advice". Content for all 9 keywords written (derived from the scripts).
+- Config is two blanks at the top of the script: `FORM_ACTION` (email tool) and `OFFER_LINKS` (affiliate links). Empty → page still delivers the checklist; offer cards stay hidden (no dead links). No IDs committed.
+- Wrote `keyword-map.md` (keyword → video → freebie → offer, DM reply templates, config notes).
+- Verified in Chromium at 390x844: KIDS page renders; submit hides the form and shows 6 steps; no-keyword fallback lists all 9 checklists; offer hidden without link; with a test link (scratch copy only) the offer card shows with `rel="sponsored"` and the disclosure; no JS errors. Fixed two bugs found while checking: form stayed visible after submit (CSS overrode `hidden`), and the "copy by email" promise showed with no email tool connected.
+- Not verified: actual email delivery (no provider yet); page not deployed.
+- Added owner-todo #4 (host the page). Next: render 004, then post packages in `queue/`.

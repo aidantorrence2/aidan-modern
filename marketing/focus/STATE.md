@@ -3,7 +3,7 @@
 Niche: app blocking / phone & computer distraction. Short vertical videos → comment keyword → DM → email opt-in → matched affiliate offer.
 Channels planned: Facebook Page/Group, TikTok, X. Branch: `claude/focus-pipeline`, dir `marketing/focus/`.
 
-_Last updated: 2026-11-12 (run 7)_
+_Last updated: 2026-11-12 (run 8)_
 
 ## Standing rules (copied from the owner's brief — survive context resets)
 **Where state lives:** repo `aidantorrence2/aidan-modern`, branch `claude/focus-pipeline` (pull it first every run), dir `marketing/focus/`. STATE.md = source of truth (read first). LOG.md = one dated entry per run. `scripts/` = one markdown per video (hook, steps, caption, keyword, offer). `videos/` = 1080x1920 mp4 < 8 MB + caption file. `queue/` = ready-to-post packages per platform. `owner-todo.md` = owner-only actions with exact steps and prefilled text. Repo is PUBLIC: never commit credentials, affiliate IDs or ID-bearing links, personal details or revenue. Never touch files outside `marketing/focus/`, never push another branch, no PR. Repo CLAUDE.md reel naming does not apply here; no `next build` needed.
@@ -21,11 +21,11 @@ _Last updated: 2026-11-12 (run 7)_
 | 3 | Review | not started | Self-review checklist: claims, disclosure, no logos/trademarks on screen. |
 | 4 | Render | **4 of 9** (001, 002, 003, 008) | Renderer: `node render/render.mjs render/specs/NNN.json` (HTML cards → PNG → ffmpeg push-in + crossfades, silent AAC track). 001 done (24 s, 2.0 MB); 002 done (26.6 s, 2.1 MB); 003 done (24 s, 1.7 MB); 008 done (24.4 s, 2.1 MB). Style is text-only cards; no music (add in-app). |
 | 5 | Publish | **blocked (owner)** | No Facebook / TikTok / X credential or connector in session. See owner-todo #1. |
-| 6 | Capture | not started | Needs: landing page (opt-in) + keyword→offer map + email provider (owner). |
+| 6 | Capture | **page built, not deployed** | `landing/index.html` (static, one file): `?k=KEYWORD` shows the matching freebie; checklist revealed instantly on submit; emails only once `FORM_ACTION` is set; offer cards hidden until affiliate links set. `keyword-map.md` = map + DM templates. Needs owner: email tool + hosting (owner-todo #3, #4). |
 | 7 | Monetize | **blocked (owner)** | Affiliate programs need owner identity/tax/payout. Drafts not written yet. |
 | 8 | Measure | not started | Depends on publishing. |
 
-## Keyword → offer map (draft)
+## Keyword → offer map (draft — full version with freebies & DM templates in `keyword-map.md`)
 | Keyword | Script | Primary offer | Status of offer terms |
 |---------|--------|---------------|-----------------------|
 | NIGHT | 001 | Timed lock box (Kitchen Safe, Amazon) | unverified |
@@ -39,14 +39,14 @@ _Last updated: 2026-11-12 (run 7)_
 | QUIET | 009 | Lead magnet (Freedom secondary) | n/a |
 
 ## Next up (priority order)
-1. Buffer is exactly 5 → next run write 010, then render 004; continue 004–007, 009 one per run: write `render/specs/NNN.json` from the script, render, inspect frames.
+1. Render 004 next (buffer is 5; write 010 when it drops below 5); continue 004–007, 009 one per run: write `render/specs/NNN.json` from the script, render, inspect frames.
 2. Possible renderer upgrade: simple drawn icons/mock UI per step (scripts mention mock UI) — currently text-only.
-3. Capture landing page (static HTML in `marketing/focus/landing/`) + keyword map.
-4. Post packages in `queue/` per platform.
-5. Signals research refresh (Reddit / Shorts / ad libraries).
-6. Draft affiliate application answers (never submit).
+3. Post packages in `queue/` per platform (video + caption + hashtags + first comment + DM template) — now possible since the landing URL pattern exists.
+4. Signals research refresh (Reddit / Shorts / ad libraries).
+5. Draft affiliate application answers (never submit).
 
 ## Blocked on owner
 - Platform accounts/credentials for Facebook, TikTok, X (owner-todo #1).
 - Affiliate program signups (owner-todo #2).
 - Email provider choice for opt-in (owner-todo #3).
+- Hosting for the landing page (owner-todo #4).
