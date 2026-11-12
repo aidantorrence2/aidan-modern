@@ -102,3 +102,11 @@
 - Regenerated post packages: 8 in queue/.
 - Rendered: 001–005, 008, 010, 012. Unrendered: 006, 007, 009, 011, 013 (5).
 - Next: render 006.
+
+## 2026-11-12 — run 16
+- Rendered `videos/006-study-session-phone-jail.mp4` + `.txt` caption (spec `render/specs/006.json`, yellow accent): 23.8 s, 1.89 MB.
+- Frame check (hook, 4 steps, CTA): text fits, keyword inside margins, no one-word last lines.
+- Removed the persona claim "the blocker setup I use" from the CTA (video and script now say "the laptop + phone blocker setup").
+- Regenerated post packages: 9 in queue/.
+- Rendered: 001–006, 008, 010, 012. Unrendered: 007, 009, 011, 013 (4 → below target).
+- Next: write script 014, then render 007.

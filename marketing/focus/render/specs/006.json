@@ -1,0 +1,14 @@
+{
+  "out": "006-study-session-phone-jail",
+  "script": "scripts/006-study-session-phone-jail.md",
+  "accent": "#ffd166",
+  "scenes": [
+    { "type": "hook", "dur": 3.8, "kicker": "Study setup", "text": "Studying with your phone face-down on the desk still counts as studying with your phone." },
+    { "type": "step", "n": 1, "dur": 4.4, "title": "Phone goes in another room.", "body": "**Out of sight beats face-down.**" },
+    { "type": "step", "n": 2, "dur": 4.6, "title": "One timer, 50 minutes.", "body": "Write the **one task** you'll finish before it rings." },
+    { "type": "step", "n": 3, "dur": 4.4, "title": "Block the laptop too.", "body": "Your worst sites are blocked for the 50 minutes — **no \"quick check.\"**" },
+    { "type": "step", "n": 4, "dur": 4.4, "title": "10-minute break, then phone.", "body": "The phone is **the reward,** not the interruption." },
+    { "type": "cta", "dur": 4.2, "text": "Want the free session planner?", "keyword": "STUDY", "sub": "Plus the laptop + phone blocker setup." }
+  ],
+  "caption": "Face-down isn't far enough. A simple 50/10 study setup 👇\nComment STUDY for the free session planner.\n\n#studytips #studywithme #focus #productivity #studentlife #deepwork"
+}

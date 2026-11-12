@@ -1,6 +1,6 @@
 # 006 — The 50-minute study session your phone can't interrupt
 
-- **Status:** draft (ready for review)
+- **Status:** rendered → `videos/006-study-session-phone-jail.mp4` (spec `render/specs/006.json`)
 - **Format:** 9:16, ~25 s, text cards (renderer default)
 - **Comment keyword:** `STUDY`
 - **Matched offer:** Freedom (block apps/sites on phone + laptop during sessions) — secondary: timed lock box (Kitchen Safe, Amazon). Terms unverified.
@@ -15,7 +15,7 @@
 4. **10-minute break, then phone.** The phone is the reward, not the interruption.
 
 ## Closing card
-"Comment STUDY and I'll send the session planner + the blocker setup I use."
+"Comment STUDY for the free session planner + the laptop and phone blocker setup."
 
 ## Caption
 Face-down isn't far enough. A simple 50/10 study setup 👇
