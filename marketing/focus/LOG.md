@@ -117,3 +117,10 @@
 - 015 explicitly says router schedules don't cover mobile data (avoids an overclaim), and avoids router brand names.
 - Observation: 17 runs in, nothing has been posted — every remaining stage depends on owner-todo #1 (accounts). Content is ahead of distribution; after the buffer is used, runs may shift to signals research (hooks are still unvalidated guesses) rather than piling up more videos.
 - Next: render 015 (parent offer) or 007.
+
+## 2026-11-12 — run 18
+- Rendered `videos/015-wifi-bedtime.mp4` + `.txt` caption (spec `render/specs/015.json`, indigo accent): 24.0 s, 1.67 MB.
+- Frame check (hook, 4 steps, CTA): text fits, keyword inside margins, no orphan lines. Indigo keyword is slightly lower-contrast than other accents but legible.
+- Regenerated post packages: 10 in queue/.
+- Rendered: 10 of 15. Unrendered: 007, 009, 011, 013, 014 (5).
+- Next: render 007. Noted in STATE: prefer signals research over more scripts when the buffer next needs refilling, since nothing is posted yet.

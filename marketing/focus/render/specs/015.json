@@ -1,0 +1,14 @@
+{
+  "out": "015-wifi-bedtime",
+  "script": "scripts/015-wifi-bedtime.md",
+  "accent": "#818cf8",
+  "scenes": [
+    { "type": "hook", "dur": 3.6, "kicker": "For parents", "text": "The easiest bedtime rule in the house: the Wi-Fi goes to sleep too." },
+    { "type": "step", "n": 1, "dur": 4.6, "title": "Open your router's app.", "body": "Look for **\"schedule\" or \"parental controls.\"** Names vary." },
+    { "type": "step", "n": 2, "dur": 4.4, "title": "Pause only the kids' devices.", "body": "At bedtime — **not the whole house.**" },
+    { "type": "step", "n": 3, "dur": 4.8, "title": "Remember mobile data.", "body": "A router schedule **doesn't cover it.** Set bedtime on the phone itself too." },
+    { "type": "step", "n": 4, "dur": 4.4, "title": "Announce it once.", "body": "Then **the schedule does the reminding.**" },
+    { "type": "cta", "dur": 4.2, "text": "Want the step-by-step guide?", "keyword": "WIFI", "sub": "Including how to cover mobile data too." }
+  ],
+  "caption": "Bedtime for the Wi-Fi, not just the kids 🌙 4 steps 👇\nComment WIFI for the free guide.\n\n#parenting #screentime #parentingtips #kidsandtech #bedtime"
+}

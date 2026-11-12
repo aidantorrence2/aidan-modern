@@ -1,6 +1,6 @@
 # 015 — Give your home Wi-Fi a bedtime
 
-- **Status:** draft (ready for review)
+- **Status:** rendered → `videos/015-wifi-bedtime.mp4` (spec `render/specs/015.json`)
 - **Format:** 9:16, ~24 s, text cards (renderer default)
 - **Comment keyword:** `WIFI`
 - **Matched offer:** Qustodio / Aura (device-level schedules that also cover mobile data) — terms unverified
