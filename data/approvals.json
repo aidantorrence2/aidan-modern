@@ -5710,6 +5710,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-isa-corazza",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to Isa Corazza: SP dates and place",
+      "summary": "Interested; asks how long Aidan is in SP and his date/place expectations",
+      "payload": {
+        "to": "isabella.corazza12@gmail.com",
+        "subject": "Re: São Paulo street editorial - styling collaboration",
+        "body": "Hi Isa,\n\nNo problem at all, and glad you like the moodboard.\n\nI'm in São Paulo from 24 to 30 November, and the plan is to shoot the street editorial in the second half of November while I'm there. Which days that week work for you? For the place, I'm thinking city streets in São Paulo, and I'm open to any spots you have in mind.\n\nIt's a creative collaboration with no fee on either side; you'd get full credit and the final images, and the story will be pitched to magazines like Purple, Numéro Berlin and Vogue Portugal. You'd be styling the looks and pulling pieces for the shoot.\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-12T02:09:13Z",
+      "expires": "2026-11-15T02:09:13Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
