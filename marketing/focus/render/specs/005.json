@@ -1,0 +1,14 @@
+{
+  "out": "005-free-screen-time-lock",
+  "script": "scripts/005-free-screen-time-lock.md",
+  "accent": "#9be37a",
+  "scenes": [
+    { "type": "hook", "dur": 3.6, "kicker": "Free method", "text": "The free app blocker already on your phone — that nobody uses right." },
+    { "type": "step", "n": 1, "dur": 4.6, "title": "Set limits on your 2 worst apps.", "body": "**Screen Time** on iPhone, **Digital Wellbeing** on Android." },
+    { "type": "step", "n": 2, "dur": 4.2, "title": "Block at the end of the limit.", "body": "So the limit **actually stops you,** not just reminds you." },
+    { "type": "step", "n": 3, "dur": 4.6, "title": "Hand the passcode to someone else.", "body": "Partner, friend, roommate. **They type it — you never see it.**" },
+    { "type": "step", "n": 4, "dur": 4.6, "title": "Agree on one rule.", "body": "They unlock it **only for real reasons** — not \"just 5 more minutes.\"" },
+    { "type": "cta", "dur": 4.2, "text": "Want the step-by-step for your phone?", "keyword": "FREE", "sub": "iPhone and Android versions." }
+  ],
+  "caption": "It's free, it's already on your phone, and it works best when you can't override it 👇\nComment FREE for the iPhone + Android guide.\n\n#screentime #iphonetips #androidtips #digitalminimalism #focus"
+}

@@ -1,6 +1,6 @@
 # 005 — The free Screen Time trick: let someone else hold the passcode
 
-- **Status:** draft (ready for review)
+- **Status:** rendered → `videos/005-free-screen-time-lock.mp4` (spec `render/specs/005.json`)
 - **Format:** 9:16, ~25 s, text + drawn settings mock
 - **Comment keyword:** `FREE`
 - **Matched offer:** lead magnet (free guide) — trust-builder video; landing page suggests Freedom for computers as a secondary option
@@ -18,8 +18,8 @@
 "Comment FREE for the step-by-step for iPhone and Android."
 
 ## Caption
-It's free, it's already on your phone, and it actually works when you can't override it 👇
-Comment FREE for the guide.
+It's free, it's already on your phone, and it works best when you can't override it 👇
+Comment FREE for the iPhone + Android guide.
 #screentime #iphonetips #androidtips #digitalminimalism #focus
 
 ## Disclosure

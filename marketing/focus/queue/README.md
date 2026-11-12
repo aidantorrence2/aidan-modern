@@ -10,6 +10,7 @@ Placeholder `{LANDING_URL}` = wherever the owner hosts `landing/index.html`. Unt
 | 002-kids-phone-settings | KIDS | 2.08 MB | 116/280 | ready |
 | 003-block-sites-on-computer | FOCUS | 1.70 MB | 133/280 | ready |
 | 004-friction-trick | TAPS | 1.79 MB | 115/280 | ready |
+| 005-free-screen-time-lock | FREE | 1.94 MB | 137/280 | ready |
 | 008-kids-first-phone | FIRST | 2.10 MB | 140/280 | ready |
 | 010-autoplay-off | AUTOPLAY | 1.96 MB | 137/280 | ready |
 
@@ -18,8 +19,9 @@ Placeholder `{LANDING_URL}` = wherever the owner hosts `landing/index.html`. Unt
 2. 002-kids-phone-settings
 3. 003-block-sites-on-computer
 4. 004-friction-trick
-5. 008-kids-first-phone
-6. 010-autoplay-off
+5. 005-free-screen-time-lock
+6. 008-kids-first-phone
+7. 010-autoplay-off
 
 ## Posting checklist (per video)
 1. Upload the mp4; add a sound in-app at low volume (videos are silent).

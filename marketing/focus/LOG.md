@@ -81,3 +81,11 @@
 - Updated owner-todo #1 to point at the queue, and STATE (Publish = packages ready, blocked on accounts).
 - Not verified: platform caption/hashtag limits beyond X's 280 (FB/TikTok captions are short, well under their limits).
 - Next: render 005, then regenerate packages.
+
+## 2026-11-12 — run 13
+- Rendered `videos/005-free-screen-time-lock.mp4` + `.txt` caption (spec `render/specs/005.json`, green accent): 23.8 s, 1.94 MB.
+- Frame check (hook, 4 steps, CTA): text fits, keyword box inside margins, no one-word last lines.
+- Softened the caption claim from "it actually works when you can't override it" to "it works best when…"; script updated to match.
+- Regenerated post packages: queue now has 7 (added 005).
+- Rendered: 001–005, 008, 010. Unrendered: 006, 007, 009, 011 (4 → below target).
+- Next: write script 012, then render 006.
