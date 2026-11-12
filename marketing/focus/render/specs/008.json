@@ -1,0 +1,14 @@
+{
+  "out": "008-kids-first-phone",
+  "script": "scripts/008-kids-first-phone.md",
+  "accent": "#ff9f6e",
+  "scenes": [
+    { "type": "hook", "dur": 3.6, "kicker": "First phone?", "text": "Setting up your kid's first phone? Do this before it leaves your hands." },
+    { "type": "step", "n": 1, "dur": 4.4, "title": "Set it up as a child account.", "body": "Not with your own login — **the controls depend on it.**" },
+    { "type": "step", "n": 2, "dur": 4.8, "title": "Decide the phone's bedtime now.", "body": "Where it charges at night, and from what time. **Easier to start with a rule than add one later.**" },
+    { "type": "step", "n": 3, "dur": 4.6, "title": "Start with fewer apps.", "body": "Add them **one at a time, with approval,** as they show they can handle it." },
+    { "type": "step", "n": 4, "dur": 4.6, "title": "Write a phone agreement together.", "body": "One page: what's okay, what isn't, and **what happens if it's broken.**" },
+    { "type": "cta", "dur": 4.4, "text": "Want the first-phone checklist?", "keyword": "FIRST", "sub": "Free — with a printable agreement template." }
+  ],
+  "caption": "First phone? 4 things to set up before you hand it over 👇\nComment FIRST for the free checklist + printable agreement.\n\n#parenting #firstphone #screentime #parentalcontrols #momlife #dadlife"
+}

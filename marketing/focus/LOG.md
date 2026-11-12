@@ -39,3 +39,9 @@
 - Wrote scripts 008 (kid's first phone setup, keyword FIRST → Aura/Qustodio; parents are the highest-value audience) and 009 (notification cleanup, keyword QUIET → lead magnet). Unrendered buffer now 6.
 - Added both to the keyword→offer map. Offer terms still unverified.
 - Next: render 004 (TAPS), or 008 early for the higher-value parent offer.
+
+## 2026-11-12 — run 7
+- Rendered `videos/008-kids-first-phone.mp4` + `.txt` caption (spec `render/specs/008.json`, orange accent): 24.4 s, 2.10 MB. Chose 008 ahead of 004 because parent offers (Aura/Qustodio) are the highest-value in the list.
+- Frame check: all cards fit; the CTA sub-line left "free." orphaned on its own line → reworded and re-rendered; final CTA frame checked clean.
+- Rendered so far: 001, 002, 003, 008. Unrendered buffer: 5 (004–007, 009).
+- Next: write 010 to keep the buffer above 5, then render 004.

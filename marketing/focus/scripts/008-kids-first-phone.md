@@ -1,6 +1,6 @@
 # 008 — Before you hand your kid their first phone, do these 4 things
 
-- **Status:** draft (ready for review)
+- **Status:** rendered → `videos/008-kids-first-phone.mp4` (spec `render/specs/008.json`)
 - **Format:** 9:16, ~26 s, text cards (renderer default)
 - **Comment keyword:** `FIRST`
 - **Matched offer:** Aura parental controls (primary), Qustodio (alternate) — terms unverified
