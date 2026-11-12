@@ -124,3 +124,6 @@
 - Regenerated post packages: 10 in queue/.
 - Rendered: 10 of 15. Unrendered: 007, 009, 011, 013, 014 (5).
 - Next: render 007. Noted in STATE: prefer signals research over more scripts when the buffer next needs refilling, since nothing is posted yet.
+
+## 2026-11-12 — owner instruction (between runs)
+- Owner: "stop creating videos until I've reviewed". Added a HOLD block at the top of STATE.md (no renders or re-renders until the owner lifts it) and owner-todo #0 listing the 10 videos to review. Nothing rendered in this entry.

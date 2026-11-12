@@ -13,6 +13,9 @@ _Last updated: 2026-11-12 (run 18)_
 **Hard limits:** post/upload/create accounts/submit applications ONLY via a credential or connector actually present for that exact platform — otherwise prepare the package and add to owner-todo. Never ask for credentials in an unattended run, never register accounts via browser, never work around login walls/captchas/phone verification. Affiliate signups: draft only, never submit. All content original; no unsupported health/income/product claims; affiliate disclosure in every caption with a link. No email/Slack/messages to anyone. Report honestly in LOG.md. Finish every run: commit, push to `claude/focus-pipeline`, reply in 2–3 lines (done / next / needs owner).
 
 
+## ⛔ HOLD — owner instruction (2026-11-12): no new videos until the owner has reviewed
+Do NOT render any video (and do not re-render existing ones) until this block is removed by the owner or the owner says so in the conversation. Scripts, landing page, post packages, signals research and affiliate drafts may continue. Review list: `owner-todo.md` #0.
+
 ## Stage status
 | # | Stage | Status | Notes |
 |---|-------|--------|-------|
@@ -45,7 +48,7 @@ _Last updated: 2026-11-12 (run 18)_
 | WIFI | 015 | Qustodio / Aura | unverified |
 
 ## Next up (priority order)
-1. Render 007 next; then 009, 011, 013, 014 one per run. Content is far ahead of distribution (nothing posted yet): when the buffer would need refilling, prefer a signals-research run over new scripts (run `node queue/make-packages.mjs` after each): write `render/specs/NNN.json` from the script, render, inspect frames.
+1. ON HOLD (see top): no renders until owner review. Meanwhile: signals research, affiliate application drafts. After approval: render 007, then 009, 011, 013, 014 one per run. Content is far ahead of distribution (nothing posted yet): when the buffer would need refilling, prefer a signals-research run over new scripts (run `node queue/make-packages.mjs` after each): write `render/specs/NNN.json` from the script, render, inspect frames.
 2. Possible renderer upgrade: simple drawn icons/mock UI per step (scripts mention mock UI) — currently text-only.
 3. Signals research refresh (Reddit / Shorts / ad libraries).
 4. Draft affiliate application answers (never submit).

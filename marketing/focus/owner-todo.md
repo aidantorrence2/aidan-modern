@@ -1,5 +1,9 @@
 # Owner to-do (only you can do these)
 
+## 0. Review the 10 rendered videos (rendering is paused until you do)
+Videos: `marketing/focus/videos/` — 001–006, 008, 010, 012, 015 (each ~24 s, with a `.txt` caption). Matching post copy: `marketing/focus/queue/`.
+Reply with: approved / changes wanted (style, tone, length, topics, which to drop). Then remove the HOLD block at the top of `STATE.md`, or just say so in the conversation.
+
 Nothing here is urgent until videos exist; the pipeline keeps building around these.
 
 ## 1. Create the posting accounts and connect them
