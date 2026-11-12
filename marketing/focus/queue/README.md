@@ -13,6 +13,7 @@ Placeholder `{LANDING_URL}` = wherever the owner hosts `landing/index.html`. Unt
 | 005-free-screen-time-lock | FREE | 1.94 MB | 137/280 | ready |
 | 008-kids-first-phone | FIRST | 2.10 MB | 140/280 | ready |
 | 010-autoplay-off | AUTOPLAY | 1.96 MB | 137/280 | ready |
+| 012-game-time-limits | GAMES | 1.91 MB | 145/280 | ready |
 
 ## Suggested first week (one per day; order already alternates general / parent topics roughly)
 1. 001-phone-out-of-bedroom
@@ -22,6 +23,7 @@ Placeholder `{LANDING_URL}` = wherever the owner hosts `landing/index.html`. Unt
 5. 005-free-screen-time-lock
 6. 008-kids-first-phone
 7. 010-autoplay-off
+8. 012-game-time-limits
 
 ## Posting checklist (per video)
 1. Upload the mp4; add a sound in-app at low volume (videos are silent).

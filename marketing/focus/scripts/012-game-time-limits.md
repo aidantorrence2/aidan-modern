@@ -1,6 +1,6 @@
 # 012 — "One more game" is a setting, not a negotiation
 
-- **Status:** draft (ready for review)
+- **Status:** rendered → `videos/012-game-time-limits.mp4` (spec `render/specs/012.json`)
 - **Format:** 9:16, ~24 s, text cards (renderer default)
 - **Comment keyword:** `GAMES`
 - **Matched offer:** Qustodio (game/app limits across devices), Aura (alternate) — terms unverified

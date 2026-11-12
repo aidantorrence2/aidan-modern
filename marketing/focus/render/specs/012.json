@@ -1,0 +1,14 @@
+{
+  "out": "012-game-time-limits",
+  "script": "scripts/012-game-time-limits.md",
+  "accent": "#f472b6",
+  "scenes": [
+    { "type": "hook", "dur": 3.8, "kicker": "For parents", "text": "Every night ends in a \"one more game\" argument? Let the settings be the bad guy." },
+    { "type": "step", "n": 1, "dur": 4.6, "title": "Set a limit on the console itself.", "body": "**Most consoles have family settings** for daily play time." },
+    { "type": "step", "n": 2, "dur": 4.4, "title": "Match it on phone and tablet.", "body": "Or the game **just moves screens.**" },
+    { "type": "step", "n": 3, "dur": 4.4, "title": "Give a 10-minute warning.", "body": "So they can **finish the round** instead of rage-quitting." },
+    { "type": "step", "n": 4, "dur": 4.6, "title": "Agree on the rule once, out loud.", "body": "Then **the timer enforces it** — not you." },
+    { "type": "cta", "dur": 4.2, "text": "Want the console + phone setup guide?", "keyword": "GAMES", "sub": "Step by step, for every device in the house." }
+  ],
+  "caption": "Stop negotiating \"one more game\" every night. 4 steps 👇\nComment GAMES for the free setup guide.\n\n#parenting #gaming #screentime #kidsandtech #parentingtips #momlife #dadlife"
+}

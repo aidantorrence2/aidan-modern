@@ -95,3 +95,10 @@
 - Added both to the landing page and keyword map. Verified in Chromium: both pages render with 5 steps; fallback lists all 13; no JS errors.
 - Caught an unbacked promise while checking: TABLE originally offered "30 questions in the email", but no email sequence exists. Changed to 7 questions shown on the page; removed "30" from the script and landing title.
 - Next: render 012 (parent offer) or 006.
+
+## 2026-11-12 — run 15
+- Rendered `videos/012-game-time-limits.mp4` + `.txt` caption (spec `render/specs/012.json`, pink accent): 24.0 s, 1.91 MB. Picked 012 for its parent offer.
+- Frame check (hook, 4 steps, CTA): all text inside margins, keyword fits, no one-word last lines. No brand names or logos on screen.
+- Regenerated post packages: 8 in queue/.
+- Rendered: 001–005, 008, 010, 012. Unrendered: 006, 007, 009, 011, 013 (5).
+- Next: render 006.
