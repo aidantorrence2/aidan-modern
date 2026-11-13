@@ -5854,6 +5854,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-marcela-meignan",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to Marcela Mayorga de Meignan: yes for digital, casting first",
+      "summary": "REGIA says yes for digital; wants the model casting sent first",
+      "payload": {
+        "to": "marcela@regiamag.com",
+        "subject": "Re: Editorial proposal: Rio de Janeiro",
+        "body": "Hi Marcela,\n\nGreat, thank you. I'll send the model casting over as soon as it's set.\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-13T20:09:38Z",
+      "expires": "2026-11-16T20:09:38Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
