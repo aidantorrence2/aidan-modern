@@ -5818,6 +5818,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-isa-corazza-3",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to Isa Corazza: WhatsApp number",
+      "summary": "Asked for WhatsApp to exchange details",
+      "payload": {
+        "to": "isabella.corazza12@gmail.com",
+        "subject": "Re: São Paulo street editorial - styling collaboration",
+        "body": "Hi Isa,\n\nGreat. My WhatsApp is +49 175 8966210, message me there and we can sort out the details.\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-13T15:36:17Z",
+      "expires": "2026-11-16T15:36:17Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
