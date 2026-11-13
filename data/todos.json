@@ -1,6 +1,6 @@
 {
- "date": "2026-11-12",
- "generated": "2026-11-12T08:50:00Z",
+ "date": "2026-11-13",
+ "generated": "2026-11-13T08:53:00Z",
  "items": [
   {
    "id": "publication-1",
@@ -683,12 +683,12 @@
    "source": "português"
   },
   {
-   "id": "sao-paulo-4b",
+   "id": "sao-paulo-4c",
    "task": "sao-paulo",
    "rank": 5,
    "title": "Make the São Paulo week produce one strong shoot",
    "text": "The next milestone for São Paulo is {{a confirmed shoot date inside 24 to 30 November}}.",
-   "note": "Several São Paulo contacts have now replied with interest and are asking for dates and details. One of them needs a date.",
+   "note": "Several São Paulo contacts have replied with interest. Isa Corazza can do 24 November or the morning of the 25th.",
    "minutes": 0,
    "source": "photography · São Paulo"
   },
