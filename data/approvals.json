@@ -5872,6 +5872,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-nina-guimaraes",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to Nina Guimarães: what the shoot is",
+      "summary": "Asked what the project is about",
+      "payload": {
+        "to": "ninafigurino@gmail.com",
+        "subject": "Re: São Paulo street editorial - styling collaboration",
+        "body": "Hi Nina,\n\nIt's a street fashion editorial in São Paulo, shooting in the second half of November. I'm looking for a stylist to style the looks and pull pieces for the shoot. The story is being pitched to magazines, including Purple, Numéro Berlin and Vogue Portugal.\n\nIt's a creative collaboration with no fee on either side; you'd get full credit and the final images.\n\nWhich days in the second half of November would work for you?\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-13T20:09:47Z",
+      "expires": "2026-11-16T20:09:47Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
