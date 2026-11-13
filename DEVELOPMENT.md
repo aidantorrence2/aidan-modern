@@ -40,11 +40,12 @@ Next.js 14 App Router (TypeScript, TailwindCSS). Deployed on Vercel Pro project 
 - `components/` — shared UI (header, footer, gallery, lightbox, sticky CTAs).
 - Campaign/landing experiences co-located in `app/<route>/page.tsx`.
 - Meta Pixel support gated by `NEXT_PUBLIC_META_PIXEL_ID`.
-- Availability slots persisted in **Neon** Postgres (`DATABASE_URL`), table `availability_slots` (`lib/neon.ts`, `@neondatabase/serverless`). Separate from the Supabase-backed `signups` flow.
+- Availability slots persisted in Postgres (`DATABASE_URL`), table `availability_slots` (`lib/neon.ts`, `@neondatabase/serverless`). Separate from the Supabase-backed `signups` flow.
+- **Database (since 13 Nov 2026, off Neon):** self-hosted Postgres 17 on the 12 GB Oracle VM (container `swiper-pg`, shared with OneBox but its own role `aidan_modern` and database `neondb`; same table names as on Neon). The site reaches it only through the HTTPS endpoint `swiper-sql` (https://api.158-101-127-175.sslip.io/sql), which speaks Neon's HTTP SQL protocol, so `neon()` works unchanged; the token is the DATABASE_URL password and picks the database. Setup/endpoint code: `~/applicant-swiper/scripts/setup-swiper-db.sh`, `server/swiper-db/server.cjs`. Secrets: `~/.config/aidan-modern/site-db.env` (Mac), `~/swiper-db/secrets/sql-extra.env` (VM). psql: `docker exec -it swiper-pg psql -U aidan_modern -d neondb`. Nightly dump `~/swiper-db/backups/neondb-<date>.dump` (7 kept), pulled to the Mac `~/swiper-db-backups` by launchd `com.aidan.swiper-db-backups`. Also used by `~/dating-photos-ai` (`dp_idea_leads`). The old Neon project is left untouched (read-only record; nothing should write there).
 
 ### First-party analytics (/sign-up-collab)
 
-- Client tracker `lib/track.ts` batches events to `POST /api/events`, stored in Neon table `analytics_events` (auto-created on first insert; geo from Vercel headers).
+- Client tracker `lib/track.ts` batches events to `POST /api/events`, stored in Postgres table `analytics_events` (auto-created on first insert; geo from Vercel headers).
 - `SignUpFormCollab` tracks the full funnel: page_view → form_start → field_engaged per field → validation_error → submit_attempt/success/error, plus scroll depth, active time, concept/location choices, UTM/referrer attribution. Counts and booleans only — no raw contact details in events.
 - Report: `node scripts/pull-collab-analytics.mjs [days]` (funnel, drop-off, sources, geo, engagement). Headless/bot UAs are excluded.
 
@@ -61,7 +62,7 @@ Next.js 14 App Router (TypeScript, TailwindCSS). Deployed on Vercel Pro project 
 | `app/globals.css` | Typography and utilities |
 | `components/Header.tsx` | Navigation (add new pages here) |
 | `components/SignUpFormBali.tsx` | Bali booking form with 4 packages |
-| `lib/neon.ts` | Neon Postgres helper for availability slots |
+| `lib/neon.ts` | Postgres helper (Neon HTTP client, self-hosted endpoint) for availability, analytics, feedback |
 | `tailwind.config.ts` | Tailwind content paths — update when adding new files |
 | `tools/process_images.py` | Rewrites `public/images/manifest.json` from source directory |
 | `public/images/large/` | Full-size images served by the site |
@@ -110,7 +111,7 @@ Background / why the script does what it does:
 
 - `datetime-local` in the admin is interpreted in the admin's local timezone, stored as UTC; the public page renders in each visitor's local timezone with relative day labels (Today/Tomorrow/weekday).
 - Removals are soft deletes (`deleted_at`). Public/admin APIs filter to `deleted_at IS NULL AND start_at >= now()`.
-- Uses Neon (not Supabase) for availability.
+- Uses the self-hosted Postgres (`DATABASE_URL`, not Supabase) for availability.
 
 ### Bali booking packages
 
