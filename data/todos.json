@@ -1,6 +1,6 @@
 {
  "date": "2026-11-13",
- "generated": "2026-11-13T08:53:00Z",
+ "generated": "2026-11-13T12:00:00Z",
  "items": [
   {
    "id": "publication-1",
@@ -63,14 +63,14 @@
    "source": "português"
   },
   {
-   "id": "next-city-1",
-   "task": "next-city",
+   "id": "bali-1",
+   "task": "bali",
    "rank": 4,
-   "title": "Choose the next city and set it up before arriving",
-   "text": "After Rio, the goal is to {{choose the next city and set it up before I arrive}}.",
-   "note": "Set up means outreach sent, a sign-up page live and ads running before landing.",
+   "title": "Set Bali up before arriving on 7-8 December",
+   "text": "The next city after Rio is {{Bali}}, and the goal is to have it set up before I land.",
+   "note": "Set up means outreach sent, a sign-up page live and ads running before arrival.",
    "minutes": 0,
-   "source": "photography · travel"
+   "source": "photography · Bali"
   },
   {
    "id": "pt-poder",
@@ -263,14 +263,14 @@
    "source": "português"
   },
   {
-   "id": "next-city-2",
-   "task": "next-city",
+   "id": "bali-2",
+   "task": "bali",
    "rank": 4,
-   "title": "Choose the next city and set it up before arriving",
-   "text": "Setting a city up before arriving matters because {{the first week is otherwise lost to waiting on replies}}.",
+   "title": "Set Bali up before arriving on 7-8 December",
+   "text": "Setting Bali up before arriving matters because {{the first week is otherwise lost to waiting on replies}}.",
    "note": "Rio showed how long agencies, venues and magazines take to answer.",
    "minutes": 0,
-   "source": "photography · travel"
+   "source": "photography · Bali"
   },
   {
    "id": "pt-levar",
@@ -463,14 +463,14 @@
    "source": "português"
   },
   {
-   "id": "next-city-3",
-   "task": "next-city",
+   "id": "bali-3",
+   "task": "bali",
    "rank": 4,
-   "title": "Choose the next city and set it up before arriving",
-   "text": "I leave Rio on {{4 December}}, so the next city has to be chosen with enough time to send outreach first.",
-   "note": "Agencies and venues need lead time.",
+   "title": "Set Bali up before arriving on 7-8 December",
+   "text": "I arrive in Bali around {{7 or 8 December}}, so the outreach has to go out while I am still in Brazil.",
+   "note": "Agencies, venues and models need lead time.",
    "minutes": 0,
-   "source": "photography · travel"
+   "source": "photography · Bali"
   },
   {
    "id": "pt-pagar",
@@ -663,14 +663,14 @@
    "source": "português"
   },
   {
-   "id": "next-city-4",
-   "task": "next-city",
+   "id": "bali-4",
+   "task": "bali",
    "rank": 4,
-   "title": "Choose the next city and set it up before arriving",
-   "text": "A city is set up when it has three things: outreach sent, a city sign-up page and {{a paid campaign pointing at it}}.",
-   "note": "The same kit Rio has: /sign-up-collab-rio plus rio - website - pt.",
+   "title": "Set Bali up before arriving on 7-8 December",
+   "text": "Bali is set up when it has three things: outreach sent, a sign-up page and {{a paid campaign pointing at it}}.",
+   "note": "The site already has a Bali sign-up page (/sign-up-bali). Rio's kit is the model: /sign-up-collab-rio plus the rio - website - pt campaign.",
    "minutes": 0,
-   "source": "photography · travel"
+   "source": "photography · Bali"
   },
   {
    "id": "pt-roupa",
@@ -863,14 +863,14 @@
    "source": "português"
   },
   {
-   "id": "next-city-5",
-   "task": "next-city",
+   "id": "bali-5",
+   "task": "bali",
    "rank": 4,
-   "title": "Choose the next city and set it up before arriving",
-   "text": "The next milestone for the next city is simply {{deciding which city it is}}.",
-   "note": "Nothing else can start until that is fixed.",
+   "title": "Set Bali up before arriving on 7-8 December",
+   "text": "The next milestone for Bali is {{the first batch of outreach sent before I leave Rio}}.",
+   "note": "So replies are already waiting when the plane lands.",
    "minutes": 0,
-   "source": "photography · travel"
+   "source": "photography · Bali"
   },
   {
    "id": "pt-perto",
