@@ -1,6 +1,6 @@
 {
- "date": "2026-11-13",
- "generated": "2026-11-13T12:00:00Z",
+ "date": "2026-11-14",
+ "generated": "2026-11-14T08:50:00Z",
  "items": [
   {
    "id": "publication-1",
@@ -403,12 +403,12 @@
    "source": "português"
   },
   {
-   "id": "publication-3b",
+   "id": "publication-3c",
    "task": "publication",
    "rank": 1,
    "title": "Land a magazine publication from the Rio trip",
-   "text": "Of about 200 magazine pitches, {{LAZIN}} has said it will feature the Rio editorial, subject to quality checks.",
-   "note": "A conditional yes. The editorial now has to be good enough to pass.",
+   "text": "Of about 200 magazine pitches, three magazines now want the Rio editorial: LAZIN, Cartola Mag and {{REGIA}}.",
+   "note": "LAZIN's yes is subject to quality checks, Cartola Mag asked whether a model is confirmed, and REGIA said yes for digital and wants the model casting first.",
    "minutes": 0,
    "source": "photography · magazines"
   },
