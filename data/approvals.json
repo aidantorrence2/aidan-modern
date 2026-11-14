@@ -5940,8 +5940,8 @@
         "behavior": "Poll DMs every 30 seconds and send replies explicitly queued in OneBox every 10 seconds; no unsolicited test messages; no database migration."
       },
       "created": "2026-11-14T23:30:09Z",
-      "status": "pending",
-      "decided": null,
+      "status": "approved",
+      "decided": "2026-11-14T23:31:02Z",
       "note": ""
     }
   ]
