@@ -56,7 +56,7 @@ Owner reviewed the 10 text-card videos: likes the idea, but the visuals are too 
 | WIFI | 015 | Qustodio / Aura | unverified |
 
 ## Next up (priority order)
-1. When network access is approved: build the stock-footage + voiceover renderer (Pexels search per scene, open-source TTS such as Kokoro running locally, word-timed captions, 1080x1920) and make **001b** only. Inspect frames and listen-check timing before sending it to the owner.
+1. `scripts/001b-phone-out-of-bedroom-broll.md` (voiceover + shot list) is written. When network access is approved: build the stock-footage + voiceover renderer (Pexels search per scene, open-source TTS such as Kokoro running locally, word-timed captions, 1080x1920) and make **001b** only. Inspect frames and listen-check timing before sending it to the owner.
 2. Until then: nothing to render. Runs log "waiting on owner" and stop.
 3. After owner OKs 001b: convert the rest one per run (002b…015b), then 007/009/011/013/014 in the new style; regenerate `queue/` packages.
 4. Signals research refresh (Reddit / Shorts / ad libraries); draft hook variants.

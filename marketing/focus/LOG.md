@@ -280,3 +280,7 @@
 ## 2026-11-14 13:26 UTC — run 66
 - Owner reviewed the videos and gave new direction: real stock footage + AI voiceover, no screen recordings, test one video (001b) first. Recorded in STATE.md (replaced the HOLD block) and owner-todo #0/#5.
 - Blocked: proxy denies api.pexels.com / videos.pexels.com / huggingface.co (403). Proposed a personal environment allowing only those hosts; the approval prompt was closed unanswered when the worker restarted. Pexels API key also needed.
+
+## 2026-11-14 14:26 UTC — run 67
+- Wrote `scripts/001b-phone-out-of-bedroom-broll.md`: ~24 s voiceover, line-by-line Pexels search queries, 3 hook variants, Pexels-licence rules. Not rendered.
+- Still blocked: proxy refuses api.pexels.com and huggingface.co. The network-access approval prompt was shown twice and closed unanswered by worker restarts (not declined).
