@@ -284,3 +284,8 @@
 ## 2026-11-14 14:26 UTC — run 67
 - Wrote `scripts/001b-phone-out-of-bedroom-broll.md`: ~24 s voiceover, line-by-line Pexels search queries, 3 hook variants, Pexels-licence rules. Not rendered.
 - Still blocked: proxy refuses api.pexels.com and huggingface.co. The network-access approval prompt was shown twice and closed unanswered by worker restarts (not declined).
+
+## 2026-11-14 15:26 UTC — run 68
+- Built renderer v2 `render/broll.mjs` + `render/tts_kokoro.py` + `render/specs/001b.json`: per-line Pexels portrait clip (or dropped-in file), Kokoro voice per line, 9:16 crop, B&W option, ASS captions (≤3-word chunks timed by character share) + accent tag per line, concat + voice mux.
+- Tested offline with placeholder voice/footage: 20.4 s draft renders; frames checked (crop, grayscale, tag and captions all placed correctly). Draft stays in ignored work dir; no video published.
+- Still blocked on network access (Pexels, Hugging Face) + Pexels key — owner-todo #5.

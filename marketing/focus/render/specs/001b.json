@@ -1,0 +1,14 @@
+{
+  "out": "001b-phone-out-of-bedroom-broll",
+  "keyword": "NIGHT",
+  "voice": "af_heart",
+  "lines": [
+    { "say": "It's 1 a.m. and you're still scrolling.", "query": "woman scrolling phone in bed at night", "emph": "1:07 AM" },
+    { "say": "Here's the 4-step fix.", "query": "phone screen glow dark bedroom", "emph": "4 STEPS" },
+    { "say": "One: charge it outside the bedroom.", "query": "smartphone charging on kitchen counter", "emph": "1 · CHARGE IT OUTSIDE" },
+    { "say": "Two: same cutoff every night. Use Bedtime mode.", "query": "alarm clock night bedside", "emph": "2 · SAME CUTOFF" },
+    { "say": "Three: switch to grayscale. Grey feeds are boring.", "query": "scrolling social media phone close up", "emph": "3 · GRAYSCALE", "bw": true },
+    { "say": "Four: if willpower fails, lock it in a timed box.", "query": "hand putting phone in drawer", "emph": "4 · LOCK IT AWAY" },
+    { "say": "Comment NIGHT and I'll send you the free 7-day checklist.", "query": "morning sunlight bedroom window", "emph": "COMMENT NIGHT" }
+  ]
+}
