@@ -5890,6 +5890,31 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "other:generate-instagram-dm-api-credentials-fo-202611141451",
+      "kind": "other",
+      "source": "codex:aidantorrence",
+      "title": "Generate Instagram DM API credentials for @madebyaidan",
+      "summary": "Generate a token for your existing published Meta app “dming people” to access @madebyaidan profile and DMs. Save the token and existing app secret locally with owner-only file permissions; validate with a read-only API request.",
+      "payload": {
+        "meta_app_id": "738201438878900",
+        "instagram_app_id": "1844983099407404",
+        "instagram_account": "madebyaidan",
+        "instagram_account_id": "17841403020033949",
+        "actions": [
+          "Generate Instagram user access token through the existing Meta app",
+          "Authorize instagram_business_basic and instagram_business_manage_messages; include instagram_business_manage_comments only if required by the existing token flow",
+          "Retrieve existing Instagram app secret without rotation",
+          "Save credentials to /Users/aidantorrence/.config/instagram-dm/credentials.env with mode 0600",
+          "Validate token with read-only account and messaging-permission checks"
+        ],
+        "no_messages_sent": true
+      },
+      "created": "2026-11-14T14:51:06Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
