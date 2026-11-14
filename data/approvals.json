@@ -5915,6 +5915,34 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "build:switch-onebox-dms-to-the-official-instag-202611142330",
+      "kind": "build",
+      "source": "codex:applicant-swiper",
+      "title": "Switch OneBox DMs to the official Instagram API",
+      "summary": "Deploy the tested OneBox API update and activate receiving/sending for @madebyaidan. Existing cards and group chats are preserved; replies use Meta’s 24-hour window.",
+      "payload": {
+        "deployment_directory": "/var/folders/qn/b47y7fkx74x4g2njvl9m6sn00000gn/T/onebox-instagram-api-ok53z77d",
+        "command": [
+          "vercel",
+          "deploy",
+          "--prod",
+          "--yes"
+        ],
+        "url": "https://applicant-swiper.vercel.app",
+        "activation": [
+          "Enable Instagram API in ~/.config/applicant-swiper/instagram-api.json",
+          "Restart the Instagram browser worker preserving group chat support",
+          "Run one receive-only conversation canary",
+          "Install and start com.aidantorrence.applicant-swiper.ig-api"
+        ],
+        "behavior": "Poll DMs every 30 seconds and send replies explicitly queued in OneBox every 10 seconds; no unsolicited test messages; no database migration."
+      },
+      "created": "2026-11-14T23:30:09Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
