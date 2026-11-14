@@ -5937,7 +5937,9 @@
           "Run one receive-only conversation canary",
           "Install and start com.aidantorrence.applicant-swiper.ig-api"
         ],
-        "behavior": "Poll DMs every 30 seconds and send replies explicitly queued in OneBox every 10 seconds; no unsolicited test messages; no database migration."
+        "behavior": "Poll DMs every 30 seconds and send replies explicitly queued in OneBox every 10 seconds; no unsolicited test messages; no database migration.",
+        "result": "The concurrent OneBox production deployment dpl_A3iV3FG9MtHUin3wUNRDqz438iwD already included the prepared API/UI changes; verified live signed attachments, idempotent receipt reporting, and API conversation links without overwriting its group-chat changes. Enabled Instagram API credentials/config, restarted the browser worker preserving group handling, passed a one-conversation receive-only canary, and installed the running ig-api launch agent. Initial catch-up updated 44 conversations; heartbeat healthy with no error or pending media. Six focused tests passed. No unsolicited test DM sent.",
+        "result_at": "2026-11-14T23:35:01Z"
       },
       "created": "2026-11-14T23:30:09Z",
       "status": "approved",
