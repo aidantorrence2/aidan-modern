@@ -3,7 +3,7 @@
 Niche: app blocking / phone & computer distraction. Short vertical videos → comment keyword → DM → email opt-in → matched affiliate offer.
 Channels planned: Facebook Page/Group, TikTok, X. Branch: `claude/focus-pipeline`, dir `marketing/focus/`.
 
-_Last updated: 2026-11-12 (run 20)_
+_Last updated: 2026-11-14 (run 66)_
 
 ## Standing rules (copied from the owner's brief — survive context resets)
 **Where state lives:** repo `aidantorrence2/aidan-modern`, branch `claude/focus-pipeline` (pull it first every run), dir `marketing/focus/`. STATE.md = source of truth (read first). LOG.md = one dated entry per run. `scripts/` = one markdown per video (hook, steps, caption, keyword, offer). `videos/` = 1080x1920 mp4 < 8 MB + caption file. `queue/` = ready-to-post packages per platform. `owner-todo.md` = owner-only actions with exact steps and prefilled text. Repo is PUBLIC: never commit credentials, affiliate IDs or ID-bearing links, personal details or revenue. Never touch files outside `marketing/focus/`, never push another branch, no PR. Repo CLAUDE.md reel naming does not apply here; no `next build` needed.
@@ -13,8 +13,16 @@ _Last updated: 2026-11-12 (run 20)_
 **Hard limits:** post/upload/create accounts/submit applications ONLY via a credential or connector actually present for that exact platform — otherwise prepare the package and add to owner-todo. Never ask for credentials in an unattended run, never register accounts via browser, never work around login walls/captchas/phone verification. Affiliate signups: draft only, never submit. All content original; no unsupported health/income/product claims; affiliate disclosure in every caption with a link. No email/Slack/messages to anyone. Report honestly in LOG.md. Finish every run: commit, push to `claude/focus-pipeline`, reply in 2–3 lines (done / next / needs owner).
 
 
-## ⛔ HOLD — owner instruction (2026-11-12): no new videos until the owner has reviewed
-Do NOT render any video (and do not re-render existing ones) until this block is removed by the owner or the owner says so in the conversation. Scripts, landing page, post packages, signals research and affiliate drafts may continue. Review list: `owner-todo.md` #0.
+## 🎬 Owner direction (2026-11-14) — new video format
+Owner reviewed the 10 text-card videos: likes the idea, but the visuals are too limited to get views. Decisions:
+- **Use real stock footage** (B-roll) behind the captions. **No screen recordings from the owner — do not ask again.**
+- **Add an AI voiceover** reading the script, with burned-in captions.
+- Stop making text-card-only videos (001–015 v1 style is shelved; keep the files).
+- First make ONE test video, **001b** (phone out of the bedroom), in the new format so the owner can compare it with 001. Do not convert the others until the owner OKs 001b.
+- Engagement plan agreed in chat: stronger first-second hook (2–3 hook variants per video), series framing, comment questions, also post to Instagram Reels and YouTube Shorts.
+
+**Blocked:** this session cannot reach the footage or voice sources (proxy 403 on api.pexels.com, videos.pexels.com, huggingface.co). A personal environment allowing only those hosts was proposed to the owner (approval pending, owner-todo #5). Pexels also needs a free API key (owner-todo #5).
+**Pexels licence notes:** free commercial use, no attribution required, but do not make identifiable people in clips appear to endorse a product, and no unaltered resale. Use clips as mood B-roll only; no brand logos visible.
 
 ## Stage status
 | # | Stage | Status | Notes |
@@ -48,12 +56,13 @@ Do NOT render any video (and do not re-render existing ones) until this block is
 | WIFI | 015 | Qustodio / Aura | unverified |
 
 ## Next up (priority order)
-1. ON HOLD (see top): no renders until owner review. Meanwhile: nothing high-value left that doesn't need the owner or a render — runs should log 'idle, waiting on owner' and end quickly rather than invent busywork. After approval: render 007, then 009, 011, 013, 014 one per run. Content is far ahead of distribution (nothing posted yet): when the buffer would need refilling, prefer a signals-research run over new scripts (run `node queue/make-packages.mjs` after each): write `render/specs/NNN.json` from the script, render, inspect frames.
-2. Possible renderer upgrade: simple drawn icons/mock UI per step (scripts mention mock UI) — currently text-only.
-3. Signals research refresh (Reddit / Shorts / ad libraries).
-4. Draft affiliate application answers (never submit).
+1. When network access is approved: build the stock-footage + voiceover renderer (Pexels search per scene, open-source TTS such as Kokoro running locally, word-timed captions, 1080x1920) and make **001b** only. Inspect frames and listen-check timing before sending it to the owner.
+2. Until then: nothing to render. Runs log "waiting on owner" and stop.
+3. After owner OKs 001b: convert the rest one per run (002b…015b), then 007/009/011/013/014 in the new style; regenerate `queue/` packages.
+4. Signals research refresh (Reddit / Shorts / ad libraries); draft hook variants.
 
 ## Blocked on owner
+- Network access for footage + voice, and a free Pexels API key (owner-todo #5).
 - Platform accounts/credentials for Facebook, TikTok, X (owner-todo #1).
 - Affiliate program signups (owner-todo #2).
 - Email provider choice for opt-in (owner-todo #3).

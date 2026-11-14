@@ -1,10 +1,6 @@
 # Owner to-do (only you can do these)
 
-## 0. Review the 10 rendered videos (rendering is paused until you do)
-Videos: `marketing/focus/videos/` — 001–006, 008, 010, 012, 015 (each ~24 s, with a `.txt` caption). Matching post copy: `marketing/focus/queue/`.
-Reply with: approved / changes wanted (style, tone, length, topics, which to drop). Then remove the HOLD block at the top of `STATE.md`, or just say so in the conversation.
-
-Nothing here is urgent until videos exist; the pipeline keeps building around these.
+## 0. ~~Review the 10 rendered videos~~ — done 2026-11-14 (decision: switch to stock footage + voiceover; see STATE.md)
 
 ## 1. Create the posting accounts and connect them
 The automated runs can only post through a credential/connector that exists in the session. Until then, ready-to-post packages pile up in `marketing/focus/queue/`.
@@ -26,3 +22,7 @@ The page is a single static file: `marketing/focus/landing/index.html`. Any stat
    - `OFFER_LINKS` = your affiliate links once approved (step 2). Leave any empty to hide that offer card.
 2. Upload it. The DM link pattern is `https://<your-host>/?k=NIGHT` (keywords in `marketing/focus/keyword-map.md`).
 3. Tell the pipeline the base URL (add it to STATE.md "Blocked on owner" → done) so post packages can use it. The URL itself is fine to commit; affiliate IDs are not.
+
+## 5. Unblock the new video format (stock footage + voiceover)
+1. **Approve the network change** when Claude asks: a personal environment called "aidan-modern (focus videos)" that allows only api.pexels.com, videos.pexels.com and Hugging Face (where the free voice model is downloaded from). Your Default environment is not changed.
+2. **Get a free Pexels API key:** sign up at pexels.com, then open pexels.com/api and request a key (free, takes about a minute). Do not paste it in chat or the repo — Claude will show a secure form to save it to the environment.
