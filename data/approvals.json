@@ -5965,7 +5965,9 @@
         "method": "Recheck exact directory identity and file metadata against the preflight manifest, then delete only this directory with Python shutil.rmtree; verify absence and disk free space.",
         "manifest": "/var/folders/qn/b47y7fkx74x4g2njvl9m6sn00000gn/T/portablessd-2023-02-22-y3xphk6w.json",
         "excluded": "All other Trash contents, including 2023-02-22 (copied to OldSSD, trash me).",
-        "backup_verification": "Not performed; this deletes the existing Trash copy permanently."
+        "backup_verification": "Not performed; this deletes the existing Trash copy permanently.",
+        "result": "Permanently deleted only /Volumes/PortableSSD/.Trashes/501/2023-02-22 after verifying directory identity and all 2,008 files against the preflight manifest. Recovered 114.83 GiB; PortableSSD now has 133.38 GiB free. Verified target absent and all other Trash entries preserved.",
+        "result_at": "2026-11-15T09:04:09Z"
       },
       "created": "2026-11-15T09:00:12Z",
       "status": "approved",
