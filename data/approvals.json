@@ -5968,8 +5968,8 @@
         "backup_verification": "Not performed; this deletes the existing Trash copy permanently."
       },
       "created": "2026-11-15T09:00:12Z",
-      "status": "pending",
-      "decided": null,
+      "status": "approved",
+      "decided": "2026-11-15T09:02:47Z",
       "note": ""
     }
   ]
