@@ -5990,7 +5990,9 @@
           "launchctl kickstart -k gui/$UID/com.aidantorrence.applicant-swiper.ig  (restart Mac Instagram daemon)",
           "re-queue failed outbox 50000074 to @micaeladelg through /api/reply, exact text: hey\\n\\nare you still good for tomorrow?  (translated to Spanish by OneBox as usual, sent by the Mac browser)"
         ],
-        "rollback": "jj backout of vnnwlrnv + redeploy; the column can stay"
+        "rollback": "jj backout of vnnwlrnv + redeploy; the column can stay",
+        "result": "Done: column outbox.via added, server deployed to production, API worker redeployed on the VM, Mac Instagram daemon restarted. Micaela's reply re-queued (outbox 50000076), handed to the Mac browser and sent at 18:38 as 'hola / ¿seguimos en pie para mañana?'.",
+        "result_at": "2026-11-15T21:39:16Z"
       },
       "created": "2026-11-15T21:34:37Z",
       "expires": "2026-11-16T21:34:37Z",
