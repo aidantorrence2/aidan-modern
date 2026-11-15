@@ -355,3 +355,9 @@
 
 ## 2026-11-15 13:26 UTC — run 90 (waiting)
 - Network still blocked (api.pexels.com, huggingface.co refused). Nothing unblocked; waiting on owner-todo #5.
+
+## 2026-11-15 14:26 UTC — run 91 (waiting)
+- Owner replied "approve" (13:xx). Re-proposed env "aidan-modern (focus videos)" twice; both approval prompts closed by worker restarts before an answer. Network still blocked.
+
+## 2026-11-15 15:26 UTC — run 92 (waiting)
+- Still blocked. In-chat approval keeps getting dropped; gave owner manual Settings steps (Allowed domains). Waiting on owner-todo #5.
