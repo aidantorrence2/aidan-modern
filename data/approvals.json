@@ -5945,6 +5945,32 @@
       "status": "approved",
       "decided": "2026-11-14T23:31:02Z",
       "note": ""
+    },
+    {
+      "id": "other:permanently-delete-2023-02-22-from-porta-202611150900",
+      "kind": "other",
+      "source": "codex:aidantorrence",
+      "title": "Permanently delete 2023-02-22 from PortableSSD Trash",
+      "summary": "Delete the exact 2023-02-22 folder: 2,008 RAW/DNG files, freeing about 114.8 GiB. Permanent deletion; other Trash folders stay untouched.",
+      "payload": {
+        "action": "permanently_delete_directory",
+        "path": "/Volumes/PortableSSD/.Trashes/501/2023-02-22",
+        "file_count": 2008,
+        "contents": {
+          "ARW": 1025,
+          "DNG": 983
+        },
+        "allocated_GiB": 114.83,
+        "expected_free_GiB_after": 133.38,
+        "method": "Recheck exact directory identity and file metadata against the preflight manifest, then delete only this directory with Python shutil.rmtree; verify absence and disk free space.",
+        "manifest": "/var/folders/qn/b47y7fkx74x4g2njvl9m6sn00000gn/T/portablessd-2023-02-22-y3xphk6w.json",
+        "excluded": "All other Trash contents, including 2023-02-22 (copied to OldSSD, trash me).",
+        "backup_verification": "Not performed; this deletes the existing Trash copy permanently."
+      },
+      "created": "2026-11-15T09:00:12Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
