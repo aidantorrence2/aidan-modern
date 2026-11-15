@@ -5973,6 +5973,30 @@
       "status": "approved",
       "decided": "2026-11-15T09:02:47Z",
       "note": ""
+    },
+    {
+      "id": "build:deploy-onebox-fix-instagram-replies-past-202611152134",
+      "kind": "build",
+      "source": "codex:applicant-swiper",
+      "title": "Deploy OneBox fix: Instagram replies past the 24h API window go out through the Mac browser, then re-send your Micaela reply",
+      "summary": "Micaela's 'reply window closed' was Instagram's real API rule (her last message was 4 days ago). Fix is committed and tested: such replies go to the Mac's logged-in browser instead of failing. Needs one new database column, a server deploy, the API worker redeploy and an Instagram daemon restart. Then I re-queue your exact text to Micaela.",
+      "payload": {
+        "repo": "~/applicant-swiper",
+        "commit": "vnnwlrnv",
+        "steps": [
+          "node db/migrate.mjs  (adds nullable column swiper.outbox.via; nothing else changes)",
+          "npx vercel deploy --prod --yes",
+          "scripts/deploy-swiper-ig-api.sh  (API worker on the VM)",
+          "launchctl kickstart -k gui/$UID/com.aidantorrence.applicant-swiper.ig  (restart Mac Instagram daemon)",
+          "re-queue failed outbox 50000074 to @micaeladelg through /api/reply, exact text: hey\\n\\nare you still good for tomorrow?  (translated to Spanish by OneBox as usual, sent by the Mac browser)"
+        ],
+        "rollback": "jj backout of vnnwlrnv + redeploy; the column can stay"
+      },
+      "created": "2026-11-15T21:34:37Z",
+      "expires": "2026-11-16T21:34:37Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
