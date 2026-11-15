@@ -361,3 +361,6 @@
 
 ## 2026-11-15 15:26 UTC — run 92 (waiting)
 - Still blocked. In-chat approval keeps getting dropped; gave owner manual Settings steps (Allowed domains). Waiting on owner-todo #5.
+
+## 2026-11-15 16:26 UTC — run 93 (waiting)
+- Owner said "Approve" again; env prompt re-opened and again closed by a worker restart (5th time). Network still blocked. Manual path: add hosts under Allowed domains in Settings.
