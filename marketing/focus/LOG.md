@@ -445,3 +445,6 @@
 
 ## 2026-11-16 19:26 UTC — run 120 (waiting)
 - Network still blocked (api.pexels.com, huggingface.co refused). Waiting on owner to add Allowed domains in Settings (owner-todo #5).
+
+## 2026-11-16 20:26 UTC — run 121 (waiting)
+- Owner asked "just do it" (19:3x). Proposed adding the 6 hosts to Default via update_environment; approval card again closed by a worker restart (6th dropped prompt). Network still blocked. Only reliable path: owner edits Allowed domains in Settings.
