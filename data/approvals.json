@@ -6294,6 +6294,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-arieli-marcondes-2",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to Arieli Marcondes: dates and budget",
+      "summary": "Asked when the SP shoot is and the styling budget (replaces the 12 Nov draft)",
+      "payload": {
+        "to": "arielimarcondes@gmail.com",
+        "subject": "Re: São Paulo street editorial - styling collaboration",
+        "body": "Hi Arieli,\n\nThank you. I'm shooting the São Paulo street editorial between 24 and 30 November. Which days in that window would work for you?\n\nIt's a creative collaboration with no fee on either side; you'd get full credit and the final images.\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-16T16:13:33Z",
+      "expires": "2026-11-19T16:13:33Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
