@@ -6021,9 +6021,9 @@
       },
       "created": "2026-11-16T14:08:49Z",
       "expires": "2026-11-23T14:08:49Z",
-      "status": "pending",
-      "decided": null,
-      "note": ""
+      "status": "approved",
+      "decided": "2026-11-16T17:13:31Z",
+      "note": "the ones emailed with the old wording, just send a new email as if it's a new outreach (except galpao51)"
     },
     {
       "id": "email:rio-reply-bianca-buzin",
