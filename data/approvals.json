@@ -6204,6 +6204,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-priscila-estevao",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to Priscila Estevão: Ilú Obá: budget question",
+      "summary": "Asked if there is a budget or images for institutional use; shared open rehearsals (14, 29 Nov, 5, 12 Dec)",
+      "payload": {
+        "to": "contato@iluobademin.com.br",
+        "subject": "Re: Photographing Ilú Obá De Min - Aidan Torrence",
+        "body": "Hi Priscila,\n\nThank you, and thanks for the rehearsal dates. There's no budget: it's a creative collaboration, and you'd get the photographs for Ilú's institutional use. I'd pitch the finished story to magazines.\n\nI'm in São Paulo from 24 to 30 November. Which days in that window would suit you?\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-16T16:12:59Z",
+      "expires": "2026-11-19T16:12:59Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
