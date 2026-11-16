@@ -451,3 +451,6 @@
 
 ## 2026-11-16 21:26 UTC — run 122 (waiting)
 - Owner said "You're approved" in chat; Default still has no allowed hosts (checked). Re-opened the approval card; closed by a worker restart again (7th). Network still blocked. Only working path: owner edits Allowed domains in Settings.
+
+## 2026-11-16 22:26 UTC — run 123 (waiting)
+- Network still blocked (api.pexels.com, huggingface.co refused). Waiting on owner to add Allowed domains in Settings (owner-todo #5).
