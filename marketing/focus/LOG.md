@@ -448,3 +448,6 @@
 
 ## 2026-11-16 20:26 UTC — run 121 (waiting)
 - Owner asked "just do it" (19:3x). Proposed adding the 6 hosts to Default via update_environment; approval card again closed by a worker restart (6th dropped prompt). Network still blocked. Only reliable path: owner edits Allowed domains in Settings.
+
+## 2026-11-16 21:26 UTC — run 122 (waiting)
+- Owner said "You're approved" in chat; Default still has no allowed hosts (checked). Re-opened the approval card; closed by a worker restart again (7th). Network still blocked. Only working path: owner edits Allowed domains in Settings.
