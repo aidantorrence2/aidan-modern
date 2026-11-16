@@ -6186,6 +6186,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-fabrizzio-nascioli",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to Fabrizzio Nascioli: Saturno: profile, fee, dates",
+      "summary": "Asked about profile, fee, dates and location; also has actors in SP",
+      "payload": {
+        "to": "faoliveiraator@gmail.com",
+        "subject": "Re: Portrait tests in Rio - Aidan Torrence",
+        "body": "Olá Fabrizzio,\n\nObrigado! São retratos com luz natural em locação no Rio (Arpoador, Ipanema, Santa Teresa, Centro), para quem estiver precisando de material novo. É uma colaboração criativa, sem cachê de nenhum dos lados: os atores recebem as fotos editadas, livres para usar no book e nas redes.\n\nVou fotografar no Rio na segunda quinzena de novembro e estarei em São Paulo de 24 a 30 de novembro, então os atores de SP também podem participar. Quais dias funcionam para vocês?\n\nAbraço,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-16T16:12:52Z",
+      "expires": "2026-11-19T16:12:52Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
