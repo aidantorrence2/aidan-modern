@@ -5999,6 +5999,31 @@
       "status": "approved",
       "decided": "2026-11-15T21:35:21Z",
       "note": ""
+    },
+    {
+      "id": "outreach-category:rio-brand_follow_up-v1",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Approve outreach category: Brands already emailed (old 'lookbook or campaign' wording, no reply): one follow-up with the editorial collab offer",
+      "summary": "Approving sends this email to every contact in the category, plus new ones research finds, within the 450/day cap and office hours.",
+      "payload": {
+        "category": "brand_follow_up",
+        "subject": "Re: Photography for Haight - Aidan Torrence",
+        "body": "Olá, equipe Haight,\n\nVoltando ao meu email com uma ideia mais concreta: adoraria fazer uma collab editorial com a Haight enquanto estou no Rio, até 4 de dezembro, com as imagens finais liberadas para vocês usarem nas redes sociais.\n\nVocês teriam interesse?\n\nAbraço,\nAidan Torrence\n\n— English —\n\nHi Haight team,\n\nComing back to my email with something more concrete: I'd love to do an editorial collab with Haight while I'm in Rio, through 4 December, with the final images yours to use on your socials.\n\nWould you be interested?\n\nBest,\nAidan Torrence\n",
+        "template": "{{greeting_pt}}\n\nVoltando ao meu email com uma ideia mais concreta: adoraria fazer uma collab editorial {{com_org}} enquanto estou no Rio, até 4 de dezembro, com as imagens finais liberadas para vocês usarem nas redes sociais.\n\nVocês teriam interesse?\n\nAbraço,\nAidan Torrence\n\n— English —\n\n{{greeting}}\n\nComing back to my email with something more concrete: I'd love to do an editorial collab with {{org}} while I'm in Rio, through 4 December, with the final images yours to use on your socials.\n\nWould you be interested?\n\nBest,\nAidan Torrence\n",
+        "attachment": "none",
+        "contacts": 0,
+        "examples": [
+          "To CaCay:\nOlá, equipe CaCay,\n\nVoltando ao meu email com uma ideia mais concreta: adoraria fazer uma collab editorial com a CaCay enquanto estou no Rio, até 4 de dezembro, com as imagens finais liberadas para vocês usarem nas redes sociais.\n\nVocês teriam interesse?\n\nAbraço,\nAidan Torrence\n\n— English —\n\nHi CaCay team,\n\nComing back to my email with something more concrete: I'd love to do an editorial collab with CaCay while I'm in Rio, through 4 December, with the final images yours to use on your socials.\n\nWould you be interested?\n\nBest,\nAidan Torrence\n",
+          "To Falésia Carioca:\nOlá, equipe Falésia Carioca,\n\nVoltando ao meu email com uma ideia mais concreta: adoraria fazer uma collab editorial com a Falésia Carioca enquanto estou no Rio, até 4 de dezembro, com as imagens finais liberadas para vocês usarem nas redes sociais.\n\nVocês teriam interesse?\n\nAbraço,\nAidan Torrence\n\n— English —\n\nHi Falésia Carioca team,\n\nComing back to my email with something more concrete: I'd love to do an editorial collab with Falésia Carioca while I'm in Rio, through 4 December, with the final images yours to use on your socials.\n\nWould you be interested?\n\nBest,\nAidan Torrence\n",
+          "To Aline Rocha:\nOlá, equipe Aline Rocha,\n\nVoltando ao meu email com uma ideia mais concreta: adoraria fazer uma collab editorial com a Aline Rocha enquanto estou no Rio, até 4 de dezembro, com as imagens finais liberadas para vocês usarem nas redes sociais.\n\nVocês teriam interesse?\n\nAbraço,\nAidan Torrence\n\n— English —\n\nHi Aline Rocha team,\n\nComing back to my email with something more concrete: I'd love to do an editorial collab with Aline Rocha while I'm in Rio, through 4 December, with the final images yours to use on your socials.\n\nWould you be interested?\n\nBest,\nAidan Torrence\n"
+        ]
+      },
+      "created": "2026-11-16T14:08:49Z",
+      "expires": "2026-11-23T14:08:49Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
