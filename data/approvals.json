@@ -6024,6 +6024,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-bianca-buzin",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to Bianca Buzin: Noi: open, offers brewery",
+      "summary": "Bianca said of course, shared her number and asked if he wants to use the brewery",
+      "payload": {
+        "to": "atendimento@cervejarianoi.com.br",
+        "subject": "Re: Shooting at Noi Gastronomia - Aidan Torrence",
+        "body": "Hi Bianca,\n\nThank you! I have your number now, and the brewery would be great to see too. I'm shooting in the second half of November. Which days and times are quietest for you?\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-16T16:12:12Z",
+      "expires": "2026-11-19T16:12:12Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
