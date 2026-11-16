@@ -6132,6 +6132,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-museu-do-samba",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to Museu do Samba: Museu do Samba: approach and use",
+      "summary": "Asked about approach, story and how the images would be used; offered institutional use",
+      "payload": {
+        "to": "contato@museudosamba.org.br",
+        "subject": "Re: Photographing Museu do Samba - Aidan Torrence",
+        "body": "Hi Museu do Samba team,\n\nThank you. The story I have in mind is about the keepers of samba's memory: the elders, the archives and the oral histories at the museum's home in Mangueira. I'd pitch the finished story to magazines, and you'd get the images to use for the museum's institutional and communication work.\n\nI'm shooting in the second half of November. Which days would suit you?\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-16T16:12:38Z",
+      "expires": "2026-11-19T16:12:38Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
