@@ -6060,6 +6060,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-nanda-scarambone",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to Nanda S: Nanda: wants a call",
+      "summary": "Keen to work together, asked for an online meeting or a call",
+      "payload": {
+        "to": "nanda.scarambone@gmail.com",
+        "subject": "Re: Portrait tests in Rio - Aidan Torrence",
+        "body": "Hi Nanda,\n\nGreat, thank you! WhatsApp is easiest for me: +49 175 8966210.\n\nThe tests are portraits in natural light on location in Rio: Arpoador, Ipanema, Santa Teresa and the Centro. Each session is 60 to 90 minutes, and the talent get the edited images, free to use for their book and your site and social. It's a creative collaboration with no fee on either side.\n\nI'm shooting in the second half of November. Which days work for your talent?\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-16T16:12:22Z",
+      "expires": "2026-11-19T16:12:22Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
