@@ -1,6 +1,6 @@
 {
- "date": "2026-11-16",
- "generated": "2026-11-16T08:49:00Z",
+ "date": "2026-11-17",
+ "generated": "2026-11-17T08:50:00Z",
  "items": [
   {
    "id": "publication-1",
@@ -243,12 +243,12 @@
    "source": "português"
   },
   {
-   "id": "bookings-2",
+   "id": "bookings-2b",
    "task": "bookings",
    "rank": 3,
    "title": "Turn the Rio Meta campaign into steady shoot bookings",
-   "text": "The Rio website campaign runs at {{$2 a day}}.",
-   "note": "Cheap enough to keep on. The question is whether sign-ups turn into shoots.",
+   "text": "Rio ads now run two ways: the website campaign at $2 a day and a new Instagram DM ad set at {{$5 a day}}.",
+   "note": "The DM ad set (rio - dm - pt - r1h) went out with 8 ads. The question for both is whether they turn into shoots.",
    "minutes": 0,
    "source": "photography · bookings"
   },
@@ -423,12 +423,12 @@
    "source": "português"
   },
   {
-   "id": "editorials-3",
+   "id": "editorials-3b",
    "task": "editorials",
    "rank": 2,
    "title": "Shoot 2-3 strong Rio editorials before 4 December",
-   "text": "Venues that already replied to my Rio outreach include Rubaiyat, Noi Gastronomia and {{Fasano}}.",
-   "note": "A yes from a venue is only worth something once a shoot date is on it.",
+   "text": "Venues that have said yes to hosting a Rio shoot now include Noi Gastronomia, Aureum and {{Bar Urca}}.",
+   "note": "Rubaiyat and Fasano replied earlier too. A yes from a venue is only worth something once a shoot date is on it.",
    "minutes": 0,
    "source": "photography · Rio"
   },
