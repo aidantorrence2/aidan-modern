@@ -6405,6 +6405,25 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "basemgt-rio-briefing-3",
+      "kind": "email",
+      "source": "claude:bd4c4724",
+      "title": "Send email to Base MGT Rio (Nobru): shoot briefing (beach + surrounding streets)",
+      "summary": "Final: natural-light editorial on the beach and surrounding streets, Ipanema/Leme outdoors, 1-2h TFP, Rio moodboard attached. Deny the two earlier briefing cards.",
+      "payload": {
+        "to": "newfacerio@basemgt.com.br",
+        "threadId": "1a1c6a782ca161c3",
+        "draftId": "r7839627751134924323",
+        "attachment": "Rio-Agency-Moodboard.jpg",
+        "body": "Hi Nobru,\n\nHere's the briefing:\n\n- Concept: natural-light editorial on the beach and surrounding streets\n- Location: Ipanema / Leme, outdoors\n- Duration: 1-2 hours, TFP\n\nI have attached the moodboard.\n\nBest,\nAidan"
+      },
+      "created": "2026-11-17T22:42:06Z",
+      "expires": "2026-11-20T22:42:06Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
