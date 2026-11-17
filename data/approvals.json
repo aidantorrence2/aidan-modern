@@ -6366,6 +6366,26 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "basemgt-rio-briefing-1",
+      "kind": "email",
+      "source": "claude:bd4c4724",
+      "title": "Send email to Base MGT Rio (Nobru): shoot briefing for both Barbaras",
+      "summary": "Reply in the Rio model tests thread: natural-light editorial, Ipanema/Leme, 1-2h TFP, wardrobe swimsuit/summer dress/basics, Rio moodboard attached. Gmail draft is ready.",
+      "payload": {
+        "to": "newfacerio@basemgt.com.br",
+        "threadId": "1a1c6a782ca161c3",
+        "draftId": "r-6920286417469623474",
+        "subject": "RE: RES: RES: Rio model tests | Aidan Torrence",
+        "attachment": "Rio-Agency-Moodboard.jpg",
+        "body": "Hi Nobru,\n\nHere's the briefing:\n\n- Concept: natural-light editorial on the beach and streets\n- Wardrobe: please bring 2-3 looks (swimsuit, a summer dress, basics); natural makeup, hair down\n- Location: Ipanema / Leme, outdoors\n- Duration: 1-2 hours, TFP\n\nI have attached the moodboard.\n\nBest,\nAidan"
+      },
+      "created": "2026-11-17T22:38:59Z",
+      "expires": "2026-11-20T22:38:59Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
