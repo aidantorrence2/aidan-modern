@@ -6534,7 +6534,9 @@
           "/Volumes/PortableSSD/2023/Brasil - finished NLP scans/DSC02231.tif",
           "/Volumes/PortableSSD/2023/Brasil - finished NLP scans/DSC02232.tif"
         ],
-        "condition": "After all 23 matching 2048 px JPEGs are uploaded and checksum-verified in My Drive/juliana test. Preserve source DNGs and the comparison sheets."
+        "condition": "After all 23 matching 2048 px JPEGs are uploaded and checksum-verified in My Drive/juliana test. Preserve source DNGs and the comparison sheets.",
+        "result": "Verified all 23 first-pass JPEGs against their Google Drive MD5 hashes, then deleted exactly the 23 approved TIFFs (2,510,894,292 bytes).",
+        "result_at": "2026-11-19T14:07:37Z"
       },
       "created": "2026-11-19T14:02:21Z",
       "status": "approved",
