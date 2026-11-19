@@ -6481,6 +6481,25 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "other:permanently-delete-everything-in-portabl-202611190350",
+      "kind": "other",
+      "source": "codex:scratch-2026-11-19-c73ddb",
+      "title": "Permanently delete everything in PortableSSD's Trash (52 items)",
+      "summary": "11 folders (2012-03-07, 2023, '2023-02-22 (copied to OldSSD, trash me)', 2026, anna sax, anna sax 3, anna sax selected, pati, philipino_lovely, real hker ps, shak selects ps) + 41 DNGs (DSC01924–DSC01968). Cannot be undone. Your Mac's own Trash is left untouched.",
+      "payload": {
+        "action": "permanent delete",
+        "target": "/Volumes/PortableSSD/.Trashes/501/*",
+        "method": "Finder moves the 52 trashed items into a staging folder on PortableSSD, then rm -rf that folder",
+        "not_touched": "/Users/aidantorrence/.Trash",
+        "undoable": false
+      },
+      "created": "2026-11-19T03:50:07Z",
+      "expires": "2026-11-22T03:50:07Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
