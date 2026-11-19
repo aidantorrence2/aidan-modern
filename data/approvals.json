@@ -6537,8 +6537,8 @@
         "condition": "After all 23 matching 2048 px JPEGs are uploaded and checksum-verified in My Drive/juliana test. Preserve source DNGs and the comparison sheets."
       },
       "created": "2026-11-19T14:02:21Z",
-      "status": "pending",
-      "decided": null,
+      "status": "approved",
+      "decided": "2026-11-19T14:03:03Z",
       "note": ""
     }
   ]
