@@ -6500,6 +6500,46 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "other:delete-23-first-pass-brasil-tiffs-after--202611191402",
+      "kind": "other",
+      "source": "codex:juliana-v2",
+      "title": "Delete 23 first-pass Brasil TIFFs after verified JPEG upload",
+      "summary": "Free 2.51 GB on PortableSSD after all 23 first-pass JPEGs are verified in My Drive/juliana test. Keep the DNGs and comparison sheets.",
+      "payload": {
+        "action": "delete_local_first_pass_tiffs",
+        "files": [
+          "/Volumes/PortableSSD/2023/Brasil - finished NLP scans/DSC02209.tif",
+          "/Volumes/PortableSSD/2023/Brasil - finished NLP scans/DSC02210.tif",
+          "/Volumes/PortableSSD/2023/Brasil - finished NLP scans/DSC02211.tif",
+          "/Volumes/PortableSSD/2023/Brasil - finished NLP scans/DSC02212.tif",
+          "/Volumes/PortableSSD/2023/Brasil - finished NLP scans/DSC02213.tif",
+          "/Volumes/PortableSSD/2023/Brasil - finished NLP scans/DSC02214.tif",
+          "/Volumes/PortableSSD/2023/Brasil - finished NLP scans/DSC02215.tif",
+          "/Volumes/PortableSSD/2023/Brasil - finished NLP scans/DSC02216.tif",
+          "/Volumes/PortableSSD/2023/Brasil - finished NLP scans/DSC02217.tif",
+          "/Volumes/PortableSSD/2023/Brasil - finished NLP scans/DSC02218.tif",
+          "/Volumes/PortableSSD/2023/Brasil - finished NLP scans/DSC02219.tif",
+          "/Volumes/PortableSSD/2023/Brasil - finished NLP scans/DSC02220.tif",
+          "/Volumes/PortableSSD/2023/Brasil - finished NLP scans/DSC02221.tif",
+          "/Volumes/PortableSSD/2023/Brasil - finished NLP scans/DSC02222.tif",
+          "/Volumes/PortableSSD/2023/Brasil - finished NLP scans/DSC02224.tif",
+          "/Volumes/PortableSSD/2023/Brasil - finished NLP scans/DSC02225.tif",
+          "/Volumes/PortableSSD/2023/Brasil - finished NLP scans/DSC02226.tif",
+          "/Volumes/PortableSSD/2023/Brasil - finished NLP scans/DSC02227.tif",
+          "/Volumes/PortableSSD/2023/Brasil - finished NLP scans/DSC02228.tif",
+          "/Volumes/PortableSSD/2023/Brasil - finished NLP scans/DSC02229.tif",
+          "/Volumes/PortableSSD/2023/Brasil - finished NLP scans/DSC02230.tif",
+          "/Volumes/PortableSSD/2023/Brasil - finished NLP scans/DSC02231.tif",
+          "/Volumes/PortableSSD/2023/Brasil - finished NLP scans/DSC02232.tif"
+        ],
+        "condition": "After all 23 matching 2048 px JPEGs are uploaded and checksum-verified in My Drive/juliana test. Preserve source DNGs and the comparison sheets."
+      },
+      "created": "2026-11-19T14:02:21Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
