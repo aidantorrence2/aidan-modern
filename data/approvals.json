@@ -6542,6 +6542,26 @@
       "status": "approved",
       "decided": "2026-11-19T14:03:03Z",
       "note": ""
+    },
+    {
+      "id": "other:store-306-brasil-tiff-masters-in-a-separ-202611191550",
+      "kind": "other",
+      "source": "codex:aidantorrence",
+      "title": "Store 306 Brasil TIFF masters in a separate private Google Drive folder",
+      "summary": "The 306 full-resolution TIFFs need roughly 32–45 GB. PortableSSD has 12 GB free. Use your private Drive for the masters, verify each upload, and reclaim only this job’s temporary staging files.",
+      "payload": {
+        "source": "/Volumes/PortableSSD/2023/brasil",
+        "selection": "306 unique captures, prefer the 194 DNGs and use ARW for the other 112",
+        "destination": "My Drive/Brasil 2023 - Independent Color",
+        "output": "16-bit TIFF masters and conversion recipes; smaller JPEG proofs in a subfolder",
+        "staging": "Reuse the current 23 verified masters where settings match. Remove only temporary files created for this transfer after a remote checksum match. Preserve originals, prior masters, and prior catalog edits.",
+        "sharing": "private Google Drive; no new sharing permissions"
+      },
+      "created": "2026-11-19T15:50:08Z",
+      "expires": "2026-11-22T15:50:08Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
