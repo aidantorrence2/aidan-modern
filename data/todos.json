@@ -1,6 +1,6 @@
 {
- "date": "2026-11-19",
- "generated": "2026-11-19T08:49:00Z",
+ "date": "2026-11-20",
+ "generated": "2026-11-20T08:50:00Z",
  "items": [
   {
    "id": "publication-1",
@@ -623,12 +623,12 @@
    "source": "português"
   },
   {
-   "id": "editorials-4",
+   "id": "editorials-4b",
    "task": "editorials",
    "rank": 2,
    "title": "Shoot 2-3 strong Rio editorials before 4 December",
    "text": "Each Rio editorial needs three things locked: a stylist, an agency model and {{a venue that said yes}}.",
-   "note": "The next milestone is one shoot with all three confirmed on a calendar date.",
+   "note": "A first editorial is now proposed to the stylists for Friday 27 November at Praia Vermelha and Avenida Portugal. The model is still to be chosen.",
    "minutes": 0,
    "source": "photography · Rio"
   },
