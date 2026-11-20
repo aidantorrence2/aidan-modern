@@ -6562,6 +6562,29 @@
       "status": "approved",
       "decided": "2026-11-19T16:05:55Z",
       "note": ""
+    },
+    {
+      "id": "build:install-and-relaunch-four-scan-darkroom--202611200235",
+      "kind": "build",
+      "source": "codex:scan-darkroom",
+      "title": "Install and relaunch four Scan Darkroom milestones and backfill the catalog",
+      "summary": "Back up library.sqlite3, add undoable dust repairs and re-evaluate untouched negatives. Replace /Applications/Scan Darkroom.app and relaunch after each tested milestone.",
+      "payload": {
+        "bundle": "/Applications/Scan Darkroom.app",
+        "source": "/Users/aidantorrence/Projects/scan-darkroom/build/Scan Darkroom.app",
+        "milestones": [
+          "dust and file identity",
+          "Library layout",
+          "negative roll prior",
+          "pre-render"
+        ],
+        "catalog": "Back up and verify library.sqlite3 before writing. Append default repairs, then re-evaluate untouched scan candidates. Keep originals read-only.",
+        "action": "Quit Scan Darkroom, replace its bundle with the tested build, and relaunch at each milestone."
+      },
+      "created": "2026-11-20T02:35:03Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
