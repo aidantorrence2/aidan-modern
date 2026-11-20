@@ -6610,6 +6610,29 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "other:create-the-public-facebook-group-pickleb-202611200342",
+      "kind": "other",
+      "source": "codex:aidantorrence",
+      "title": "Create the public Facebook group Pickleball Paddle Notes",
+      "summary": "Create a free, public group under your signed-in Facebook profile for recreational players comparing paddles. Your profile will be visible as admin. No invites, feed posts, ads or purchases.",
+      "payload": {
+        "service": "Facebook Groups",
+        "action": "Create public group, then set its About description if available",
+        "name": "Pickleball Paddle Notes",
+        "privacy": "Public",
+        "admin": "current signed-in Facebook profile",
+        "description": "A place for recreational pickleball players to compare paddles they have actually tried. Bring your current paddle, describe one shot you want to improve, and share what changed when you tested a second paddle. Firsthand court notes, including reasons to keep your current paddle, are welcome. Disclose free gear or commissions in any recommendation.",
+        "invitees": [],
+        "feed_posts": [],
+        "spend_usd": 0
+      },
+      "created": "2026-11-20T03:42:48Z",
+      "expires": "2026-11-20T04:42:48Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
