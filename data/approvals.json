@@ -6585,6 +6585,31 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "build:install-four-scan-darkroom-milestones-an-202611200237",
+      "kind": "build",
+      "source": "codex:scan-darkroom",
+      "title": "Install four Scan Darkroom milestones and backfill scan recipes",
+      "summary": "Replace and relaunch the local Scan Darkroom app after each tested milestone. Back up the SQLite catalog first, then add missing automatic repairs and set up untouched negatives. All original media stay read-only.",
+      "payload": {
+        "app": "/Applications/Scan Darkroom.app",
+        "build": "./build.sh",
+        "install": "stage verified bundle, quit only Scan Darkroom, replace installed bundle and relaunch",
+        "milestones": [
+          "additive dust backfill and file identity",
+          "Library layout",
+          "roll negative detection",
+          "background preparation"
+        ],
+        "catalog": "SQLite online backup plus integrity check before once-only recipe backfill in ~/Library/Application Support/Scan Darkroom/library.sqlite3",
+        "media": "read-only"
+      },
+      "created": "2026-11-20T02:37:04Z",
+      "expires": "2026-11-23T02:37:04Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
