@@ -6761,6 +6761,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-itacoa-biju",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to Itacoa Biju: collab details",
+      "summary": "Interested (new summer collection); asked for past editorials, jewelry collabs, what's included, image count/deadline, usage rights incl. campaigns, costs. Draft covers collab terms; add portfolio picks, image count and usage scope if you want",
+      "payload": {
+        "to": "itacoabiju@gmail.com",
+        "subject": "Re: Collab editorial com a Itacoa Biju - Aidan Torrence",
+        "body": "Olá, equipe Itacoa Biju,\n\nObrigado pelo retorno. A proposta é um collab editorial: fotografo um editorial com as peças da Itacoa Biju nas praias e ruas do Rio, na segunda quinzena de novembro. A modelo retira as peças com vocês e devolve depois do ensaio. Vocês recebem as fotos finais para usar nas redes sociais da marca. Não há custo nem cachê de nenhum dos lados.\n\nMeu trabalho: https://aidantorrence.com · https://instagram.com/madebyaidan\n\nQuais peças vocês gostariam de ver fotografadas, e quais dias funcionam para vocês?\n\n— English —\n\nThanks for getting back to me. The idea is an editorial collab: I shoot an editorial with Itacoa Biju pieces on the beaches and streets of Rio in the second half of November. The model collects the pieces from you and returns them after the shoot. You get the final images to use on your social channels. There is no cost or fee on either side.\n\nWhich pieces would you like to see shot, and which days suit you?\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-25T18:11:35Z",
+      "expires": "2026-11-28T18:11:35Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
