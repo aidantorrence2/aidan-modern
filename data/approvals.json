@@ -6905,6 +6905,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-sonia-destri-lie-2",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to Sonia Destri Lie: still keen, which days",
+      "summary": "Sonia asks 'Did u give up?' (earlier reply-sonia-destri-lie still unapproved; approve only one)",
+      "payload": {
+        "to": "companhia.urbana.de.danca@gmail.com",
+        "subject": "Re: Photography for Companhia Urbana de Dança - Aidan Torrence",
+        "body": "Hi Sonia,\n\nNot at all, I'd still love to do it. I'm in Rio until 4 December. Which days work best for the company, and where do you usually rehearse? I'm happy to shoot there or out in the city.\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-25T20:09:18Z",
+      "expires": "2026-11-28T20:09:18Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
