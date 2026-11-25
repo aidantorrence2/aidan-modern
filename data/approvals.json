@@ -6707,6 +6707,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-sonia-destri-lie",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to Sonia Destri Lie: days and place",
+      "summary": "Says let's talk about dates and where",
+      "payload": {
+        "to": "companhia.urbana.de.danca@gmail.com",
+        "subject": "Re: Photography for Companhia Urbana de Dança - Aidan Torrence",
+        "body": "Hi Sonia,\n\nGreat. Which days work best for the company before 4 December? And where do you usually rehearse? I'm happy to shoot there or out in the city, whichever suits you.\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-25T17:37:02Z",
+      "expires": "2026-11-28T17:37:02Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
