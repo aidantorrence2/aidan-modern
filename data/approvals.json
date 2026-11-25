@@ -6635,6 +6635,24 @@
       "status": "approved",
       "decided": "2026-11-20T03:43:10Z",
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-savory-coutinho",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to Savory: stylist in, WhatsApp",
+      "summary": "Stylist keen, wants to move to WhatsApp/Instagram (+55 21 98547-1234, @savory_________)",
+      "payload": {
+        "to": "savory.contato@gmail.com",
+        "subject": "Re: Rio beach/street editorial - styling collaboration",
+        "body": "Hi Savory,\n\nGreat, thank you. WhatsApp works for me: +49 175 8966210. Message me there and I'll send over the details.\n\nThe story is a beach/street fashion editorial in Rio, with the moodboard I sent; the role is styling the looks and pulling pieces for the shoot. It's a creative collaboration with no fee on either side, and you'd get full credit and the final images.\n\nWhich days work for you before 4 December?\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-25T17:36:47Z",
+      "expires": "2026-11-28T17:36:47Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
