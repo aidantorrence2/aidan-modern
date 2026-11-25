@@ -6923,6 +6923,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-ewa-poranga",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to Júlia Vidal: collab is with the brand",
+      "summary": "Ewa Poranga asks whether the collab is with the Instituto or Júlia Vidal, wants the proposal explained",
+      "payload": {
+        "to": "contato@ewaporanga.com",
+        "subject": "Re: Photography for Júlia Vidal - Aidan Torrence",
+        "body": "Olá,\n\nObrigado pelo retorno. A proposta é com a Júlia Vidal: uma collab editorial em que fotografo um editorial com peças da marca nas praias e ruas do Rio. A modelo retira as peças com vocês e devolve depois do ensaio, e vocês recebem as imagens finais para usar nas redes sociais. Não há cachê de nenhum dos lados.\n\nQuais peças vocês gostariam de ver fotografadas, e quais dias funcionam para vocês até 4 de dezembro?\n\nAbraço,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-25T22:08:49Z",
+      "expires": "2026-11-28T22:08:49Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
