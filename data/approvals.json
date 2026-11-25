@@ -6743,6 +6743,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-beth-paiva",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to Beth (Rio Scenarium): new meeting",
+      "summary": "Invited Aidan to meet 20 Nov 9pm (passed); asks to talk shoot in person",
+      "payload": {
+        "to": "beth.paiva@rioscenarium.com.br",
+        "subject": "RES: Shooting at Rio Scenarium - Aidan Torrence",
+        "body": "Hi Beth,\n\nThank you, and sorry I missed the 20th. Which other evening would suit you to meet and talk it through? I'm in Rio through 4 December.\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-25T17:37:10Z",
+      "expires": "2026-11-28T17:37:10Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
