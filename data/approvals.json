@@ -6815,6 +6815,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-joao-evol",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to João (Evol): WhatsApp ok",
+      "summary": "Evol new faces asks to send model options via WhatsApp (+55 11 94001-4097)",
+      "payload": {
+        "to": "fotografia@evolmgmt.com.br",
+        "subject": "Re: São Paulo model tests | Aidan Torrence",
+        "body": "Hi João,\n\nNice to meet you. Sure, my WhatsApp is +49 175 8966210.\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-25T18:11:47Z",
+      "expires": "2026-11-28T18:11:47Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
