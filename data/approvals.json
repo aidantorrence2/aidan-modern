@@ -6779,6 +6779,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-gabrielly-lau",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to Gabi Lau: dates and terms",
+      "summary": "SP-based HMUA asks exact dates, production details, and who covers travel/logistics to Rio (draft does not answer travel: your call)",
+      "payload": {
+        "to": "gabriellylaunoivas@gmail.com",
+        "subject": "Re: Rio beach/street editorial - hair and makeup",
+        "body": "Hi Gabi,\n\nThanks for getting back to me. It's a beach and street fashion editorial in Rio; the moodboard is in my first email. We're shooting in the second half of November, so let me know which days work for you.\n\nIt's a creative collaboration with no fee on either side; you'd get full credit and the final images.\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-25T18:11:39Z",
+      "expires": "2026-11-28T18:11:39Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
