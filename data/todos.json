@@ -1,6 +1,6 @@
 {
- "date": "2026-11-24",
- "generated": "2026-11-24T08:50:00Z",
+ "date": "2026-11-25",
+ "generated": "2026-11-25T08:50:00Z",
  "items": [
   {
    "id": "publication-1",
@@ -243,12 +243,12 @@
    "source": "português"
   },
   {
-   "id": "bookings-2b",
+   "id": "bookings-2c",
    "task": "bookings",
    "rank": 3,
    "title": "Turn the Rio Meta campaign into steady shoot bookings",
-   "text": "Rio ads now run two ways: the website campaign at $2 a day and a new Instagram DM ad set at {{$5 a day}}.",
-   "note": "The DM ad set (rio - dm - pt - r1h) went out with 8 ads. The question for both is whether they turn into shoots.",
+   "text": "The newest Rio ad campaign, a nature-themed Instagram DM campaign, runs at {{$5 a day}} alongside the $2 a day website campaign.",
+   "note": "It is called rio - dm - pt - natureza and went live with 7 ads. An earlier DM ad set went out at $5 a day with 8 ads. The question for all of them is whether they turn into shoots.",
    "minutes": 0,
    "source": "photography · bookings"
   },
