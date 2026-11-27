@@ -1,6 +1,6 @@
 {
- "date": "2026-11-26",
- "generated": "2026-11-26T08:50:00Z",
+ "date": "2026-11-27",
+ "generated": "2026-11-27T08:50:00Z",
  "items": [
   {
    "id": "publication-1",
@@ -83,14 +83,14 @@
    "source": "português"
   },
   {
-   "id": "sao-paulo-1",
-   "task": "sao-paulo",
+   "id": "instagram-1",
+   "task": "instagram",
    "rank": 5,
-   "title": "Make the São Paulo week produce one strong shoot",
-   "text": "My São Paulo dates are {{24 to 30 November}}.",
-   "note": "One week. Whatever is not booked before arriving probably will not happen.",
+   "title": "Build an Instagram grid that wins agencies and magazines",
+   "text": "My Instagram grid plan holds {{126 picks}}, portraits interleaved with documentary.",
+   "note": "Saved at /picks.",
    "minutes": 0,
-   "source": "photography · São Paulo"
+   "source": "photography · Instagram"
   },
   {
    "id": "pt-fazer",
@@ -103,14 +103,14 @@
    "source": "português"
   },
   {
-   "id": "instagram-1",
-   "task": "instagram",
+   "id": "archive-1",
+   "task": "archive",
    "rank": 6,
-   "title": "Build an Instagram grid that wins agencies and magazines",
-   "text": "My Instagram grid plan holds {{126 picks}}, portraits interleaved with documentary.",
-   "note": "Saved at /picks.",
+   "title": "Turn the film archive into frames I can pitch and post",
+   "text": "The point of the Lightroom and negative work is {{an archive of finished frames I can pitch and post}}.",
+   "note": "Rotating, cropping and converting are means, not the goal.",
    "minutes": 0,
-   "source": "photography · Instagram"
+   "source": "photography · archive"
   },
   {
    "id": "pt-achar",
@@ -123,14 +123,14 @@
    "source": "português"
   },
   {
-   "id": "archive-1",
-   "task": "archive",
+   "id": "dating-app-1",
+   "task": "dating-app",
    "rank": 7,
-   "title": "Turn the film archive into frames I can pitch and post",
-   "text": "The point of the Lightroom and negative work is {{an archive of finished frames I can pitch and post}}.",
-   "note": "Rotating, cropping and converting are means, not the goal.",
+   "title": "Find out whether people will pay for the dating photo generator",
+   "text": "The question for the dating profile photo generator is {{will people pay for it}}.",
+   "note": "Not 'can it be built'. That is already known.",
    "minutes": 0,
-   "source": "photography · archive"
+   "source": "apps · dating photos"
   },
   {
    "id": "pt-falar",
@@ -143,14 +143,14 @@
    "source": "português"
   },
   {
-   "id": "dating-app-1",
-   "task": "dating-app",
+   "id": "accountability-1",
+   "task": "accountability",
    "rank": 8,
-   "title": "Find out whether people will pay for the dating photo generator",
-   "text": "The question for the dating profile photo generator is {{will people pay for it}}.",
-   "note": "Not 'can it be built'. That is already known.",
+   "title": "Choose one accountability app idea and validate it",
+   "text": "For the accountability app the goal is to {{choose one idea and validate it}}.",
+   "note": "One idea, tested properly, beats five half-tested.",
    "minutes": 0,
-   "source": "apps · dating photos"
+   "source": "apps · accountability"
   },
   {
    "id": "pt-saber",
@@ -163,29 +163,9 @@
    "source": "português"
   },
   {
-   "id": "accountability-1",
-   "task": "accountability",
-   "rank": 9,
-   "title": "Choose one accountability app idea and validate it",
-   "text": "For the accountability app the goal is to {{choose one idea and validate it}}.",
-   "note": "One idea, tested properly, beats five half-tested.",
-   "minutes": 0,
-   "source": "apps · accountability"
-  },
-  {
-   "id": "pt-conseguir",
-   "task": "pt-conseguir",
-   "rank": 99,
-   "title": "conseguir = to manage to / to get",
-   "text": "Não {{consegui}} chegar a tempo. (I didn't manage to arrive in time.)",
-   "note": "",
-   "minutes": 0,
-   "source": "português"
-  },
-  {
    "id": "flywheel-1",
    "task": "flywheel",
-   "rank": 10,
+   "rank": 9,
    "title": "Get one consumer app idea to earn a build",
    "text": "Across all my app ideas the goal is {{one idea that passes the build threshold}}.",
    "note": "Hundreds of offer pages are live. None counts until one earns a build.",
@@ -193,11 +173,11 @@
    "source": "apps · flywheel"
   },
   {
-   "id": "pt-gostar",
-   "task": "pt-gostar",
+   "id": "pt-conseguir",
+   "task": "pt-conseguir",
    "rank": 99,
-   "title": "gostar = to like (always with 'de')",
-   "text": "Eu {{gosto}} muito dessa foto. (I really like this photo.)",
+   "title": "conseguir = to manage to / to get",
+   "text": "Não {{consegui}} chegar a tempo. (I didn't manage to arrive in time.)",
    "note": "",
    "minutes": 0,
    "source": "português"
@@ -213,11 +193,11 @@
    "source": "photography · magazines"
   },
   {
-   "id": "pt-chegar",
-   "task": "pt-chegar",
+   "id": "pt-gostar",
+   "task": "pt-gostar",
    "rank": 99,
-   "title": "chegar = to arrive",
-   "text": "Que horas você vai {{chegar}}? (What time are you going to arrive?)",
+   "title": "gostar = to like (always with 'de')",
+   "text": "Eu {{gosto}} muito dessa foto. (I really like this photo.)",
    "note": "",
    "minutes": 0,
    "source": "português"
@@ -233,11 +213,11 @@
    "source": "photography · Rio"
   },
   {
-   "id": "pt-deixar",
-   "task": "pt-deixar",
+   "id": "pt-chegar",
+   "task": "pt-chegar",
    "rank": 99,
-   "title": "deixar = to leave / to let",
-   "text": "Pode {{deixar}} a bolsa aqui. (You can leave the bag here.)",
+   "title": "chegar = to arrive",
+   "text": "Que horas você vai {{chegar}}? (What time are you going to arrive?)",
    "note": "",
    "minutes": 0,
    "source": "português"
@@ -253,11 +233,11 @@
    "source": "photography · bookings"
   },
   {
-   "id": "pt-pegar",
-   "task": "pt-pegar",
+   "id": "pt-deixar",
+   "task": "pt-deixar",
    "rank": 99,
-   "title": "pegar = to take / to grab / to catch",
-   "text": "Vou {{pegar}} um Uber. (I'm going to take an Uber.)",
+   "title": "deixar = to leave / to let",
+   "text": "Pode {{deixar}} a bolsa aqui. (You can leave the bag here.)",
    "note": "",
    "minutes": 0,
    "source": "português"
@@ -273,6 +253,26 @@
    "source": "photography · Bali"
   },
   {
+   "id": "pt-pegar",
+   "task": "pt-pegar",
+   "rank": 99,
+   "title": "pegar = to take / to grab / to catch",
+   "text": "Vou {{pegar}} um Uber. (I'm going to take an Uber.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
+   "id": "instagram-2",
+   "task": "instagram",
+   "rank": 5,
+   "title": "Build an Instagram grid that wins agencies and magazines",
+   "text": "The grid matters because {{agencies and magazines look at it before they answer a pitch}}.",
+   "note": "With about 200 pitches out, people are looking this week.",
+   "minutes": 0,
+   "source": "photography · Instagram"
+  },
+  {
    "id": "pt-levar",
    "task": "pt-levar",
    "rank": 99,
@@ -283,14 +283,14 @@
    "source": "português"
   },
   {
-   "id": "sao-paulo-2",
-   "task": "sao-paulo",
-   "rank": 5,
-   "title": "Make the São Paulo week produce one strong shoot",
-   "text": "The goal for the São Paulo week is {{one strong shoot I can pitch}}.",
-   "note": "One finished story beats three loose tests.",
+   "id": "archive-2",
+   "task": "archive",
+   "rank": 6,
+   "title": "Turn the film archive into frames I can pitch and post",
+   "text": "The film archive matters because {{it is where the grid, the portfolio and the magazine edits come from}}.",
+   "note": "Unedited scans cannot be sent to anyone.",
    "minutes": 0,
-   "source": "photography · São Paulo"
+   "source": "photography · archive"
   },
   {
    "id": "pt-trazer",
@@ -303,14 +303,14 @@
    "source": "português"
   },
   {
-   "id": "instagram-2",
-   "task": "instagram",
-   "rank": 6,
-   "title": "Build an Instagram grid that wins agencies and magazines",
-   "text": "The grid matters because {{agencies and magazines look at it before they answer a pitch}}.",
-   "note": "With about 200 pitches out, people are looking this week.",
+   "id": "dating-app-2",
+   "task": "dating-app",
+   "rank": 7,
+   "title": "Find out whether people will pay for the dating photo generator",
+   "text": "The dating test compares four ideas: AI shoot, camera-roll edit, profile audit and {{swipe test}}.",
+   "note": "Each has its own 'launching soon' page, so sign-ups show which one people want.",
    "minutes": 0,
-   "source": "photography · Instagram"
+   "source": "apps · dating photos"
   },
   {
    "id": "pt-esperar",
@@ -323,14 +323,14 @@
    "source": "português"
   },
   {
-   "id": "archive-2",
-   "task": "archive",
-   "rank": 7,
-   "title": "Turn the film archive into frames I can pitch and post",
-   "text": "The film archive matters because {{it is where the grid, the portfolio and the magazine edits come from}}.",
-   "note": "Unedited scans cannot be sent to anyone.",
+   "id": "accountability-2",
+   "task": "accountability",
+   "rank": 8,
+   "title": "Choose one accountability app idea and validate it",
+   "text": "Validating means {{strangers sign up or say they would pay}}, before any code is written.",
+   "note": "Same thresholds as every other app idea.",
    "minutes": 0,
-   "source": "photography · archive"
+   "source": "apps · accountability"
   },
   {
    "id": "pt-tentar",
@@ -343,49 +343,9 @@
    "source": "português"
   },
   {
-   "id": "dating-app-2",
-   "task": "dating-app",
-   "rank": 8,
-   "title": "Find out whether people will pay for the dating photo generator",
-   "text": "The dating test compares four ideas: AI shoot, camera-roll edit, profile audit and {{swipe test}}.",
-   "note": "Each has its own 'launching soon' page, so sign-ups show which one people want.",
-   "minutes": 0,
-   "source": "apps · dating photos"
-  },
-  {
-   "id": "pt-mandar",
-   "task": "pt-mandar",
-   "rank": 99,
-   "title": "mandar = to send",
-   "text": "Vou te {{mandar}} as fotos amanhã. (I'll send you the photos tomorrow.)",
-   "note": "",
-   "minutes": 0,
-   "source": "português"
-  },
-  {
-   "id": "accountability-2",
-   "task": "accountability",
-   "rank": 9,
-   "title": "Choose one accountability app idea and validate it",
-   "text": "Validating means {{strangers sign up or say they would pay}}, before any code is written.",
-   "note": "Same thresholds as every other app idea.",
-   "minutes": 0,
-   "source": "apps · accountability"
-  },
-  {
-   "id": "pt-marcar",
-   "task": "pt-marcar",
-   "rank": 99,
-   "title": "marcar = to schedule / to book",
-   "text": "Vamos {{marcar}} o ensaio para sexta. (Let's schedule the shoot for Friday.)",
-   "note": "",
-   "minutes": 0,
-   "source": "português"
-  },
-  {
    "id": "flywheel-2",
    "task": "flywheel",
-   "rank": 10,
+   "rank": 9,
    "title": "Get one consumer app idea to earn a build",
    "text": "Every app offer must start from {{demand already visible in the market}}, never from a guess.",
    "note": "Evidence from 3 or more people plus a sign that money is already being spent.",
@@ -393,11 +353,11 @@
    "source": "apps · flywheel"
   },
   {
-   "id": "pt-combinar",
-   "task": "pt-combinar",
+   "id": "pt-mandar",
+   "task": "pt-mandar",
    "rank": 99,
-   "title": "combinar = to agree / to arrange",
-   "text": "{{Combinado}}, a gente se vê às dez. (Agreed, we'll see each other at ten.)",
+   "title": "mandar = to send",
+   "text": "Vou te {{mandar}} as fotos amanhã. (I'll send you the photos tomorrow.)",
    "note": "",
    "minutes": 0,
    "source": "português"
@@ -413,11 +373,11 @@
    "source": "photography · magazines"
   },
   {
-   "id": "pt-olhar",
-   "task": "pt-olhar",
+   "id": "pt-marcar",
+   "task": "pt-marcar",
    "rank": 99,
-   "title": "olhar = to look",
-   "text": "{{Olha}} para a câmera. (Look at the camera.)",
+   "title": "marcar = to schedule / to book",
+   "text": "Vamos {{marcar}} o ensaio para sexta. (Let's schedule the shoot for Friday.)",
    "note": "",
    "minutes": 0,
    "source": "português"
@@ -433,11 +393,11 @@
    "source": "photography · Rio"
   },
   {
-   "id": "pt-comecar",
-   "task": "pt-comecar",
+   "id": "pt-combinar",
+   "task": "pt-combinar",
    "rank": 99,
-   "title": "começar = to start",
-   "text": "A gente pode {{começar}} agora? (Can we start now?)",
+   "title": "combinar = to agree / to arrange",
+   "text": "{{Combinado}}, a gente se vê às dez. (Agreed, we'll see each other at ten.)",
    "note": "",
    "minutes": 0,
    "source": "português"
@@ -453,11 +413,11 @@
    "source": "photography · bookings"
   },
   {
-   "id": "pt-acabar",
-   "task": "pt-acabar",
+   "id": "pt-olhar",
+   "task": "pt-olhar",
    "rank": 99,
-   "title": "acabar = to finish / to end",
-   "text": "Já vamos {{acabar}}. (We're about to finish.)",
+   "title": "olhar = to look",
+   "text": "{{Olha}} para a câmera. (Look at the camera.)",
    "note": "",
    "minutes": 0,
    "source": "português"
@@ -473,6 +433,46 @@
    "source": "photography · Bali"
   },
   {
+   "id": "pt-comecar",
+   "task": "pt-comecar",
+   "rank": 99,
+   "title": "começar = to start",
+   "text": "A gente pode {{começar}} agora? (Can we start now?)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
+   "id": "instagram-3",
+   "task": "instagram",
+   "rank": 5,
+   "title": "Build an Instagram grid that wins agencies and magazines",
+   "text": "The grid plan mixes portraits with {{documentary frames}} so it reads as one photographer.",
+   "note": "The order is already decided. The goal is to get it published.",
+   "minutes": 0,
+   "source": "photography · Instagram"
+  },
+  {
+   "id": "pt-acabar",
+   "task": "pt-acabar",
+   "rank": 99,
+   "title": "acabar = to finish / to end",
+   "text": "Já vamos {{acabar}}. (We're about to finish.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
+   "id": "archive-3",
+   "task": "archive",
+   "rank": 6,
+   "title": "Turn the film archive into frames I can pitch and post",
+   "text": "An archive shoot is finished when {{its best frames are edited and exported}}, not when it is imported.",
+   "note": "The next milestone is one old shoot taken all the way to exported selects.",
+   "minutes": 0,
+   "source": "photography · archive"
+  },
+  {
    "id": "pt-pagar",
    "task": "pt-pagar",
    "rank": 99,
@@ -483,14 +483,14 @@
    "source": "português"
   },
   {
-   "id": "sao-paulo-3",
-   "task": "sao-paulo",
-   "rank": 5,
-   "title": "Make the São Paulo week produce one strong shoot",
-   "text": "The São Paulo week matters because {{it widens the trip beyond Rio for magazines and agencies}}.",
-   "note": "A second city makes the Brazil work a body of work.",
+   "id": "dating-app-3",
+   "task": "dating-app",
+   "rank": 7,
+   "title": "Find out whether people will pay for the dating photo generator",
+   "text": "My rule for building an app is 1 pre-order, 3 'I'd pay' clicks, or {{10 sign-ups in 72 hours}}.",
+   "note": "The dating ideas get judged against this, nothing softer.",
    "minutes": 0,
-   "source": "photography · São Paulo"
+   "source": "apps · dating photos"
   },
   {
    "id": "pt-ajudar",
@@ -503,14 +503,14 @@
    "source": "português"
   },
   {
-   "id": "instagram-3",
-   "task": "instagram",
-   "rank": 6,
-   "title": "Build an Instagram grid that wins agencies and magazines",
-   "text": "The grid plan mixes portraits with {{documentary frames}} so it reads as one photographer.",
-   "note": "The order is already decided. The goal is to get it published.",
+   "id": "accountability-3",
+   "task": "accountability",
+   "rank": 8,
+   "title": "Choose one accountability app idea and validate it",
+   "text": "One accountability candidate is commitment-based work sessions at {{$9 a month}}.",
+   "note": "Blocking, one clear task and an accountability partner.",
    "minutes": 0,
-   "source": "photography · Instagram"
+   "source": "apps · accountability"
   },
   {
    "id": "pt-coisa",
@@ -523,69 +523,9 @@
    "source": "português"
   },
   {
-   "id": "archive-3",
-   "task": "archive",
-   "rank": 7,
-   "title": "Turn the film archive into frames I can pitch and post",
-   "text": "An archive shoot is finished when {{its best frames are edited and exported}}, not when it is imported.",
-   "note": "The next milestone is one old shoot taken all the way to exported selects.",
-   "minutes": 0,
-   "source": "photography · archive"
-  },
-  {
-   "id": "pt-tempo",
-   "task": "pt-tempo",
-   "rank": 99,
-   "title": "tempo = time / weather",
-   "text": "Não tenho muito {{tempo}} hoje. (I don't have much time today.)",
-   "note": "",
-   "minutes": 0,
-   "source": "português"
-  },
-  {
-   "id": "dating-app-3",
-   "task": "dating-app",
-   "rank": 8,
-   "title": "Find out whether people will pay for the dating photo generator",
-   "text": "My rule for building an app is 1 pre-order, 3 'I'd pay' clicks, or {{10 sign-ups in 72 hours}}.",
-   "note": "The dating ideas get judged against this, nothing softer.",
-   "minutes": 0,
-   "source": "apps · dating photos"
-  },
-  {
-   "id": "pt-lugar",
-   "task": "pt-lugar",
-   "rank": 99,
-   "title": "lugar = place",
-   "text": "Esse {{lugar}} é perfeito para fotos. (This place is perfect for photos.)",
-   "note": "",
-   "minutes": 0,
-   "source": "português"
-  },
-  {
-   "id": "accountability-3",
-   "task": "accountability",
-   "rank": 9,
-   "title": "Choose one accountability app idea and validate it",
-   "text": "One accountability candidate is commitment-based work sessions at {{$9 a month}}.",
-   "note": "Blocking, one clear task and an accountability partner.",
-   "minutes": 0,
-   "source": "apps · accountability"
-  },
-  {
-   "id": "pt-gente",
-   "task": "pt-gente",
-   "rank": 99,
-   "title": "gente = people ('a gente' = we)",
-   "text": "A {{gente}} vai fotografar na praia. (We're going to shoot at the beach.)",
-   "note": "",
-   "minutes": 0,
-   "source": "português"
-  },
-  {
    "id": "flywheel-3",
    "task": "flywheel",
-   "rank": 10,
+   "rank": 9,
    "title": "Get one consumer app idea to earn a build",
    "text": "An app idea earns a build with {{1 pre-order}}, 3 'I'd pay' clicks, or 10 sign-ups in 72 hours.",
    "note": "The single pre-order is the strongest signal of the three.",
@@ -593,11 +533,11 @@
    "source": "apps · flywheel"
   },
   {
-   "id": "pt-trabalho",
-   "task": "pt-trabalho",
+   "id": "pt-tempo",
+   "task": "pt-tempo",
    "rank": 99,
-   "title": "trabalho = work / job",
-   "text": "Esse é o meu {{trabalho}}. (This is my work.)",
+   "title": "tempo = time / weather",
+   "text": "Não tenho muito {{tempo}} hoje. (I don't have much time today.)",
    "note": "",
    "minutes": 0,
    "source": "português"
@@ -613,11 +553,11 @@
    "source": "photography · magazines"
   },
   {
-   "id": "pt-jeito",
-   "task": "pt-jeito",
+   "id": "pt-lugar",
+   "task": "pt-lugar",
    "rank": 99,
-   "title": "jeito = way / manner",
-   "text": "Faz do seu {{jeito}}. (Do it your way.)",
+   "title": "lugar = place",
+   "text": "Esse {{lugar}} é perfeito para fotos. (This place is perfect for photos.)",
    "note": "",
    "minutes": 0,
    "source": "português"
@@ -633,11 +573,11 @@
    "source": "photography · Rio"
   },
   {
-   "id": "pt-vez",
-   "task": "pt-vez",
+   "id": "pt-gente",
+   "task": "pt-gente",
    "rank": 99,
-   "title": "vez = time (occasion)",
-   "text": "Mais uma {{vez}}, por favor. (One more time, please.)",
+   "title": "gente = people ('a gente' = we)",
+   "text": "A {{gente}} vai fotografar na praia. (We're going to shoot at the beach.)",
    "note": "",
    "minutes": 0,
    "source": "português"
@@ -653,11 +593,11 @@
    "source": "photography · bookings"
   },
   {
-   "id": "pt-dinheiro",
-   "task": "pt-dinheiro",
+   "id": "pt-trabalho",
+   "task": "pt-trabalho",
    "rank": 99,
-   "title": "dinheiro = money / cash",
-   "text": "Você aceita {{dinheiro}} ou só cartão? (Do you take cash or only card?)",
+   "title": "trabalho = work / job",
+   "text": "Esse é o meu {{trabalho}}. (This is my work.)",
    "note": "",
    "minutes": 0,
    "source": "português"
@@ -673,6 +613,66 @@
    "source": "photography · Bali"
   },
   {
+   "id": "pt-jeito",
+   "task": "pt-jeito",
+   "rank": 99,
+   "title": "jeito = way / manner",
+   "text": "Faz do seu {{jeito}}. (Do it your way.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
+   "id": "instagram-4",
+   "task": "instagram",
+   "rank": 5,
+   "title": "Build an Instagram grid that wins agencies and magazines",
+   "text": "The Instagram goal is met when {{the planned grid is live on my profile}}, not saved as a plan.",
+   "note": "The next milestone is the first full row posted.",
+   "minutes": 0,
+   "source": "photography · Instagram"
+  },
+  {
+   "id": "pt-vez",
+   "task": "pt-vez",
+   "rank": 99,
+   "title": "vez = time (occasion)",
+   "text": "Mais uma {{vez}}, por favor. (One more time, please.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
+   "id": "archive-4",
+   "task": "archive",
+   "rank": 6,
+   "title": "Turn the film archive into frames I can pitch and post",
+   "text": "The measure of progress on the archive is {{the number of shoots with exported selects}}.",
+   "note": "Not hours spent in Lightroom.",
+   "minutes": 0,
+   "source": "photography · archive"
+  },
+  {
+   "id": "pt-dinheiro",
+   "task": "pt-dinheiro",
+   "rank": 99,
+   "title": "dinheiro = money / cash",
+   "text": "Você aceita {{dinheiro}} ou só cartão? (Do you take cash or only card?)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
+   "id": "dating-app-4",
+   "task": "dating-app",
+   "rank": 7,
+   "title": "Find out whether people will pay for the dating photo generator",
+   "text": "The dating demand test costs {{$3 a day}}, about $42 over two weeks.",
+   "note": "A small price for knowing which idea to build.",
+   "minutes": 0,
+   "source": "apps · dating photos"
+  },
+  {
    "id": "pt-roupa",
    "task": "pt-roupa",
    "rank": 99,
@@ -683,14 +683,14 @@
    "source": "português"
   },
   {
-   "id": "sao-paulo-4c",
-   "task": "sao-paulo",
-   "rank": 5,
-   "title": "Make the São Paulo week produce one strong shoot",
-   "text": "The next milestone for São Paulo is {{a confirmed shoot date inside 24 to 30 November}}.",
-   "note": "Several São Paulo contacts have replied with interest. Isa Corazza can do 24 November or the morning of the 25th.",
+   "id": "accountability-4",
+   "task": "accountability",
+   "rank": 8,
+   "title": "Choose one accountability app idea and validate it",
+   "text": "Another accountability candidate is task-start support at {{$12 a month}}: live starts and small next actions.",
+   "note": "For people who know what to do and cannot begin.",
    "minutes": 0,
-   "source": "photography · São Paulo"
+   "source": "apps · accountability"
   },
   {
    "id": "pt-luz",
@@ -703,89 +703,9 @@
    "source": "português"
   },
   {
-   "id": "instagram-4",
-   "task": "instagram",
-   "rank": 6,
-   "title": "Build an Instagram grid that wins agencies and magazines",
-   "text": "The Instagram goal is met when {{the planned grid is live on my profile}}, not saved as a plan.",
-   "note": "The next milestone is the first full row posted.",
-   "minutes": 0,
-   "source": "photography · Instagram"
-  },
-  {
-   "id": "pt-rua",
-   "task": "pt-rua",
-   "rank": 99,
-   "title": "rua = street",
-   "text": "A gente fotografa na {{rua}}. (We shoot in the street.)",
-   "note": "",
-   "minutes": 0,
-   "source": "português"
-  },
-  {
-   "id": "archive-4",
-   "task": "archive",
-   "rank": 7,
-   "title": "Turn the film archive into frames I can pitch and post",
-   "text": "The measure of progress on the archive is {{the number of shoots with exported selects}}.",
-   "note": "Not hours spent in Lightroom.",
-   "minutes": 0,
-   "source": "photography · archive"
-  },
-  {
-   "id": "pt-praia",
-   "task": "pt-praia",
-   "rank": 99,
-   "title": "praia = beach",
-   "text": "Vamos para a {{praia}} cedo. (Let's go to the beach early.)",
-   "note": "",
-   "minutes": 0,
-   "source": "português"
-  },
-  {
-   "id": "dating-app-4",
-   "task": "dating-app",
-   "rank": 8,
-   "title": "Find out whether people will pay for the dating photo generator",
-   "text": "The dating demand test costs {{$3 a day}}, about $42 over two weeks.",
-   "note": "A small price for knowing which idea to build.",
-   "minutes": 0,
-   "source": "apps · dating photos"
-  },
-  {
-   "id": "pt-ensaio",
-   "task": "pt-ensaio",
-   "rank": 99,
-   "title": "ensaio = photo shoot / rehearsal",
-   "text": "O {{ensaio}} dura duas horas. (The shoot lasts two hours.)",
-   "note": "",
-   "minutes": 0,
-   "source": "português"
-  },
-  {
-   "id": "accountability-4",
-   "task": "accountability",
-   "rank": 9,
-   "title": "Choose one accountability app idea and validate it",
-   "text": "Another accountability candidate is task-start support at {{$12 a month}}: live starts and small next actions.",
-   "note": "For people who know what to do and cannot begin.",
-   "minutes": 0,
-   "source": "apps · accountability"
-  },
-  {
-   "id": "pt-semana",
-   "task": "pt-semana",
-   "rank": 99,
-   "title": "semana = week",
-   "text": "Estou livre na {{semana}} que vem. (I'm free next week.)",
-   "note": "",
-   "minutes": 0,
-   "source": "português"
-  },
-  {
    "id": "flywheel-4",
    "task": "flywheel",
-   "rank": 10,
+   "rank": 9,
    "title": "Get one consumer app idea to earn a build",
    "text": "Offer pages get no sign-ups without {{traffic}}, which is the part that still depends on me.",
    "note": "The posting scripts are written. Nothing is posted automatically.",
@@ -793,11 +713,11 @@
    "source": "apps · flywheel"
   },
   {
-   "id": "pt-bom",
-   "task": "pt-bom",
+   "id": "pt-rua",
+   "task": "pt-rua",
    "rank": 99,
-   "title": "bom = good",
-   "text": "O resultado ficou muito {{bom}}. (The result turned out really good.)",
+   "title": "rua = street",
+   "text": "A gente fotografa na {{rua}}. (We shoot in the street.)",
    "note": "",
    "minutes": 0,
    "source": "português"
@@ -813,11 +733,11 @@
    "source": "photography · magazines"
   },
   {
-   "id": "pt-legal",
-   "task": "pt-legal",
+   "id": "pt-praia",
+   "task": "pt-praia",
    "rank": 99,
-   "title": "legal = cool / nice",
-   "text": "Que {{legal}}! Adorei. (How cool! I loved it.)",
+   "title": "praia = beach",
+   "text": "Vamos para a {{praia}} cedo. (Let's go to the beach early.)",
    "note": "",
    "minutes": 0,
    "source": "português"
@@ -833,11 +753,11 @@
    "source": "photography · Rio"
   },
   {
-   "id": "pt-lindo",
-   "task": "pt-lindo",
+   "id": "pt-ensaio",
+   "task": "pt-ensaio",
    "rank": 99,
-   "title": "lindo = beautiful",
-   "text": "Ficou {{lindo}}. (It turned out beautiful.)",
+   "title": "ensaio = photo shoot / rehearsal",
+   "text": "O {{ensaio}} dura duas horas. (The shoot lasts two hours.)",
    "note": "",
    "minutes": 0,
    "source": "português"
@@ -853,11 +773,11 @@
    "source": "photography · bookings"
   },
   {
-   "id": "pt-pronto",
-   "task": "pt-pronto",
+   "id": "pt-semana",
+   "task": "pt-semana",
    "rank": 99,
-   "title": "pronto = ready",
-   "text": "Você está {{pronta}}? (Are you ready? (to a woman))",
+   "title": "semana = week",
+   "text": "Estou livre na {{semana}} que vem. (I'm free next week.)",
    "note": "",
    "minutes": 0,
    "source": "português"
@@ -873,11 +793,11 @@
    "source": "photography · Bali"
   },
   {
-   "id": "pt-perto",
-   "task": "pt-perto",
+   "id": "pt-bom",
+   "task": "pt-bom",
    "rank": 99,
-   "title": "perto = near / close",
-   "text": "O estúdio fica {{perto}} daqui. (The studio is close to here.)",
+   "title": "bom = good",
+   "text": "O resultado ficou muito {{bom}}. (The result turned out really good.)",
    "note": "",
    "minutes": 0,
    "source": "português"
@@ -885,7 +805,7 @@
   {
    "id": "dating-app-5",
    "task": "dating-app",
-   "rank": 8,
+   "rank": 7,
    "title": "Find out whether people will pay for the dating photo generator",
    "text": "Testing before building matters because {{the 60 offers I launched from guesses all failed}}.",
    "note": "Your own rule since 18 October: no offer from a guess.",
@@ -893,11 +813,11 @@
    "source": "apps · dating photos"
   },
   {
-   "id": "pt-longe",
-   "task": "pt-longe",
+   "id": "pt-legal",
+   "task": "pt-legal",
    "rank": 99,
-   "title": "longe = far",
-   "text": "É muito {{longe}} para ir a pé. (It's too far to walk.)",
+   "title": "legal = cool / nice",
+   "text": "Que {{legal}}! Adorei. (How cool! I loved it.)",
    "note": "",
    "minutes": 0,
    "source": "português"
@@ -905,7 +825,7 @@
   {
    "id": "accountability-5",
    "task": "accountability",
-   "rank": 9,
+   "rank": 8,
    "title": "Choose one accountability app idea and validate it",
    "text": "The next milestone for the accountability app is {{picking the one idea to test}}.",
    "note": "Everything else waits on that choice.",
@@ -913,11 +833,11 @@
    "source": "apps · accountability"
   },
   {
-   "id": "pt-cedo",
-   "task": "pt-cedo",
+   "id": "pt-lindo",
+   "task": "pt-lindo",
    "rank": 99,
-   "title": "cedo = early",
-   "text": "Prefiro começar {{cedo}}. (I prefer to start early.)",
+   "title": "lindo = beautiful",
+   "text": "Ficou {{lindo}}. (It turned out beautiful.)",
    "note": "",
    "minutes": 0,
    "source": "português"
@@ -933,11 +853,11 @@
    "source": "photography · Rio"
   },
   {
-   "id": "pt-agora",
-   "task": "pt-agora",
+   "id": "pt-pronto",
+   "task": "pt-pronto",
    "rank": 99,
-   "title": "agora = now",
-   "text": "Pode ser {{agora}}? (Can it be now?)",
+   "title": "pronto = ready",
+   "text": "Você está {{pronta}}? (Are you ready? (to a woman))",
    "note": "",
    "minutes": 0,
    "source": "português"
@@ -945,7 +865,7 @@
   {
    "id": "dating-app-6",
    "task": "dating-app",
-   "rank": 8,
+   "rank": 7,
    "title": "Find out whether people will pay for the dating photo generator",
    "text": "I kill an app idea after {{7 days under 3 sign-ups}}.",
    "note": "So the dating test needs a start date and an end date.",
@@ -953,11 +873,11 @@
    "source": "apps · dating photos"
   },
   {
-   "id": "pt-depois",
-   "task": "pt-depois",
+   "id": "pt-perto",
+   "task": "pt-perto",
    "rank": 99,
-   "title": "depois = after / later",
-   "text": "A gente conversa {{depois}}. (We'll talk later.)",
+   "title": "perto = near / close",
+   "text": "O estúdio fica {{perto}} daqui. (The studio is close to here.)",
    "note": "",
    "minutes": 0,
    "source": "português"
@@ -965,7 +885,7 @@
   {
    "id": "accountability-6",
    "task": "accountability",
-   "rank": 9,
+   "rank": 8,
    "title": "Choose one accountability app idea and validate it",
    "text": "The accountability idea has earned a build when it gets 1 pre-order, {{3 'I'd pay' clicks}}, or 10 sign-ups in 72 hours.",
    "note": "Below that, keep testing or kill it.",
@@ -973,11 +893,11 @@
    "source": "apps · accountability"
   },
   {
-   "id": "pt-ainda",
-   "task": "pt-ainda",
+   "id": "pt-longe",
+   "task": "pt-longe",
    "rank": 99,
-   "title": "ainda = still / yet",
-   "text": "{{Ainda}} não recebi resposta. (I still haven't received an answer.)",
+   "title": "longe = far",
+   "text": "É muito {{longe}} para ir a pé. (It's too far to walk.)",
    "note": "",
    "minutes": 0,
    "source": "português"
@@ -993,6 +913,56 @@
    "source": "photography · Rio"
   },
   {
+   "id": "pt-cedo",
+   "task": "pt-cedo",
+   "rank": 99,
+   "title": "cedo = early",
+   "text": "Prefiro começar {{cedo}}. (I prefer to start early.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
+   "id": "dating-app-7",
+   "task": "dating-app",
+   "rank": 7,
+   "title": "Find out whether people will pay for the dating photo generator",
+   "text": "The next milestone for the dating app is {{the first real number: sign-ups per idea}}.",
+   "note": "Until the test runs there is nothing to decide on.",
+   "minutes": 0,
+   "source": "apps · dating photos"
+  },
+  {
+   "id": "pt-agora",
+   "task": "pt-agora",
+   "rank": 99,
+   "title": "agora = now",
+   "text": "Pode ser {{agora}}? (Can it be now?)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
+   "id": "pt-depois",
+   "task": "pt-depois",
+   "rank": 99,
+   "title": "depois = after / later",
+   "text": "A gente conversa {{depois}}. (We'll talk later.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
+   "id": "pt-ainda",
+   "task": "pt-ainda",
+   "rank": 99,
+   "title": "ainda = still / yet",
+   "text": "{{Ainda}} não recebi resposta. (I still haven't received an answer.)",
+   "note": "",
+   "minutes": 0,
+   "source": "português"
+  },
+  {
    "id": "pt-devagar",
    "task": "pt-devagar",
    "rank": 99,
@@ -1001,16 +971,6 @@
    "note": "",
    "minutes": 0,
    "source": "português"
-  },
-  {
-   "id": "dating-app-7",
-   "task": "dating-app",
-   "rank": 8,
-   "title": "Find out whether people will pay for the dating photo generator",
-   "text": "The next milestone for the dating app is {{the first real number: sign-ups per idea}}.",
-   "note": "Until the test runs there is nothing to decide on.",
-   "minutes": 0,
-   "source": "apps · dating photos"
   }
  ]
 }
